@@ -9,6 +9,7 @@
 [![Preregistros](https://img.shields.io/badge/Preregistros-5%2F5%20intactos-success.svg)](es/red/prereg.lock)
 [![Tests](https://img.shields.io/badge/Tests-79%20pasan-success.svg)](stasispath-tools/)
 [![Toolkit](https://img.shields.io/badge/Toolkit-stasispath--tools-orange.svg)](stasispath-tools/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23087196.svg)](https://doi.org/10.5281/zenodo.23087196)
 [![Licencia: CC BY-NC 4.0](https://img.shields.io/badge/Licencia-CC%20BY--NC%204.0-blue.svg)](LICENSE)
 
 **Un marco biofísico cuantitativo de los límites de la preservación reversible.**
@@ -231,4 +232,8 @@ Publicado para investigación académica y científica bajo **CC BY-NC 4.0**. Qu
 
 ## Cita
 
-> Malia, A., con Claude (Anthropic) y Grok (xAI) (2026). *StasisPath: A Quantitative Biophysical Framework for Metabolic Depression, Ice Avoidance, and the Thermodynamic Limits of Reversible Mammalian Preservation.* StasisPath Initiative.
+Si usas StasisPath, cítalo así:
+
+> Malia, A., con Claude (Anthropic) y Grok (xAI) (2026). *StasisPath: A Quantitative Biophysical Framework for Metabolic Depression, Ice Avoidance, and the Thermodynamic Limits of Reversible Mammalian Preservation.* StasisPath Initiative. DOI: [10.5281/zenodo.23087196](https://doi.org/10.5281/zenodo.23087196)
+
+GitHub también lee [`CITATION.cff`](CITATION.cff) y ofrece el botón «Cite this repository».

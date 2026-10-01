@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use StasisPath, please cite it as below."
+title: "StasisPath: A Quantitative Biophysical Framework for Metabolic Depression, Ice Avoidance, and the Thermodynamic Limits of Reversible Mammalian Preservation"
+type: software
+authors:
+  - family-names: "Malia"
+    given-names: "Alejo"
+  - name: "Claude (Anthropic)"
+  - name: "Grok (xAI)"
+doi: "10.5281/zenodo.23087196"
+url: "https://github.com/AlejoMalia/StasisPath"
+repository-code: "https://github.com/AlejoMalia/StasisPath"
+license: "CC-BY-NC-4.0"
+date-released: "2026-10-01"
+abstract: "A computable biophysical framework for the limits of reversible preservation: 251 audited nodes, 91 primary sources and 5 hash-locked preregistrations. Key result: a human brain requires a critical cooling rate of at most 0.425 C/min, 4.25 times more permissive than M22."
