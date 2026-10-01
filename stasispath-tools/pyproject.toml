@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stasispath"
+version = "0.1.0"
+authors = [
+    { name = "Alejo Malia" },
+    { name = "Claude (Anthropic)" },
+    { name = "Grok (xAI)" },
+]
+description = "Computational biophysics toolkit for cryopreservation, organ stasis, and phase kinetics (StasisPath Framework)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "CC-BY-NC-4.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Free for non-commercial use",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+keywords = ["cryopreservation", "biostasis", "vitrification", "ischemia", "cooling-rate", "cpa-toxicity"]
+
+[project.scripts]
+stasispath = "stasispath.cli:main"

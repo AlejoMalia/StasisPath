@@ -1,0 +1,19 @@
+C6 — congelación parcial (hielo extracelular) a escala de órgano
+  LC=1.0 cm  enfriamiento convectivo ~2.27 C/min  (ventana 'lenta' 0.1-1 C/min: NO)
+  LC=1.4 cm  enfriamiento convectivo ~1.16 C/min  (ventana 'lenta' 0.1-1 C/min: SI)
+  LC=2.2 cm  enfriamiento convectivo ~0.47 C/min  (ventana 'lenta' 0.1-1 C/min: SI)
+  LC=4.0 cm  enfriamiento convectivo ~0.14 C/min  (ventana 'lenta' 0.1-1 C/min: SI)
+  calor latente 1 kg, LC=1.4 cm: 134 kJ / 71 W = 31 min
+  calor latente 1 kg, LC=4.0 cm: 134 kJ / 25 W = 89 min
+  => térmicamente NO limitado: el límite de C6 es biológico o mecánico (nucleación uniforme, 9 % de expansión en espacio vascular, soluto a -15 C).
+
+C7 — techo de la reperfusión óptima
+  suelo actual τ_org ≈ 5 min; techo teórico = tolerancia celular ≥ 20 min, necrosis del 15 % a 6 h
+  => la medicina de reperfusión podría mover el umbral x4 (seguro) hasta x72 (si 15 % de necrosis es recuperable).
+  Predicción a verificar: los mejores datos animales o ex vivo caen entre 15 min y unas pocas horas, no más allá.
+
+C8 — tensión CCR ↔ toxicidad
+  pendiente ~-1.6 décadas de CCR por mol/L  => +1 M de CPA baja la CCR ~36x
+  Requisito C3 para LC 4 cm (~0.15 C/min): CCR ≤ 0.1 => hace falta CPA de la clase M22 o superior.
+  => toxicidad: necesito la ley. Hipótesis a verificar: toxicidad ~ f(qv*) de Fahy, no ~ concentración total;
+     y cargar a baja temperatura (−22 °C) reduce la toxicidad (Arrhenius). Si se cumplen, la tensión no es dura: es diseño de mezcla.

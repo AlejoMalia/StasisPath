@@ -1,0 +1,40 @@
+BASE: 244 nodos · progreso 94.91 %
+
+Aristas totales (sin parámetros): 375
+Aristas PENALIZANTES (impiden que el nodo valga lo declarado): 14
+
+==================================================================================================
+COSTE DE CADA ARISTA PENALIZANTE (puntos que recupera el marco si sale)
+==================================================================================================
+nodo   decl  -> dep     EF(dep)   gana sola   capa/tipo
+L37    [V]   -> F82      [P]        +0.11    ley
+V06    [V]   -> F57      [P]        +0.15    via
+V09    [V]   -> F19      [P]        +0.15    via
+Q5     [M]   -> L29      [P]        +0.00    pregunta
+Q5     [M]   -> L31      [P]        +0.00    pregunta
+Q5     [M]   -> L32      [P]        +0.00    pregunta
+Q5     [M]   -> L34      [P]        +0.00    pregunta
+Q6     [M]   -> L25      [P]        +0.00    pregunta
+Q6     [M]   -> L35      [P]        +0.00    pregunta
+Q7     [M]   -> L38      [P]        +0.18    pregunta
+Q20    [M]   -> L36      [P]        +0.00    pregunta
+Q20    [M]   -> L39      [P]        +0.00    pregunta
+Q11    [M]   -> X2       [A]        +0.18    pregunta
+Q11    [M]   -> L37      [P]        +0.00    pregunta
+
+==================================================================================================
+NODOS SUJETOS POR VARIAS ARISTAS DEBILES (quitar una sola no los sube)
+==================================================================================================
+Q11    [M] deps débiles ['X2', 'L37'] -> quitando TODAS: +0.36
+Q20    [M] deps débiles ['L36', 'L39'] -> quitando TODAS: +0.18
+Q5     [M] deps débiles ['L29', 'L31', 'L32', 'L34'] -> quitando TODAS: +0.18
+Q6     [M] deps débiles ['L25', 'L35'] -> quitando TODAS: +0.18
+
+==================================================================================================
+TECHO TEORICO si TODAS las 14 penalizantes fueran temáticas: 94.91 -> 96.41 % (+1.49)
+NO es un objetivo: la mayoría de estas aristas SI son apoyo probatorio real.
+El techo sólo dice cuánto está en juego en esta capa del barrido.
+
+==================================================================================================
+VERIFICACION DEL LIMITE: ningun nodo por encima de su estatus DECLARADO
+OK · ninguna retirada de arista sube un nodo sobre su declaracion.

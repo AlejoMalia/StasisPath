@@ -1,0 +1,13 @@
+T(C)   factor_metab   ventana_estimada
+  37        1.000          5.0 min (0.1 h)
+  30        0.558          9.0 min (0.1 h)
+  25        0.368         13.6 min (0.2 h)
+  20        0.243         20.6 min (0.3 h)
+  18        0.205         24.3 min (0.4 h)
+  15        0.160         31.2 min (0.5 h)
+  10        0.106         47.4 min (0.8 h)
+   0        0.046        109.0 min (1.8 h)
+ -10        0.020        250.7 min (4.2 h)
+Para 1 dia: factor 3.5e-03 -> T ~ -31 C (bajo 0 C => requiere cambio de fase o vidrio)
+Para 1 año: factor 9.5e-06 -> T ~ -102 C (bajo 0 C => requiere cambio de fase o vidrio)
+Para 10 años: factor 9.5e-07 -> T ~ -129 C (bajo 0 C => requiere cambio de fase o vidrio)

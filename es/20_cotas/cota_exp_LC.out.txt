@@ -1,0 +1,82 @@
+A. control de implementación
+   s13 calculada = 1.801 (registrada 1.80)  ->  1 L: LC = 1.402 cm, tasa = 0.998 °C/min
+   comprobación s23 = 1.670 (registrada 1.67)
+
+B. ajuste de los 3 volúmenes (tasa ∝ LC^-n)
+   LC citada              n = 1.771 ± 0.104 (1σ) · IC95 (1 gl) = [0.45, 3.09] · residuo típico 4.7 %
+   LC = V/A reconstruida  n = 1.817 ± 0.104 (1σ) · IC95 (1 gl) = [0.49, 3.14] · residuo típico 4.6 %
+   rango del motor: exp_LC = 2.0 [1.67, 2.18]
+
+C. predicción a LC 4 cm (ventana lenta de C6: 0.1–1 °C/min)
+   motor, central n=2: 0.142 · esquinas n=1.67/2.18: 0.128–0.173 °C/min
+   LC citada              0.161 °C/min · IC95 predicción (1 gl) 0.0387–0.673
+   LC = V/A reconstruida  0.179 °C/min · IC95 predicción (1 gl) 0.0471–0.678
+
+D. diseño de la medición que cerraría exp_LC a ±0.1 (IC 95 %)
+   hasta 3 L (lo que F2 ya hace)  ruido ±5 % -> ni con 10 volúmenes
+   hasta 3 L (lo que F2 ya hace)  ruido ±10 % -> ni con 10 volúmenes
+   hasta 3 L (lo que F2 ya hace)  ruido ±17 % -> ni con 10 volúmenes
+   hasta ~12 L                    ruido ±5 % -> ni con 10 volúmenes
+   hasta ~12 L                    ruido ±10 % -> ni con 10 volúmenes
+   hasta ~12 L                    ruido ±17 % -> ni con 10 volúmenes
+   hasta ~25 L                    ruido ±5 % -> 8 volúmenes (semiancho 0.090)
+   hasta ~25 L                    ruido ±10 % -> ni con 10 volúmenes
+   hasta ~25 L                    ruido ±17 % -> ni con 10 volúmenes
+
+E. MATE: ¿se sostienen los veredictos clave con el ajuste honesto (1 gl)?
+   C6: LC 4 cm dentro de la ventana lenta (tasa ≥ 0.1)
+      LC citada              95 % unilateral (predicción): tasa ≥ 0.0794 -> FUGA
+      LC citada              99 % unilateral (predicción): tasa ≥ 0.00452 -> FUGA
+      LC = V/A reconstruida  95 % unilateral (predicción): tasa ≥ 0.0921 -> FUGA
+      LC = V/A reconstruida  99 % unilateral (predicción): tasa ≥ 0.00634 -> FUGA
+   C3: VMP no vitrifica riñón humano (tasa < CCR_VMP=5.3)
+      LC citada              95 % unilateral (predicción): tasa < 4.21 -> SE SOSTIENE
+      LC citada              99 % unilateral (predicción): tasa < 34.2 -> FUGA
+      LC = V/A reconstruida  95 % unilateral (predicción): tasa < 5.2 -> SE SOSTIENE
+      LC = V/A reconstruida  99 % unilateral (predicción): tasa < 49.2 -> FUGA
+   C8: VMP insuficiente a LC 4 cm (tasa < 5.3)
+      LC citada              95 % unilateral (predicción): tasa < 0.328 -> SE SOSTIENE
+      LC citada              99 % unilateral (predicción): tasa < 5.77 -> FUGA
+      LC = V/A reconstruida  95 % unilateral (predicción): tasa < 0.346 -> SE SOSTIENE
+      LC = V/A reconstruida  99 % unilateral (predicción): tasa < 5.03 -> SE SOSTIENE
+   C11: a LC 4 cm más lento que 1 °C/min
+      LC citada              95 % unilateral (predicción): tasa < 0.328 -> SE SOSTIENE
+      LC citada              99 % unilateral (predicción): tasa < 5.77 -> FUGA
+      LC = V/A reconstruida  95 % unilateral (predicción): tasa < 0.346 -> SE SOSTIENE
+      LC = V/A reconstruida  99 % unilateral (predicción): tasa < 5.03 -> FUGA
+
+F. ¿qué exponente vuelca cada veredicto? (anc 2.2/2.33, tasa ancla 0.45–0.5, riñón 0.85–0.91)
+   C6: LC 4 cm dentro de la ventana lenta (tasa ≥ 0.1)        vuelca con n > 2.52
+   C3: VMP no vitrifica riñón humano (tasa < CCR_VMP=5.3)     vuelca con n > 2.34
+   C8: VMP insuficiente a LC 4 cm (tasa < 5.3)                vuelca con n < -3.95
+   C11: a LC 4 cm más lento que 1 °C/min                      vuelca con n < -1.16
+
+G. diseño MÍNIMO: certificar n < 2.34 (umbral de C3, el más exigente) al 95 % unilateral
+   ruido de tasa ±4.7 %:
+      sólo los 3 de F2                                               n ≤ 2.49 -> no basta
+      + 1 volumen de ~40 mL (LC 0.5 cm)                              n ≤ 1.95 -> CERTIFICA
+      + 1 volumen de ~0.15 L (LC 0.8 cm, tamaño riñón)               n ≤ 2.01 -> CERTIFICA
+      + 1 volumen de ~7 L (LC 3.0 cm)                                n ≤ 2.01 -> CERTIFICA
+      + 0.15 L y 7 L                                                 n ≤ 1.93 -> CERTIFICA
+      + 0.15 L, 7 L y ~17 L (LC 4 cm)                                n ≤ 1.89 -> CERTIFICA
+   ruido de tasa ±10.0 %:
+      sólo los 3 de F2                                               n ≤ 3.24 -> no basta
+      + 1 volumen de ~40 mL (LC 0.5 cm)                              n ≤ 2.09 -> CERTIFICA
+      + 1 volumen de ~0.15 L (LC 0.8 cm, tamaño riñón)               n ≤ 2.22 -> CERTIFICA
+      + 1 volumen de ~7 L (LC 3.0 cm)                                n ≤ 2.22 -> CERTIFICA
+      + 0.15 L y 7 L                                                 n ≤ 2.05 -> CERTIFICA
+      + 0.15 L, 7 L y ~17 L (LC 4 cm)                                n ≤ 1.98 -> CERTIFICA
+   ruido de tasa ±15.0 %:
+      sólo los 3 de F2                                               n ≤ 3.95 -> no basta
+      + 1 volumen de ~40 mL (LC 0.5 cm)                              n ≤ 2.23 -> CERTIFICA
+      + 1 volumen de ~0.15 L (LC 0.8 cm, tamaño riñón)               n ≤ 2.42 -> no basta
+      + 1 volumen de ~7 L (LC 3.0 cm)                                n ≤ 2.42 -> no basta
+      + 0.15 L y 7 L                                                 n ≤ 2.16 -> CERTIFICA
+      + 0.15 L, 7 L y ~17 L (LC 4 cm)                                n ≤ 2.06 -> CERTIFICA
+
+H. Camino FÍSICO independiente (PRECISION.md, número de Biot)
+   C6: LC 4 cm dentro de la ventana lenta (tasa ≥ 0.1)
+      vuelca con n > 2.52 · techo físico 2 + exceso observado 0.18 = 2.18 · haría falta un exceso de forma/ruido de 0.52 = x2.9 el observado
+   C3: VMP no vitrifica riñón humano (tasa < CCR_VMP=5.3)
+      vuelca con n > 2.34 · techo físico 2 + exceso observado 0.18 = 2.18 · haría falta un exceso de forma/ruido de 0.34 = x1.9 el observado
+   Fuga declarada: órganos reales no son bolsas (forma no autosemejante). Se acota con el exceso observado; un exceso > x1.9 el observado la abriría.

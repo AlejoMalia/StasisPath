@@ -1,0 +1,2800 @@
+# StasisPath: SINGLE SOURCE OF TRUTH (English edition). Only this file is edited by hand; everything else is regenerated with:
+#   python3 red/motor.py
+# The Spanish edition lives in es/red/stasispath.yaml. Run `python3 tools/check_parity.py` after editing either.
+meta:
+  titulo: 'StasisPath: a framework for reversible stasis versus irreversible damage'
+  pregunta: What magnitudes, thresholds and time windows separate an organism (or tissue) in a reversible pause from one that can no longer recover?
+  fecha: '2026-09-26'
+fuentes:
+  F1:
+    cita: Han et al. 2023, Nat Commun 14:3407 (vitrified rat kidney + nanowarming)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10256770/
+    estatus: V
+  F2:
+    cita: Etheridge/Bischof et al., bioRxiv 2024.11.08.622572 = Nat Commun 2025 (litre scale)
+    url: https://www.nature.com/articles/s41467-025-63483-2
+    estatus: V
+  F3:
+    cita: CCR/CWR of VS55 and VMP in kidney tissue (PMC11611618)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11611618/
+    estatus: V
+  F4:
+    cita: McCullough et al. 1999, Ann Thorac Surg 67:1895 (via thoracickey)
+    url: https://thoracickey.com/deep-hypothermic-circulatory-arrest-2/
+    estatus: V
+  F5:
+    cita: Best 2008, rationale for cryonics (PMC4733321)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4733321/
+    estatus: P
+  F6:
+    cita: 'McKenzie, Thorn, Nnadi, Wróbel, Kendziorra, Farrell and Crary 2024, Free Neuropathology 5:35, ''Cryopreservation of brain cell structure: a review''. **FULL PDF READ (batch 46).** **It replaces the popular article (Asterisk Mag) that occupied this record:** a peer-reviewed review is a better source, but **it remains secondary and for that reason stays at [P]** — status is not raised by changing source, only the quality of the support improves. It covers the state of the art in preservation of brain structure, including the ASC of McIntyre and Fahy 2015'
+    url: https://doi.org/10.17879/freeneuropathology-2024-5883
+    estatus: P
+    cierra: '**Batch 49: this record no longer supports any verdict.** It is removed from `deps` of V16, the only pathway that cited it: none of the four fields of V16 comes from F6 (all are from F16 and F69, verified on the full PDF in `es/20_cotas/auditoria_aristas_tanda49.py`). The edge was a fossil of the popular article this record replaced in batch 46. F6 is kept as a context reference (review read in full), and it CANNOT be repositioned where it would indeed be good support (G5, V17, layer E0) because in this network adding a [P] source to a [V] node downgrades it: the framework penalizes citing a review even if correct. Closing it would require reading the primaries it reviews, which is work this session cannot do'
+  F7:
+    cita: 'McIntyre & Fahy 2015, Cryobiology 71:448 (ASC; abstract read: easily traceable processes and sharp synapses in rabbit and pig; EG at 65 %, −135 °C; PMID 26408851)'
+    url: https://pubmed.ncbi.nlm.nih.gov/26408851/
+    estatus: V
+  F8:
+    cita: 'de Vries, Uygun, Toner et al. 2019, Nat Biotechnol 37:1131 (nihms-1534583). **FULL PDF READ (batch 46).** **Entire HUMAN livers supercooled at −4 °C** plus subnormothermic perfusion: the organ''s ex vivo life is extended by **27 h** versus the clinical limit of <12 h at +4 °C. Viability before and after supercooling **does not change**, and the liver withstands a simulated transplant by normothermic reperfusion with ex vivo blood. **There was no real transplant.** Antecedent from the same group: rat liver at −6 °C (F85)'
+    url: https://www.nature.com/articles/s41587-019-0223-y
+    estatus: V
+    cierra: 'closed in batch 46: primary read (−4 °C, +27 h)'
+  F9:
+    cita: 'Tisherman et al. 2016, Int J Surg (EPR for traumatic cardiac arrest). **FULL PDF READ (batch 46).** **A review that CORROBORATES, independently, the two anchors of C10:** (a) in **dog**, with flush in the distal abdominal aorta and brain at **10 °C**, acceptable neurological outcomes after **up to 120 min** of arrest — the same number as F30; (b) **the upper limit of arrest without impairment of learning or memory is 60 min** — the same as F42 in pig. It adds **measured optimal parameters**: tympanic target **10 °C** (better than 5 or 15), rapid induction at **2 °C/min** and gradual rewarming at **0.5 °C/min**. Pig (Rhee): <10 °C intracranial in 12 min, 90 min of low-flow extracorporeal circulation, **5/5 survive** (1 with injury). Pig with complex injuries and 1 h of EPR: **>75 % neurologically intact survival at 6 weeks**. Dog with 2 h of haemorrhagic shock and 1 h of EPR: **85 % survival** versus 0 % with conventional resuscitation'
+    url: https://pubmed.ncbi.nlm.nih.gov/34859446/
+    estatus: V
+    cierra: 'closed in batch 46: primary read; corroborates flush_min and pig_min'
+  F10:
+    cita: 'Hibernating mammal torpor. **FULL PDF READ (batch 46):** Geiser and Kenagy 1988, Physiol Zool — duration of torpor bouts versus air (Ta), body (Tb) temperature and O2 consumption. **A result the framework did not have and that bounds the biological route:** from Ta = 8 °C down to 2 °C the torpor duration **increases** as Tb and VO2 fall, with Tb − Ta ≈ 1.5 °C maintained; but **on falling from 2 °C to −2 °C the trend REVERSES** and the duration drops, because the animal has to thermoregulate. ⇒ **For a hibernator there is an optimum near 2 °C: colder is NOT better.** It is the opposite limit to that of the physical route, where colder always helps (C2)'
+    url: https://link.springer.com/chapter/10.1007/978-3-662-04162-8_7
+    estatus: V
+    cierra: 'closed in batch 46: primary read (torpor optimum ~2 °C)'
+  F11:
+    cita: Larson et al. 2014, J Exp Biol 217:2193 (wood frog)
+    url: https://journals.biologists.com/jeb/article/217/12/2193/12112/
+    estatus: V
+  F12:
+    cita: Wu, Sunagawa, Chen 2025, review of synthetic torpor (PMC12659898)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12659898/
+    estatus: V
+  F13:
+    cita: 'Nordeen & Martin 2019, Physiology 34:101, ''Engineering Human Stasis for Long-Duration Spaceflight''. **TWO PRIMARIES READ AND CONSOLIDATED (2026-09-27): (1) Gilbert et al. 2000, *The Lancet* 355:375–376** (DOI 10.1016/S0140-6736(00)01021-7; PMID 10665559; F13a / F88): clinical case of accidental hypothermia at **13.7 °C** in a woman (Anna Bågenholm), assisted with continued CPR, prolonged circulatory arrest (>3 h), rewarming by extracorporeal cardiopulmonary bypass; full physical and cerebral recovery. **(2) Bradford et al. 2014, NIAC Phase I Report (NASA Grant NNX13AP82G) and Phase II TechPort 88911** (SpaceWorks; F13b, F13c, F89): torpor habitat for transit to Mars; reduces habitable mass by **52 % to 68 %** relative to the reference TransHab habitat (from 41.5 t to 19.9 t); IMLEO reduction 25–44 %; metabolic support with parenteral nutrition and cooling to 31.4–34.2 °C. **Previously [P] for being a review; now [V] through its two primaries read in full.**'
+    url: https://doi.org/10.1152/physiol.00046.2018
+    estatus: V
+    cierra: 'closed 2026-09-27: both primaries read in full (Gilbert 2000 in The Lancet and Bradford NIAC Phase I/II)'
+  F14:
+    cita: McKenzie et al. 2024, Brain Sci 14:942 (biostasis roadmap)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11430499/
+    estatus: V
+  F15:
+    cita: McKenzie, 'Defining Death'
+    url: https://brainpreservation.github.io/Defining_Death
+    estatus: V
+  F16:
+    cita: Wowk 2022, 'Matters of Life and Death', Cryonics 43(3)
+    url: https://www.cryonicsarchive.org/docs/Matters-of-Life-and-Death.pdf
+    estatus: V
+  F19:
+    cita: 'Consolidated primary anoxia data for *Trachemys scripta* / *Chrysemys picta* (freshwater turtles). **Reference primaries: Jackson 1968 (J Exp Biol 49:11, whole-body calorimetry in anoxic submersion), Herbert & Jackson 1985 (Physiol Zool 58:655, survival and metabolism at different T), Lutz & Chih 1992 (Am J Physiol 263:R1030, cerebral metabolic depression and channel arrest), Storey 2007 (Physiology 22:109, review of regulated mechanisms).** CONSOLIDATED MAGNITUDES (supplied by the user 2026-09-27, cross-checked against the primaries): whole body in anoxia at the same body T: ~10–20 % of the aerobic rate (depression ~80–90 %); in cold (~3 °C) + anoxia: ~0.5 % of aerobic at 20 °C, <0.01 % of the comparable mammal; anoxic survival at ~3 °C: 12–18 weeks (up to ~5.5 months through glycogen); survival at ~16 °C: ~2 weeks; brain in vivo: up to ~5 % of the normoxic rate; cortical slices: −37 % heat → −30 % ATP use (underestimates in vivo depression); early phase (1–2 h): ATP demand −70 to −80 %; sustained state: ~10–15 % of baseline; brain electrical activity: −75 to −95 %; extracellular GABA (striatum): up to ×80; Na⁺/K⁺-ATPase (24 h): −30 to −35 %; anoxic hepatocytes: ATP turnover −94 %; mechanism: channel arrest + GABA↑, REGULATED depression (reversible phosphorylation), ATP and energy charge are maintained. METHODOLOGICAL NOTE: slices underestimate in vivo depression because they arrive at the rig already depressed. **Lemur (F90) and lungfish (F91) already have their own primaries; this record covers only the turtle.**'
+    url: https://pubmed.ncbi.nlm.nih.gov/20535765/
+    estatus: V
+    cierra: 'closed 2026-09-27: consolidated primary data (Jackson, Herbert & Jackson, Lutz & Chih, Storey) instead of abstracts; turtle22_h is backed with range [24, 36] h; F60 corroborates the long window (4–5 months at 3 °C)'
+  F20:
+    cita: Calderon Novoa et al. 2026, Am J Transplant 26:91–103. **Full text read.** 22 Yorkshire pigs of 30 kg, autotransplantation, randomized 11 on ice / 11 subzero (CryoStasis platform, proprietary undisclosed solution). **−2 °C only 5 h (n = 5+5); for 24 h (n = 3+3) and 48 h (n = 3+3) they RAISED to −0.5 °C because of nucleation risk.** No ice crystals on histology; creatinine, BUN and potassium comparable (P > .05); 7 days of follow-up, no mortality
+    url: https://pubmed.ncbi.nlm.nih.gov/40935342/
+    estatus: V
+  F62:
+    cita: 'Editorial ''Subzero kidney preservation comes to scale'', Am J Transplant 26 (2026). **Full text read.** It confirms the protocol and sets the next steps: lowering the temperature further, achieving it with phase change, and going from one week in a large animal'
+    url: https://www.sciencedirect.com/science/article/pii/S1600613525030631
+    estatus: V
+  F63:
+    cita: 'Donor heart preservation at 10 °C after thoracoabdominal NRP, Am J Transplant 26:173–180 (2026). **Full text read.** Human clinical series: preserving the heart at 10 °C instead of on ice reduces severe primary graft dysfunction, with regression adjusted for warm ischemia time'
+    url: https://www.sciencedirect.com/science/article/pii/S1600613525029478
+    estatus: V
+  F21:
+    cita: 'Ozgur, Taggart, Tessier, Uygun et al. 2024, Sci Rep 14:25260. **Full PDF read.** Partial freezing at −15 °C with 3-OMG (metabolic depressant), **SnoMax** (nucleator), **PEG 35k** (membrane stabilizer), trehalose (extracellular CPA) and propylene glycol (intracellular CPA). The three improvements to go from 5 to **10 days**: more PEG, **20 min of acclimatization during thawing** to limit shear, and more BSA to reduce oedema. Compared with static cold by **SIMULATED transplantation with blood**, not real. Reference: static cold at 4 °C limits to 8–10 h'
+    url: https://pubmed.ncbi.nlm.nih.gov/39448774/
+    estatus: V
+  F22:
+    cita: 'Botea, Năstase, Herlea, Chang, Şerban, Barcu, Rubinsky and Popescu 2023, Biochem Biophys Rep 34:101485. **FULL PDF READ (batch 46).** First **isochoric** supercooling of a large organ: **whole pig liver at −2 °C, one for 24 h and another for 48 h, WITHOUT freezing** (verified by pressure in the chamber, not by inspection). H&E histology and immunohistochemistry **normal at 48 h**, architecture indistinguishable from control. Controls frozen at −2 °C for 24 h: severe destruction, **98 % nuclear pyknosis**. **n = 2 per arm, feasibility study, WITHOUT transplantation or functional test** (the authors themselves call it exploratory). Isochoric chamber with an intracellular-composition solution in osmotic equilibrium with the liver'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10203736/
+    estatus: V
+    cierra: 'closed in batch 46: primary read (48 h isochoric without freezing)'
+  F23:
+    cita: Vrselja et al. 2019, Nature (BrainEx, PMC6844189)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6844189/
+    estatus: V
+  F24:
+    cita: OrganEx 2022, Nature
+    url: https://pubmed.ncbi.nlm.nih.gov/35922506/
+    estatus: P
+  F25:
+    cita: Leonov, Sterz, Safar, Radovsky 1990, Stroke 21:1600 (17 min, perros; resumen completo)
+    url: https://pubmed.ncbi.nlm.nih.gov/2237954/
+    estatus: V
+  F25b:
+    cita: Safar et al. 1993 (7.5/10/12.5 min, 42 dogs)
+    url: https://pubmed.ncbi.nlm.nih.gov/8446790/
+    estatus: P
+  F26:
+    cita: Fahy, Wowk, Wu, Paynter 2004, Cryobiology 48:22 (qv*)
+    url: https://pubmed.ncbi.nlm.nih.gov/14969679/
+    estatus: V
+  F27:
+    cita: Canadian guideline 2023 (Shemie et al.), via the Saskatchewan national form
+    url: https://www.saskhealthauthority.ca/system/files/2023-09/SHA-0331-Organ-Donation-Death-Deterimination-Circulatory.pdf
+    estatus: V
+  F28:
+    cita: Fahy et al. 2009, Organogenesis 5:167 (rabbit kidney M22, PMC2781097)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2781097/
+    estatus: V
+  F29:
+    cita: Vita-More & Barranco 2015, Rejuvenation Res 18:458 (memory in C. elegans, PMC4620520)
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4620520/
+    estatus: V
+  F30:
+    cita: Tisherman, Safar et al. 2000, Crit Care Med 28(11 Suppl):N214 (suspended animation in dogs; cold aortic flush)
+    url: https://pubmed.ncbi.nlm.nih.gov/11098950/
+    estatus: V
+  F32:
+    cita: Larson et al. 2013, J Exp Biol 216:3461 (Alaskan frog in the laboratory)
+    url: https://journals.biologists.com/jeb/article/216/18/3461/11609/
+    estatus: V
+  F33:
+    cita: 'Packard & Packard 2003, Comp Biochem Physiol A 134:233 (painted-turtle hatchlings: they avoid freezing)'
+    url: https://pubmed.ncbi.nlm.nih.gov/12547253/
+    estatus: V
+  F34:
+    cita: 'MICrONS Consortium 2025, Nature 640:435–447. **Full text read (PMC11981939).** Volume 1.3×0.87×0.82 mm³; 84,035 neurons segmented; **524 M synapses** detected; >1 M manual edits; only **85 neurons with complete axon** and 1,188 with proofread dendrites. Synapse detection: 96 % precision, 89 % recall; partner assignment 98 %. Declared limitation: **automatic axon segmentation is not as accurate** as that of dendrites'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11981939/
+    estatus: V
+  F35:
+    cita: 'Xue et al. 2024, Cell Rep Methods (MEDY). **FULL PDF READ (batch 46).** Cryopreservation method **MEDY = methylcellulose + ethylene glycol + DMSO + Y-27632** (ROCK inhibitor) for **human cortical organoids and living human brain tissue**. It preserves neural cytoarchitecture and **functional activity**; it is applied to dorsal and ventral forebrain organoids, spinal cord, optic vesicle and **patient-derived epilepsy organoids**, which **keep their pathological features after thawing**. The transcriptome shows protection of synaptic function and inhibition of endoplasmic-reticulum-mediated apoptosis. **It is slow freezing with dilute CPA (10 % DMSO + 10 % EG), NOT vitrification**: the scale at which it works is that of organoid and biopsy, not of organ'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11133841/
+    estatus: V
+    cierra: 'closed in batch 46: primary read (MEDY, slow freezing at organoid scale)'
+  F36:
+    cita: Lemler, Harris, Platt, Huffman 2004, Ann NY Acad Sci 1019:559 (Alcor position paper; PMID 15247086)
+    url: https://pubmed.ncbi.nlm.nih.gov/15247086/
+    estatus: P
+  F37b:
+    cita: Pichugin, Fahy, Morin 2006, Cryobiology 52:228–240. **FULL PDF read.** Exact composition of **VM3 = 22.3 % DMSO + 12.86 % formamide + 16.84 % EG + 7 % PVP K12 + 1 % X-1000 + 1 % Z-1000 = 61 % w/v.** Absolute K⁺/Na⁺ control of untreated slices = **1.1–1.5**; recovery = 100 × (treated/control). VM3 gave **91–108 %**. **V(EG) at 53 % allowed vitrification without damage from vitrification or rewarming themselves, but was much more damaging than at 50 %.** Rewarming ~2370 °C/min between Tg and Tm on a metal block; −130 °C lies 3–4 °C below the Tg of VM3. Cold injury mitigated by **0.8 mM vitamin C**, a more 'intracellular' aCSF (less Na and Ca, more K) and the V(EG) solutes themselves; with RPS-2, **0 °C protected more than 10 °C**
+    url: https://pubmed.ncbi.nlm.nih.gov/16403489/
+    estatus: V
+  F38:
+    cita: Hossmann, Schmidt-Kastner, Grosse Ophoff 1987, J Neurol Sci 77:305 (cat, 1 h of cerebral circulatory arrest at 37 °C; PMID 3819770)
+    url: https://pubmed.ncbi.nlm.nih.gov/3819770/
+    estatus: V
+  F39:
+    cita: Fahy et al. 2004, Cryobiology 48:157 (organ vitrification; VMP and M22 in rabbit kidney; PMID 15094092)
+    url: https://pubmed.ncbi.nlm.nih.gov/15094092/
+    estatus: V
+  F40:
+    cita: Fahy 2010, Cryobiology 60:S45 (neutralization of CPA toxicity; PMID 19501081)
+    url: https://pubmed.ncbi.nlm.nih.gov/19501081/
+    estatus: V
+  F41:
+    cita: Manuchehrabadi et al. 2017, Sci Transl Med 9:eaah4586 (nanowarming 1–80 mL; PMID 28251904)
+    url: https://pubmed.ncbi.nlm.nih.gov/28251904/
+    estatus: V
+  F42:
+    cita: Alam et al. 2005, J Surg Res 126:172 (pig, 60 min at 10 °C, no cognitive deficit; PMID 15919416)
+    url: https://pubmed.ncbi.nlm.nih.gov/15919416/
+    estatus: V
+  F43:
+    cita: Takahashi et al. 2020, Nature 583:109 (Q neurons, hibernation-like state; PMID 32528181)
+    url: https://pubmed.ncbi.nlm.nih.gov/32528181/
+    estatus: V
+  F44:
+    cita: 'Cerri et al. 2013, J Neurosci 33:2984 (rat: inhibition of the rostral ventromedial medulla 6 h → suspended animation; PMID 23407956)'
+    url: https://pubmed.ncbi.nlm.nih.gov/23407956/
+    estatus: V
+  F45:
+    cita: 'Yang et al. 2023, Nat Metab 5:789 (ultrasound: torpor > 24 h in mouse; feasible in rat; PMID 37231250)'
+    url: https://pubmed.ncbi.nlm.nih.gov/37231250/
+    estatus: V
+  F46:
+    cita: 'German et al. 2026, PNAS 123(10):e2516848123 (adult mouse hippocampus vitrified: LTP preserved; whole brain in situ at −140 °C; PMID 41774797)'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12974479/
+    estatus: V
+  F47:
+    cita: 'Fahy et al. 2026, bioRxiv preprint 2026.01.28.702375 v2 (5 Feb 2026). **SPECIES CORRECTION (2026-09-27, PDF read in full):** the paper evaluates only **RABBIT** and **HUMAN cortical biopsy** — pig does NOT appear experimentally; the only mention of pig is in the Intro/citation of ASC (McIntyre 2018). No neural-function tests (0 electrophysiological recordings, 0 LTP, 0 respiration). **New datum from the PDF:** DSC on human cortical biopsies (n=3): cooled at 1.0 °C/min + warmed at 160 °C/min → **zero ice melting** → CCR in human cortex perfused with M22 **≤ 1.0 °C/min** (upper bound measured directly). Protocol 2 (forced nucleation): also no ice. Mechanism: osmotic dehydration concentrates intracellular proteins from 15 % to 22 % w/w, suppressing nucleation → tissue is **more ice-resistant than pure 90 % M22 solution**. Terminal concentration: 102–105 % of M22 (≈9.9 M) in LM5+HES vehicle. No cracks at −140 °C. Human case (Dr. L.S. Coles): carotid cannulation at 2.5 h post-arrest; post-vitrification ultrastructure indistinguishable from young rabbits despite prior ischemia. **Verified batch 48 + PDF 2026-09-27:** still a bioRxiv preprint, no journal'
+    url: https://www.biorxiv.org/content/10.64898/2026.01.28.702375v2
+    estatus: P
+    cierra: '[waiting] bioRxiv 2026.01.28.702375; closes on publication in a peer-reviewed journal'
+  F48:
+    cita: 'Suda, Kito & Adachi 1966 Nature 212:268 (PMID 5970120) and 1974 Brain Res 70:527 (PMID 4821065): isolated cat brain with ~15 % glycerol, FROZEN (not vitrified) at −20/−60/−90 °C for up to 7.25 years; PARTIAL recovery of EEG and single unit. Criticism: freezing loses synapses; there was never complete electrophysiological recovery'
+    url: https://pubmed.ncbi.nlm.nih.gov/4821065/
+    estatus: P
+  F49:
+    cita: White et al. 1966, Nature 209:1320 (whole brain refrigerated with electrical and metabolic recovery; PMID 5956043)
+    url: https://pubmed.ncbi.nlm.nih.gov/5956043/
+    estatus: P
+  F50:
+    cita: Wowk, Ting, Phan, Fahy et al. 2025, Cryobiology 119:105257 (dielectric warming at 55 MHz; 13.9 g rabbit kidney vitrified and transplanted with normal clinical function, alive 17 months; PMID 40345110)
+    url: https://pubmed.ncbi.nlm.nih.gov/40345110/
+    estatus: V
+  F51:
+    cita: 'Gao et al. 2022, Adv Mater Technol 7:2100873 (rat heart vitrified + nanowarming: no crystallization or cracks, partial electrical activity; PMID 35668819)'
+    url: https://pubmed.ncbi.nlm.nih.gov/35668819/
+    estatus: V
+  F52:
+    cita: 'German & Akdaş 2024, bioRxiv preprint 2024.06.03.597218 (mouse corticohippocampal slices with 61 % w/v ETHYLENE GLYCOL alone: fEPSPs recovered, but stable potentiation after HFS was NOT achieved; swelling and vacuolization). **VERIFIED IN BATCH 48 and the doubt opened by batch 45 is CLOSED:** the candidate published version, PNAS 123(24):e2605838123 (PMID 42258742), **IS NOT** it — it is a **commentary** by Maya-Romero and Zoncu (UC Berkeley) on the German article, with a different title and different authors. As of September 2026 F52 **remains a bioRxiv v1 preprint**, with no journal. Only a journal''s calendar closes it'
+    url: https://www.biorxiv.org/content/10.1101/2024.06.03.597218v1
+    estatus: P
+    cierra: '[waiting] bioRxiv 2024.06.03.597218 with no confirmed published version'
+  F53:
+    cita: 'Ghetler et al. 2005, Hum Reprod 20:3385 (FTIR: lipid phase transition in human oocyte and zygote: zygote 10.0 ± 1.2 °C, mature oocyte 16.9 ± 0.9 °C, immature GV 24.4 ± 1.6 °C)'
+    url: https://academic.oup.com/humrep/article/20/12/3385/2913701
+    estatus: V
+  F54:
+    cita: Rubinsky L, Raichman, Lavee, Frenk, Ben-Jacob, Bickler 2010, Neurosci Res 67:256 (type I antifreeze protein, 10 mg/mL, protects rat hippocampal slices from 8 h at 4 °C + rewarming; PMID 20398707)
+    url: https://pubmed.ncbi.nlm.nih.gov/20398707/
+    estatus: V
+  F55:
+    cita: 'Szurek & Eroglu 2011, PLOS One 6:e27604 (comparative toxicity of penetrating CPAs in mouse MII oocytes: PROH 1.5 M degenerates 54.2 % at 23 °C and 85 % at 37 °C; DMSO and EG negligible at 1.5 M)'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3217997/
+    estatus: V
+  F56:
+    cita: 'Januszewski, Kornfeld, Li, Pope, Blakely, Lindsey, Maitin-Shepard, Tyka, Denk, Jain 2018, Nat Methods 15:605–610 (PMID 30013046). **Verified in the primary.** Flood-filling networks on zebra finch brain (SBEM): **ERL = 1.1 mm** of error-free neurite, and only 4 mergers in a 97 mm test set; an order of magnitude better than before, at the cost of much more computation'
+    url: https://pubmed.ncbi.nlm.nih.gov/30013046/
+    estatus: V
+  F57:
+    cita: 'Uygun, Taggart, Hassan, Lyon, Ozgur, Taveras, Mojoudi, Agius, Tessier, Markmann, Yeh, Longchamp, Toner 2026, **Research Square rs.3.rs-7820837 / NIH Public Access (PMC12869680)** and proceedings in **Am J Transplant 2024 (MO-8, S1600-6135(24)00812-8) and 2025 (S1600-6135(25)00885-8)**. **FULL MANUSCRIPT AND NUMERICAL SERIES READ (2026-09-27, supplied by the user):** partial-freezing protocol at **−15 °C** for 3 to 10 days in pig and human kidneys with protective perfusate (PEG 35k, 3-OMG, propylene glycol, trehalose and SnoMax nucleator). Quantitative results: (1) Porcine: real in vivo autotransplantation after 10 days at −15 °C with immediate urine production and recovery of function (MGH / Univ. Minnesota report / Kolata NYT 2025); n=6 at 10 days PF vs conventional SCS, which collapses; histology with 22.6 % less damage than SCS; (2) Human: n=4 (3 days) and n=3 (10 days) in discarded kidneys (KDPI 95, 18.9 h of prior ischemia), with creatinine clearance at ~50–57.5 % of the prior value, stable vascular resistance and urine production during 2 h of simulated transplant (normothermic reperfuser). A 30-day attempt produces severe damage (validated limit: 10 days).'
+    url: https://doi.org/10.21203/rs.3.rs-7820837/v1
+    estatus: V
+    cierra: 'closed 2026-09-27: full NIH/Research Square manuscript, AJT 2024/2025 proceedings and in vivo autotransplantation documented'
+  F58:
+    cita: 'Dave, Prado, Raval, Drew, Perez-Pinzon 2006, Stroke 37:1261 (EUTHERMIC arctic ground squirrel, 8 min cardiac arrest: neuronal count no different from control at 7 days; control rats are indeed injured; PMID 16574920)'
+    url: https://pubmed.ncbi.nlm.nih.gov/16574920/
+    estatus: V
+  F59:
+    cita: 'Kavian, Sellers, Sanchez, Alvarez, Aguilar, Powell-Palm 2025, Sci Rep 15:27903 (cryomacroscope + segmentation + FEM: cracking depends strongly on the Tg of the solution; 4 chemistries with > 50 °C range in Tg; PMID 40745362)'
+    url: https://pubmed.ncbi.nlm.nih.gov/40745362/
+    estatus: V
+  F60:
+    cita: 'Jackson & Ultsch 2010, J Exp Zool A 313:311 (painted and snapping turtles survive 4–5 months without O₂: metabolic depression + lactic-acid buffering by shell and bones; frogs do NOT survive even 1 week in anoxic water; PMID 20535765)'
+    url: https://pubmed.ncbi.nlm.nih.gov/20535765/
+    estatus: V
+  F64:
+    cita: 'Tessier et al. 2022, Front Phys (PMC10161798). **Full text read.** Ice modulators in partial freezing of rat liver at −10/−15 °C with 12 % v/v glycerol (1.64 M): **AFGP 0.5 mg/mL** (inhibits recrystallization, binds to the crystal) and **X-1000 0.1 % + Z-1000 0.2 %** (X inhibits recrystallization, **Z suppresses heterogeneous nucleation**). Unfrozen fraction ~60 % at −10 °C and ~73 % at −15 °C; 1–5 days; n = 4 per group, 13 controls. AFGP reduced oedema (p = 0.029) but damaged the endothelium; X/Z kept ATP and energy charge high but gave post-thaw oedema'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10161798/
+    estatus: V
+  F65:
+    cita: 'Fahy, Wowk, Wu, Phan, Rasch, Chang, Zendejas 2004, Cryobiology 48:157–178. **Full PDF read (21cm.com).** It introduces the **viability–stability plot**: viability as K⁺/Na⁺ of rabbit renal cortex slices after washing out the CPA, against mWCR (the minimum warming rate that confines crystallization to ~0.2 % of the mass). **No-damage band: 93–103 % of untreated control.** M22 was designed to be used **at −22 °C**; at −3 °C its toxicity would be unacceptable. VM3 at 40 min gives intermediate K⁺/Na⁺, and at 30 min approaches the control'
+    url: https://www.21cm.com/pdfs/cryopreservation_advances.pdf
+    estatus: V
+  F66:
+    cita: 'Tessier, de Vries et al. 2022, Nat Commun 13:4008 (PMC9287450). **Full text read.** Partial freezing of rat liver at −10/−15 °C: propylene glycol 12 % v/v, 3-OMG 200 mM, trehalose and raffinose, PEG 5 %, **Snomax nucleator 1 g/L**. 5 days at −15 °C with O₂ and lactate comparable to control, **but much lower bile and very high enzymes (AST/ALT ~1270/768 versus ~79/35 U/L)**'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9287450/
+    estatus: V
+  F67:
+    cita: Barnes 1989, Science 244:1593 (PMID 2740905). **Primary abstract verified.** Arctic ground squirrel hibernates with body temperature down to **−2.9 °C without freezing**; mean minimum in February −1.9 °C. **Plasma with normal solutes and NO evidence of antifreezes** ⇒ pure supercooling
+    url: https://pubmed.ncbi.nlm.nih.gov/2740905/
+    estatus: V
+  F68:
+    cita: 'Solanki, Bischof, Rabin 2017, Cryobiology (PMID 28192076). **Full PDF read.** Thermomechanical analysis of pillow-shaped cryobags, parameterized by half-length a = 61 mm and ratios b/a and c/a (c/a from 0.016 to 1). Findings: (1) **maximum stress does NOT occur with the bag filled to the maximum** (when it resembles a sphere); (2) the width/length ratio weighs heavily; (3) **lowering the initial warming rate between storage temperature and Tg reduces stress drastically**; (4) nanowarming also reduces it drastically'
+    url: https://pubmed.ncbi.nlm.nih.gov/28192076/
+    estatus: V
+  F69:
+    cita: 'Tomorrow Biostasis, report on the P-19 case (2024). **Full PDF reread, including the chronology tables and the CT analysis.** Team of 3 people, two prior shifts (3 and 4 days). **Chronology from cardiorespiratory arrest:** legal declaration ~1 h · arrival at the mortuary ~1 h 30 · chest compressions (LUCAS-2) and medication **1 h 43** · intubation 1 h 47 · end of stabilization 2 h 37 · start of surgery 4 h 09 · **START OF PERFUSION 4 h 40** · end of perfusion 9 h 04 · start of cooling **96 h** · end 127 h · cranial CT 198 h. Washout with 21 L of MHP-2; target CPA **65 % w/v**. **CT at −196 °C: 83.17 % of brain area exceeded 100 % of the target concentration and 97.42 % exceeded 92 %.** **Brain shrinkage of 36 %** (2D axial slice). Incident: temporary depletion of liquid N₂ around hour 85'
+    url: https://www.tomorrowbio.com
+    estatus: V
+  F70:
+    cita: 'Pamenter et al. 2018, PLOS One 13:e0208453. **Full PDF read.** Effect of cold (37 → 6 °C) in permeabilized mouse brain mitochondria: **Q10 of state II respiration = 2.61 ± 0.09 and state III = 3.92 ± 0.31**; H⁺ leak Q10 = 4.4. By complexes: citrate synthase and complexes I, III and IV poorly sensitive (Q10 1.2–2.4), complex II 4.2 and **complex V 11.3**. Agrees with ground-squirrel brown fat (2.4) and muscle/liver (2.8–6.5)'
+    url: https://doi.org/10.1371/journal.pone.0208453
+    estatus: V
+  F71:
+    cita: 'German et al. 2026, PNAS — **Supplementary information, full PDF read.** The authors state verbatim that they managed to **omit the ''Supercool'' polymers from the composition** and that they named it **''V3'' by reference to VM3** and for its three permeating solvents. Molar composition of V3: **2.85 M DMSO + 2.71 M EG + 2.86 M formamide = 8.42 M of permeating CPA**, plus 23–35 mM impermeant. Loading in steps of increasing concentration **at 10 °C** with LM5 or CI-VM-1 carrier. Whole brain: 8 min of loading at 1 mL/min, 25 min of bath perfusion at 4 °C, 2 min immersion in 65 % w/v V3 at −20 °C and then isopentane at −140 °C. They also tested EG at 61 % alone and EG 37.5 % + DMSO 12.5 %: **V3 gave the best functional recovery**'
+    url: https://www.pnas.org/doi/suppl/10.1073/pnas.2516848123
+    estatus: V
+  F72:
+    cita: 'German, Akdaş, Flügel-Koch, Erterek, Frischknecht, Fejtova, Winkler, Alzheimer and Zheng 2026, **PNAS 123(10):e2516848123** (PMID 41774797). **Batch 45: it is the SAME work as F46** — the bioRxiv preprint 2025.01.22.634384v3 that was cited here is its earlier version, with identical title and identical authors. F72 keeps the detailed numerical extract (concentration series) and F46 the LTP result; **the datum is no longer a preprint**. **Full PDF read.** Concentration series in slices, **CPA exposure WITHOUT cooling below −10 °C** to isolate the chemistry: basal respiration (pmol/min) control **173.3 ± 6.7** · 30 % w/v (4.28 M) **139.7 ± 3.1** · 59 % (8.42 M) **135.1 ± 6.7** · **65 % (9.28 M) 80.4 ± 5.6** (Spearman r = −0.90, p = 0.0002). Reserve capacity: 73.4 → 62.3 → 48.6 → **38.9**. The authors call it ''toxicity that increases sharply''. **And there was no difference between standard CPA exposure and complete vitrification** (135.1 vs 131.4; reserve 48.6 vs 50.6). Thresholds: no crystallization on cooling from 58 % w/v; successful recovery from **57 %**'
+    url: https://www.biorxiv.org/content/10.1101/2025.01.22.634384v3
+    estatus: V
+    cierra: 'closed in batch 45: it is the same work as F46, PNAS 123(10):e2516848123'
+  F73:
+    cita: 'Buck & Barnes 2000, Am J Physiol 279:R255 (PMID 10896889). **Primary abstract verified.** Arctic ground squirrel in torpor: between Ta 0 and −16 °C Tb is maintained and the metabolic rate **rises more than 15-fold** from a minimum of 0.0115 mL O₂/g/h. **Between Tb 0 and 12 °C the rate does NOT change significantly: metabolic inhibition independent of temperature.** The global change from Tb 4 to 20 °C is equivalent to **Q10 = 2.4, but within that range the Q10 varies from 1.0 to 14.1**. Respiratory quotient 0.70 in stable torpor (lipids only); it rises above 0.85 at Ta −16 and 20 °C. **RQ correlates negatively with the maximum duration of the torpor bout**'
+    url: https://pubmed.ncbi.nlm.nih.gov/10896889/
+    estatus: V
+  F74:
+    cita: 'Tardigrade CAHS proteins and biological vitrification. **READ IN FULL (PMC5987194, 2026-09-27):** (1) **Boothby et al. 2017, *Mol Cell* 65:975–984** (DOI 10.1016/j.molcel.2017.02.018; PMC5987194): CAHS proteins (*cytosolic abundant heat soluble*) of *Hypsibius dujardini* vitrify in vitro by DSC and confer desiccation tolerance on heterologous yeast. **Survival correlates strictly with the glassy state** (Fig 7D, 7E): below the CAHS-induced Tg survival is high, falls sharply inside the Tg range and reaches zero when exceeded. **CORRECTION OF OUR OWN READING:** the earlier record cited ''Tg ~60 and ~135 °C'' — those numbers in the PDF were 60 µg/mL kanamycin and 135 kPa vacuum; the DSC curves show broad transitions dependent on residual moisture, with no fixed Tg. (2) **Gelation (Malki et al. / Sanchez-Martinez et al. 2024 / Tanaka et al. 2022, PLOS Biol):** CAHS form a gel by concentration-dependent network self-assembly: **>15 g/L (~0.6 mM) robust gel**, 10–15 g/L viscous, **<10 g/L (~0.4 mM) liquid/diffuse solution**. (3) **Debate:** Arakawa & Numata 2021 (*Mol Cell* 81:409) maintain that the thermal effect in DSC is dehydration and not Tg; Boothby et al. 2021 (*Mol Cell* 81:411) defend that residual water modulates a real Tg. **Key datum for the framework:** they vitrify at **~0.6 mM**, some 4 orders of magnitude below small solutes (~9 M). **Neighbouring field: anhydrobiosis**'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5987194/
+    estatus: V
+    cierra: 'closed 2026-09-27: PMC5987194 read in full; kanamycin/vacuum error corrected and Malki/Tanaka gelation context added'
+  F75:
+    cita: 'Roughton, Topp & Camarda 2012, Comput Chem Eng 36:10 (PMID 24385675). **Neighbouring field: pharmaceutical lyophilization.** Computational molecular design framework that **optimizes excipients** by maximizing the Tg of the anhydrous solute and minimizing the water content in the freeze-concentrated matrix. They develop quantitative structure-property relationships for **Tg of the anhydrous solute, Tg'', ice melting point and the Gordon-Taylor constant**, and solve the optimization with tabu search'
+    url: https://pubmed.ncbi.nlm.nih.gov/24385675/
+    estatus: V
+  F76:
+    cita: 'Mowry, Krüger, Drabbels and Lorenz (EPFL) 2025, **Phys Rev Research 7:013095** (DOI 10.1103/PhysRevResearch.7.013095; arXiv 2407.01087). **READ IN FULL (2026-09-27).** Method: electron microscopy with in situ time-resolved electron diffraction on a **206 nm** amorphous water film on graphene; ultrafast melting with a laser pulse (≥10⁸ K/s) followed by conductive cooling at controlled rate. **Directly measured value: CCR = (6.4 ± 0.5) × 10⁶ K/s = (3.84 ± 0.30) × 10⁸ °C/min** — at the low end of the historical spectrum (10⁵–10¹² K/s), validating the Dubochet 1981 estimate (~10⁶ K/s) and ruling out the models that demanded >10⁸ K/s. Extrapolation to zero concentration from CPA solutions: ~2.5 × 10⁵ K/s; the real value is **×25 higher**, confirming that the CCR↔concentration curve is convex (nonlinear) near 0 M. With added CPA the CCR falls by >7 orders of magnitude. Critical thickness without CPA: LC* ≈ √(α·ΔT/CCR) ≈ **1.5 µm** (agrees with cryo-EM practice). With high-pressure freezing (2000 bar, Tm drops to −22 °C) the required CCR falls ×100 → thickness up to ~200 µm. **Distant field: electron cryomicroscopy**'
+    url: https://doi.org/10.1103/PhysRevResearch.7.013095
+    estatus: V
+    cierra: 'closed 2026-09-27: read in full via arXiv; value measured directly with uncertainty'
+  F77:
+    cita: 'Lu and Liu 2002, **Acta Mater 50:3501–3512** (DOI 10.1016/S1359-6454(02)00166-0). **READ IN FULL (2026-09-27).** They define Trg = Tg/Tl and **γ = Tx/(Tg+Tl)**. They formulate two explicit equations with R²=0.91 spanning 6 orders of magnitude: **R_c = 5.1 × 10²¹ · exp(−117.19 γ) K/s** (critical cooling rate — exact analogue of CCR) and **Z_c = 2.80 × 10⁻⁷ · exp(41.70 γ) mm** (critical section thickness — exact analogue of LC*). Range of γ: marginal glasses 0.35 → Vitreloy 1 (Zr-Ti-Cu-Ni-Be) ~0.43 → best Pd-Cu-Ni-P alloys ~0.45. Vitrifiable section: γ=0.35 → 0.6 mm; γ=0.40 → 4.9 mm; γ=0.43 → 11–17 mm; γ=0.45 → ~40 mm (experimental Pd up to 72–80 mm). γ correlates better than Trg because it integrates devitrification kinetics (Tx) in addition to the thermodynamic limits. The Turnbull criterion (Trg>2/3) is theoretically sufficient but practically unattainable in metals. **Distant field: materials science** — the γ design framework is transferable to cryoprotectants: CCR and LC* as functions of measurable thermodynamic parameters'
+    url: https://doi.org/10.1016/S1359-6454(02)00166-0
+    estatus: V
+    cierra: 'closed 2026-09-27: read in full; Rc and Zc equations verified with numerical data'
+  F78:
+    cita: 'Black bear hibernation. **FULL PDFs READ (batch 46).** **Muscle** (Fedorov, Garreau, Tøien, Barnes and Goropashnaya 2025, Ecol Evol 15:e71669): **limited** loss of muscle mass and protein despite months of immobility and fasting; the expression profile shows maintenance of protein biosynthesis via the **mTORC1** pathway and preservation of branched-chain amino acids (BCAA). **Bone** (Sci Rep 2021, 41598_2021_87785): **no bone-mass loss in 4–6 months of immobility**, with **coordinated downregulation of the bone-resorption genes** and no changes in those of formation ⇒ bone is not lost because **resorption is switched off**, not because more is made'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8050052/
+    estatus: V
+    cierra: 'closed in batch 46: both primaries read'
+  F79:
+    cita: 'Industrial refrigeration of beef carcasses. **TWO SOURCES READ (2026-09-27):** (1) **Cano-Muñoz 1991, FAO Animal Prod Health Paper 92**, *Manual on meat cold store operation and management*, ch. T0098E02 — technical guide of industrial practice: half-carcass ~150–200 kg, core at **40 °C** post-mortem (transiently 40–41 °C by anaerobic glycolysis), mean of **~15 °C at 4 h** in a rapid tunnel, stabilization at **~4 °C at 15–16 h** (continuous two-phase process); tunnel freezing at −30/−35 °C, air 2–4 m/s: **16–20 h** for a half-carcass. Air temperature: 0 °C (range −1 to +1 °C), RH 90–95 %. Effective mean rate: (40−4)/15.5 h = 2.32 °C/h = **0.0387 °C/min**. (2) **Mallikarjunan & Mittal 1994, J Food Eng 23:277–292** — 2D finite-element model validated against experimental profiles (±2.7 °C); it is a SIMULATION, not a primary measurement campaign — the caveat of L34 is correct. **Key datum for the graph:** the rate 0.0387 °C/min vs. C3 predicted for LC≈7.5 cm confirms LC⁻ⁿ scaling at 100+ kg. **Distant field: food industry**'
+    url: https://www.fao.org/4/t0098e/t0098e02.htm
+    estatus: V
+    cierra: 'closed 2026-09-27: FAO manual read directly; Mallikarjunan 1994 identified as a simulation (caveat already declared in L34)'
+  F80:
+    cita: 'Jesus, Duarte and Paiva 2022, Sci Rep 12:8095. **FULL PDF READ (batch 46).** NADES as a vitrification medium in **L929 (mouse fibroblast) and HaCaT (human keratinocyte) cell lines**, at **50 % w/v**, frozen by **direct immersion in liquid N2** in cryovials. **CORRECTION OF AN ERROR OF OUR OWN:** the earlier record said ''94.65 % viability in human mesenchymal stem cells, no difference from DMSO''. **That number does NOT appear in the article and no stem cells are studied** (they are only mentioned as future work); viability is reported as optical density, not as a percentage. **DATUM THE FRAMEWORK NEEDED, and it runs against it:** in DSC cooling at **30 °C/min the NADES at 50 % w/v CRYSTALLIZE** (Tc onset: BetSucProW −26.6, BetTreW −32.3, TreGluSorW −31.0; pure water −23.7) ⇒ **CCR > 30 °C/min**. Under the same conditions **50 % v/v DMSO does NOT crystallize** ⇒ at this concentration the NADES vitrify WORSE than DMSO. The concentration is limited to 50 % by toxicity and viscosity. The authors call N2 immersion (15 000–30 000 °C/min) ''vitrification'', not a low-CCR glass'
+    url: https://www.nature.com/articles/s41598-022-12365-4
+    estatus: V
+    cierra: 'closed in batch 46: primary read; refutes the shortcut of L44'
+  F81:
+    cita: 'Neuronal tolerance to hypoxia in the hooded seal (*Cystophora cristata*). **THREE PRIMARIES READ (2026-09-27): (1) Folkow, Ramirez, Ludvigsen, Ramirez and Blix 2008, *Neurosci Lett* 446:147–150** (DOI 10.1016/j.neulet.2008.09.040; PMID 18824079): **intracellular recordings** in visual cortex slices. Mouse: depolarization −65.0 mV, firing ceases at **5 ± 2 min**. Seal: depolarization −13.4 mV, mean firing **19 ± 10 min**, maximum **60 min** in continuous severe hypoxia. **CORRECTION:** the earlier record attributed this comparison to Mitz; it comes from Folkow. **(2) Mitz, Reuss, Folkow, Blix, Ramirez, Hankeln and Burmester 2009, *Neuroscience* 163:552–560** (DOI 10.1016/j.neuroscience.2009.06.058; PMID 19576963): IHC + Western blot. In terrestrial mammals neuroglobin (Ngb) and cytochrome c are **neuronal**; in the hooded seal both are **in fibrous astrocytes** (GFAP+), with neuronal cell bodies almost undetectable. Total cerebral Ngb concentration does not differ between seal and mouse — the adaptation is the **inversion of compartmentalization**. **(3) Hoff, Fabrizius, Czech-Damal, Folkow and Burmester 2017, *PLOS ONE* 12:e0169366** (DOI 10.1371/journal.pone.0169366; PMID 28046118): RNA-Seq after 1 h of hypoxia (1 % O₂) and 1 h of reoxygenation. Repression of ion channels and synaptic transmission; overexpression of MCT4 (rapid expulsion of neuronal lactate); chaperones Clusterin and S100B; cytochrome c and LDHB in astrocytes confirm **rANLS** (neuron→astrocyte lactate, the inverse of the classic ANLS). **Distant field: diving physiology**'
+    url: https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2019.01199/full
+    estatus: V
+    cierra: 'closed 2026-09-27: three primaries read in full (Folkow 2008, Mitz 2009, Hoff 2017)'
+  F82:
+    cita: 'B1 field homogeneity at 7 T. **TWO PRIMARIES READ IN FULL (batch 55), which replace the reviews this record cited:** (a) **Investigative Radiology, ''Ready for Routine: Homogeneous, High-Resolution and Multicontrast Whole-Brain MRI at 7 Tesla…''** — **IN VIVO** measurement: 10 healthy volunteers scanned, plus B1 maps of **82 subjects at 3 centres** (Bonn and others). It states that the B1 inhomogeneities ''**result from radiofrequency interferences and dielectric resonances** at the Larmor frequency of **300 MHz at 7 T**'' and that they degrade quality **above all in the eccentric infratentorial regions**, to the point of limiting clinical use. It is exactly the wave mechanism that L37 contrasts. (b) **arXiv 1911.05313, ''B1+ Homogenization in 7T MRI''** — an electromagnetic model declaring **εr = 64** for tissue at 7 T, which is the permittivity with which the wavelengths of L37 are reproduced. **Previously [P] for being reviews; now [V] for primaries read**'
+    url: https://journals.lww.com/investigativeradiology/fulltext/9900/ready_for_routine__homogeneous,_high_resolution,.394.aspx
+    estatus: V
+    cierra: 'closed in batch 55: two primaries read in full, one with in vivo measurement'
+  F83:
+    cita: 'Fetal and neonatal tolerance to hypoxia. **TWO SOURCES READ (2026-09-27): (1) Giussani 2016, *J Physiol* 594:1215–1230** (DOI 10.1113/JP271099; PMC4721497; PMID 26678231) — *brain sparing*: bradycardia of **25–35 %** in moderate hypoxia (up to 50–60 % in severe asphyxia), mediated by vagal carotid chemoreflex. Cerebral vasodilation by **adenosine** (main mediator). Peripheral vasoconstriction by catecholamines. Fetal temperature *in utero* does NOT fall (the fetus is clamped to the mother via the placenta); the fall in temperature is a response of the **neonate** (4–8 °C in rodents, 2–4 °C in humans). Hypometabolism: the fetus reduces VO₂ by a further **30–50 %** in acute asphyxia. **(2) Singer 1999, *Comp Biochem Physiol A* 123:221–234** (DOI 10.1016/S1095-6433(99)00057-4) — origin of the framework''s verbatim phrases: ''hibernation-like deviation from Kleiber allometry'' (fetal metabolic rate ~equal to adult, not ×3–8 as Kleiber predicts), ''hypoxic hypometabolism'', ''acidotic torpor'', ''cerebral vulnerability comparable to that of the diving turtle''s brain''. Tolerated anoxia duration: **rat neonate 40–50 min** vs adult 1.5–3 min (×20–30); **dog neonate 20–30 min** vs adult 3–5 min (×5–8); term fetus (lamb/monkey) **8–12 min** of total occlusion. Ontogenic gradient: anoxic tolerance **decreases progressively** from early fetus (~25 min) → term (~10 min) → adult (~2 min). Mechanisms: GABA (channel arrest), NMDA silencing, cardiac glycogen (Dawes 1959). **Distant field: perinatal physiology**'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4721497/
+    estatus: V
+    cierra: 'closed 2026-09-27: Giussani 2016 (PMC4721497) and Singer 1999 read; fetus vs neonate nuance in temperature declared'
+  F84:
+    cita: 'Wang, Webley and Hughes (Monash Univ.) 2025, **Energy 334:137568** (DOI 10.1016/j.energy.2025.137568; PII S0360-5442(25)03210-4). **READ IN FULL (2026-09-27).** Title: *''Cooldown strategies for ship-borne cryogenic storage tanks during the ballast voyage''*. Industrial safe rate: **< 9–10 °C/h = 0.150 °C/min** (standard EN 14620-5; non-exceedable limit 15 °C/h for cryogenic membranes; maximum spatial gradient 50 °C between adjacent sensors). Scale: tanks of 35,000–45,000 m³ (16,000–20,000 t of LNG per tank on an LNG carrier); onshore tanks 100,000–200,000 m³. Cooldown time from ambient temperature: **8–12 h** (from hot post-dock: 18–24 h). Physical reason: thermal stress from differential contraction (σ_th ≈ E·α·ΔT/(1−ν)); AISI 304L steel α≈16×10⁻⁶ K⁻¹, modulus ~190–210 GPa. Materials: austenitic stainless steel (GTT Mark III), Invar Fe-36Ni (NO96) or aluminium 5083 (Moss). **EXACT COINCIDENCE WITH C3 (declared in L38):** C3 predicts for LC ~3.9 cm (human body) a rate of 0.150 °C/min — identical to the industrial limit of F84. The meaning: cryogenic engineering has used for decades the same rate that thermal conduction imposes on the human body. **Distant field: cryogenic engineering**'
+    url: https://doi.org/10.1016/j.energy.2025.137568
+    estatus: V
+    cierra: 'closed 2026-09-27: Wang et al. 2025, Elsevier journal Energy, peer-reviewed; data from standard EN 14620-5 and LNG carriers'
+  F85:
+    cita: 'Bruinsma, Berendsen, Uygun et al. — supercooling and rat liver transplantation (Nat Protoc 2015, nprot.2015.011). **FULL PDF READ (batch 46).** Rat liver is cooled to **−6 °C without freezing and remains viable for up to 96 h**, with **real orthotopic transplantation** (unlike F8 and F22, which only simulate). Survival: **100 % at 72 h and ~58 % at 96 h**'
+    url: https://pubmed.ncbi.nlm.nih.gov/24973919/
+    estatus: V
+    cierra: 'closed in batch 46: primary read (protocol and survival)'
+  F86:
+    cita: 'Martin, Kula, Krishnan, Murphy et al. 2019, Nat Metab 1:966 (PMID 32395697). **Neighbouring field: transplant metabolomics.** They compare WARM and COLD ischemia in mouse, pig and **human** heart. **Succinate accumulation** is the common feature of ischemia in the three species; cold **slows its generation** and thus reduces reactive-oxygen-species damage on reperfusion. The unavoidable periods of warm ischemia during procurement accumulate **harmful levels of succinate despite cooling as fast as possible**, and the damage is **attenuated by metabolic inhibitors** that prevent its accumulation and oxidation'
+    url: https://pubmed.ncbi.nlm.nih.gov/32395697/
+    estatus: V
+  F87:
+    cita: 'Gregory M. Fahy et al. 2004, **Cryobiology 48(1):22–35** (DOI 10.1016/j.cryobiol.2003.11.004) and **Cryobiology 48(2):157–178** (DOI 10.1016/j.cryobiol.2004.02.002). **TWO PEER-REVIEWED PRIMARIES READ IN FULL (2026-09-27): they replace the Alcor 2005 technical reference.** (1) *Cryobiology 48:22–35*: formalization of the qv* parameter (intensity of water hydrogen bonds vs toxicity), design of non-toxic solutions at high concentration (VM3, 8.4 M), use of PVP K12 and ice blockers (X-1000, Z-1000). (2) *Cryobiology 48:157–178*: **''Cryopreservation of organs by vitrification: perspectives and recent advances''**. Exact properties of M22: total concentration 9.345 M (64.8 % w/v), pH 8.0, tonicity 1.5×, estimated Tm −54.9 °C. **CWR < 1.0 °C/min** (DSC limit); mWCR ≈ 0 °C/min (on warming at 1 °C/min from below Tg of −124 °C no melting endotherm is shown). Perfusion in rabbit kidney at −22 °C for 25 min with simultaneous rapid rewarming to −3 °C: full renal function after autotransplantation (creatinine normalized to baseline). Kidneys cooled to −45 °C: 8 of 8 survivors. DSC biopsies of subregions: devitrification in cortex suppressed (0.0 J/g); inner medulla <2 % and pelvis <4 % of ice mass. Confirms superior glass stability in tissue versus bare solution at submaximal concentrations.'
+    url: https://doi.org/10.1016/j.cryobiol.2004.02.002
+    estatus: V
+    cierra: 'closed 2026-09-27: both peer-reviewed primaries read in full (Cryobiology 48:22 and 48:157)'
+  F88:
+    cita: 'Gilbert, Busund, Skagseth, Nilsen and Solbø 2000, **Lancet 355:375–376**, ''Resuscitation from accidental hypothermia of 13·7 °C with circulatory arrest''. **FULL PDF READ (batch 54).** Literal chronology: she stops moving at **19:00** (clinically dead, immediate basic CPR), bypass flow reached at **21:50**, rectal temperature **13.7 °C at 21:52**, fibrillation at 22:00 that reverts on its own to a rhythm with pulse **15 min later**. Initial temperature measured on arrival: 14.4 °C. Taken off bypass after **179 min**. **It is the primary of the case that the network held via F13 (a review)**'
+    url: https://pubmed.ncbi.nlm.nih.gov/10665559/
+    estatus: V
+  F89:
+    cita: 'Bradford, Schaffer and Talk — **NIAC Phase I, ''Torpor Inducing Transfer Habitat For Human Stasis to Mars''** (SpaceWorks, executive summary, May 2014; Grant NNX13AP82G). **FULL PDF READ (batch 54 + confirmed with the direct PDF 2026-09-27).** Literal figure for habitat mass reduction: ''Compared to the current NASA reference **TransHab** design, the torpor-enabled habitats indicated **mass reductions ranging from 52 % to 68 %**, depending on the specific configuration, for the same mission''. IMLEO reduction: **25 % to 44 %** (literal: ''IMLEO mass reductions ranging from 25% to 44% were achieved'' — CORRECTION: batch 54 noted ''25–35 %'', a misreading; the PDF says **44 %**, not 35 %). With the same mass the crew can be **doubled**. Assumed torpor: 200 days of outbound transit + 200 of return (400 days total). Temperature: reduction of 5–10 °F (2.8–5.6 °C) from 37 °C → range of 31.4–34.2 °C. Supporting clinical evidence cited: up to **14 days** of continuous therapeutic hypothermia in humans. **It is the primary of the 52–68 % that the network held via F13 (a review) and that the batch 52 audit flagged as not located**'
+    url: https://www.nasa.gov/wp-content/uploads/2016/04/Bradford_2013_PhI_Torpor.pdf
+    estatus: V
+  F90:
+    cita: Dausmann, Glos and Heldmaier 2009, **J Comp Physiol B 179:345–357**, 'Energetics of tropical hibernation'. **ORIGINAL PAPER, full PDF read (batch 55).** It measures **oxygen consumption and body temperature of *Cheirogaleus medius* (Malagasy primate) IN ITS NATURAL HIBERNACULA**. The tree-hollow temperature and the body temperature fluctuate in parallel, and the metabolic rate varies with them. In well-insulated hollows both remain relatively stable. **It is the lemur primary that V09 cited via F19 (abstracts)**
+    url: https://doi.org/10.1007/s00360-008-0318-0
+    estatus: V
+  F91:
+    cita: Niu, Guan, Wang, Jiang et al., **Frontiers in Genetics**, 'Aestivation induces widespread transcriptional changes in the African lungfish'. **ORIGINAL RESEARCH, full PDF read (batch 55).** Transcriptome of *Protopterus annectens* after **6 months of experimental aestivation**. **DATUM THAT CORRECTS THE FRAMEWORK:** it states that the natural aestivation of *P. annectens* 'lasts **seven or 8 months**, depending on the length of the dry season'. **The network claimed 3–4 YEARS in V11 and no primary supports it**
+    url: https://www.frontiersin.org/articles/10.3389/fgene.2023.1096929
+    estatus: V
+  F92:
+    cita: 'Storey, Kenneth B. 2004, **Int Congr Ser 1275:47–54** (doi:10.1016/j.ics.2004.08.072), ''Molecular mechanisms of anoxia tolerance''. **FULL PDF READ (2026-09-27).** Species: *Trachemys scripta elegans*. Experimental temperature: **7 °C**, 20 h of anoxic immersion in N₂-bubbled water. Measured data: (1) **10–20 %** residual whole-body metabolic rate in anoxia vs normoxia at the same body T (citing Jackson 2001 — same figure as F19); (2) **94 %** reduction of net ATP turnover in isolated hepatocytes (**6 %** remains), with the Na⁺/K⁺-ATPase pump going from 28 % to **62 %** of the ATP budget, and protein synthesis/degradation inhibited by **>90 %**; (3) transcripts of voltage-dependent K⁺ channels in brain reduced to **18.5 %** of normoxic levels after 4 h of anoxia (Prentice et al. 2003); (4) ecological survival of 3–4 months in cold deoxygenated water (Jackson 2001). No survival data at T > 16 °C. **This source confirms and details F19 (whole-body and hepatocyte data) at the molecular level; it does not supply the turtle22_h datum (22 °C)**'
+    url: https://doi.org/10.1016/j.ics.2004.08.072
+    estatus: V
+    cierra: 'closed 2026-09-27: PDF read in full; consolidates and details the F19 data on anoxia in Trachemys'
+  F93:
+    cita: 'Bradford, Williams, Ricano-Cadenas — **NIAC Phase II, ''Advancing Torpor Inducing Transfer Habitats for Human Stasis to Mars''** (SpaceWorks, Project ID 88911, 2016–2018). **FULL PDF READ (2026-09-27, NASA TechPort record).** It is Phase II of the project whose Phase I is F89. Starting TRL: 2; final TRL: 3. Four work areas: (i) medical assessments (torpor induction via TH + TPN, tests in animal models), (ii) habitat design to Mars, (iii) extensibility beyond Mars (Martian moons, asteroid, Jupiter, Saturn), (iv) technology roadmap. It includes no itemized mass tables. **Context for the graph:** it closes the technological trajectory of the SpaceWorks project: Phase I (2014, F89) → Phase II (2018, F93). L8 no longer needs this source in deps because F89 suffices for the verdict'
+    url: https://techport.nasa.gov/view/88911
+    estatus: V
+  F31:
+    cita: Warner et al. 2023 (PMC10668850), CPA perfusion in pig and human kidneys of 150–220 g
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10668850/
+    estatus: V
+parametros:
+  t37:
+    v: 5
+    r:
+    - 4
+    - 6
+    u: min
+    f: F4
+    e: V
+    d: cerebral ischemic window at 37 °C without flow
+  Q10_frio:
+    v: 3.5
+    r:
+    - 2.52
+    - 4.23
+    u: ''
+    f: F70
+    e: V
+    d: 'Q10 of the COLD branch, **MEASURED with spread** in mouse brain mitochondria between 37 and 6 °C (F70): state II 2.61 ± 0.09 and state III 3.92 ± 0.31; the range spans both ±1 SD. The central 3.5 coincides with the 15–11 °C branch of McCullough in humans (F4), measured independently. It was previously [P] with an assumed range [2.05, 4.54]'
+  Q10:
+    v: 2.3
+    r:
+    - 2.08
+    - 2.53
+    u: ''
+    f: F4
+    e: V
+    d: 'MEASURED human cerebral metabolic Q10: CMRO₂ by jugular arteriovenous difference in n = 37 adults. **95 % CI = 2.08–2.53 read in the full text** (mean slope of lnCMRO₂ versus temperature = 0.083 ± 0.062). Our assumed range [2.0, 2.6] was slightly WIDER than the real one: conservative. Independent corroboration: Q10 = 2.0 cited in the transplant literature (F20/L17). Implementation check: with Q10 = 2.3 and 5 min at 37 °C, the source itself predicts 29 min at 15 °C and our C2 gives 31.2 (×1.07)'
+  alpha:
+    v: 1.3e-07
+    r:
+    - 1.0e-07
+    - 1.6e-07
+    u: m²/s
+    f: null
+    e: P
+    d: thermal diffusivity of the CPA or glassy tissue
+  dT_rew:
+    v: 100
+    r:
+    - 80
+    - 120
+    u: K
+    f: null
+    e: P
+    d: dangerous rewarming range (Tg → −20 °C)
+  Tg:
+    v: -123
+    r:
+    - -140
+    - -120
+    u: °C
+    f: F2
+    e: P
+    d: glass transition (the minimum of water/CPA mixtures is around −140 °C)
+  CCR_M22:
+    v: 0.1
+    r:
+    - 0.05
+    - 0.15
+    u: °C/min
+    f: F2
+    e: V
+    d: 'critical cooling rate of M22. **DECLARED GAP (batch 51): it is not recorded whether it is for FREE SOLUTION or for TISSUE, and the difference matters.** Its source F2 vitrified M22 in **cryopreservation bags**, not in tissue. The framework itself holds proof that the effect exists: `CCR_VS55` declares ''tissue <1, solution 2.5'', a factor **>2.5**, and `CCR_VMP` is labelled as tissue. Literature exists (Uygun/Fahy, CPA loading in kidney tissue) reporting reductions of **up to ×5 in CCR** when the CPA is loaded into tissue; **the primary source has not been read and therefore the value is NOT moved** (R2). **If the tissue value were ×2.5 lower, the range would be [0.020, 0.060] and the verdict ''M22 fails at the centre of the trunk'' WOULD REVERSE**: the trunk rate is 0.0404 °C/min and the verdict requires CCR_M22 > 0.0404, which the current minimum (0.05) sustains by only ×1.24. Direction of the bias: if it is a solution value, the framework is **conservative** with M22 and the frontier moves in its favour. **BATCH 52 — the gap walked to the end in `es/20_cotas/cota_CCR_M22_tejido.py` (no value moved, R2). Three things batch 51 had not seen:** (1) **what actually moves is the FRONTIER, not an isolated verdict**: this parameter enters the derived quantity `b_CCR` and through it `M_de_CCR`, `LC_viable` and `masa_viable`; with a tissue factor of ×2.5 the viable mass goes from **10.9 to 41.9 kg** and with ×5 to **115 kg**, that is, the whole trunk enters the viable region. (2) **The `b_CCR` line already mixes labels today**, whatever M22''s is: it takes `CCR_VS55` at its **solution** value (2.5) and `CCR_VMP` labelled as **tissue**. Putting all three points in tissue, without touching M22, changes the slope from −1.739 to −1.518 decades/M. **The gap is not only ''what type is CCR_M22'': it is that the line does not declare the type of any of its three points.** (3) **`red/espacio.py` has the 0.10 written by hand** in its `CPAS` table instead of reading it from `parametros`: if one day this parameter is labelled and changes, `ESPACIO.md` would not find out (R4, impostor box: the same datum in two places). **What does NOT fall in any scenario:** the empty intersection of X2 (the axis M22 lacks is neural function, not CCR), the 0.425 °C/min requirement of the brain (it comes from C3 alone), the key verdict of C3 and that of C8 (both concern VMP) and the failure of the eutectic solvents by ×71. **DIRECTION RESOLVED (batch 54) with F87 [P]:** at **81 % of the M22 concentration** a rabbit brain vitrified **without ice**, and the authors state that this concentration **would not remain vitrified as a bare solution** ⇒ ''brain tissue may be more stable against ice than the solution it is perfused with''. **This confirms that a solution value is CONSERVATIVE for tissue**, the direction batch 51 predicted. **The value is NOT moved** (R2): F87 is organizational and gives no tissue CCR figure, only the direction. What is established is that the bias does **not** go where it would break the verdicts. **NEW BOUND (2026-09-27, F47 read in full):** Fahy et al. 2026 measured DSC directly on human cortical biopsies perfused with M22 (n=3): cooling at **1.0 °C/min** no ice was detected → the CCR in human cortex with M22 is **≤ 1.0 °C/min** (a measured upper bound, not a lower one). The mechanism is osmotic dehydration, which concentrates intracellular proteins to 22 % w/w, suppressing nucleation. **This bounds the gap** without resolving it: tissue is LESS demanding than free solution (0.1 °C/min), not MORE. Factor: tissue/solution ≥ 10× (CCR_tissue ≤ 1.0, CCR_solution = 0.1). **The value is NOT moved** (R2): the datum gives CCR_tissue ≤ 1.0, which is an upper bound, not the exact value nor a lower bound; the current range [0.05, 0.15] remains valid as an estimate of the CCR of free solution'
+  CWR_M22:
+    v: 0.4
+    r:
+    - 0.3
+    - 0.6
+    u: °C/min
+    f: F2
+    e: V
+    d: 'critical warming rate of M22. **REGIME AND CORROBORATION (2026-09-27):** Fahy et al. 2004 (*Cryobiology* 48:157, read in full today) and Han & Bischof independently corroborate CWR ~0.4 °C/min after rapid cooling and <1.0 °C/min after slow cooling. A large object cools slowly by definition (C3: brain centre at 0.426 °C/min), so the relevant CWR in the slow regime is ~1.0 °C/min instead of 0.4. In C1 the maximum radius rewarmable by surface goes from 4.42 to 2.79 cm; the key verdict (''M22 cannot be surface-rewarmed in the trunk, r ~15 cm'') holds with both values. The value stays conservative.'
+  CCR_VMP:
+    v: 5.4
+    r:
+    - 5.3
+    - 5.6
+    u: °C/min
+    f: F3
+    e: V
+    d: CCR of VMP (kidney tissue)
+  CWR_VMP:
+    v: 62
+    r:
+    - 55
+    - 70
+    u: °C/min
+    f: F3
+    e: V
+    d: CWR of VMP (kidney tissue)
+  CCR_VS55:
+    v: 2.5
+    r:
+    - 1.0
+    - 2.5
+    u: °C/min
+    f: F3
+    e: V
+    d: CCR of VS55 (tissue <1, solution 2.5)
+  anc_LC:
+    v: 2.2
+    r:
+    - 2.1
+    - 2.35
+    u: cm
+    f: F2
+    e: V
+    d: 'LC of the 3 L bag. **Definition CONFIRMED in the primary:** the published paper literally says ''the characteristic length for heat transfer is defined as **L_C (= Volume/Surface Area)**'', exactly the definition in C3. Out-of-plane thicknesses declared: 5.5, 6.5 and 10.5 cm for 0.5, 1 and 3 L. Range narrowed from [2.0, 2.4] (my assumption) to [2.1, 2.35], bounded by the difference between the cited value (2.2) and my V/A reconstruction from the thickness (2.34). **Prior check:** with the declared thickness (10.5 cm) and V = 3 L, LC = V/A gives 2.34 versus 2.2 cited (ratio 1.06); at 0.5 L and 1 L the ratios are 1.06 and 1.13 ⇒ Bischof''s LC IS V/A, the same definition C3 uses'
+  exp_LC:
+    v: 2.0
+    r:
+    - 1.67
+    - 2.18
+    u: ''
+    f: F2
+    e: V
+    d: 'Exponent of the cooling law (rate ∝ LC^−n). Central = 2 (diffusion, theory). **MEASURED range** by fitting the three cited volumes in pairs (0.5 L→1 L: 2.18 · 0.5→3 L: 1.80 · 1→3 L: 1.67). It was previously fixed at 2 with no uncertainty. **Batch 42:** the 1 L point is **confirmed in the primary** (''~1 °C/min for a 1 L (LC~1.4 cm)'', summary of F2; the reconstruction from the slopes gave 1.402 cm and 0.998 °C/min). Fit of the three volumes: **n = 1.77–1.82 ± 0.10 (1 σ)**, but with 1 degree of freedom the two-sided 95 % CI is [0.45, 3.1]. ⇒ **The range is NOT a statistical CI: it is the physical ceiling n ≤ 2 (Biot, PRECISION.md) plus the measured shape/noise excess (0.18, pair 0.5→1 L)**. The central value is left at 2 and not at the fitted 1.8: at large LC (Bi 10–19) the local exponent tends to 2 and 1.8 would be optimistic exactly where C6 extrapolates. See L45'
+  anc_rate:
+    v: 0.47
+    r:
+    - 0.45
+    - 0.5
+    u: °C/min
+    f: F2
+    e: V
+    d: cooling measured at the centre of 3 L
+  dT_crack:
+    v: 20
+    r:
+    - 20
+    - 20
+    u: K
+    f: F2
+    e: V
+    d: Maximum ΔT in glass without cracks
+  nano_rate:
+    v: 88
+    r:
+    - 88
+    - 88
+    u: °C/min
+    f: F2
+    e: V
+    d: nanowarming measured in 2 L (120 kW coil)
+  LC_trunk:
+    v: 7.5
+    r:
+    - 6
+    - 9
+    u: cm
+    f: null
+    e: P
+    d: LC of the human trunk (cylinder r/2)
+  LC_body:
+    v: 3.9
+    r:
+    - 3.5
+    - 4.3
+    u: cm
+    f: null
+    e: P
+    d: LC of the whole body (V/A)
+  LC_kidneyH:
+    v: 0.88
+    r:
+    - 0.85
+    - 0.91
+    u: cm
+    f: null
+    e: V
+    d: 'LC of an ADULT human kidney, **COMPUTED** as an 11×6×3 cm ellipsoid scaled to the real mass of 130–160 g: LC = V/A = 0.85 cm at 130 g and 0.91 at 160 g. **Two successive corrections, both declared:** the original assumption [0.8, 1.2] was shifted upward; the next [0.70, 1.00] was computed correctly but **spanned a 64 g kidney, which is paediatric or atrophic, not adult**. This range covers only the adult. Note: the adjustment **favours** a verdict of C3, and it is made on anatomy, not for that reason'
+  tau_org_good:
+    v: 12.5
+    r:
+    - 10
+    - 12.5
+    u: min
+    f: F25b
+    e: P
+    d: maximum normothermic ischemia with good outcome in dog (standard or optimal)
+  tau_org_surv:
+    v: 17
+    r:
+    - 17
+    - 17
+    u: min
+    f: F25
+    e: V
+    d: '17 min: 18/18 survive with a deficit of 35–44 %; good outcome 4/12 with hypothermia'
+  tau_org_exist:
+    v: 60
+    r:
+    - 60
+    - 60
+    u: min
+    f: F38
+    e: V
+    d: 'existence (n = 1): cat, brain-only ischemia at 37 °C, recovers integrative function; atrophy of the dorsal hippocampus and striatum'
+  tau_cel:
+    v: 240
+    r:
+    - 240
+    - 240
+    u: min
+    f: F23
+    e: V
+    d: 'BrainEx: cellular and synaptic recovery at 4 h post mortem, no global EEG'
+  legal_obs:
+    v: 5
+    r:
+    - 5
+    - 5
+    u: min
+    f: F27
+    e: V
+    d: minimum observation to declare circulatory death (controlled donation)
+  frog_days:
+    v: 193
+    r:
+    - 182
+    - 204
+    u: d
+    f: F11
+    e: V
+    d: frog frozen in the field, mean −6.3 °C
+  turtle_days:
+    v: 177
+    r:
+    - 150
+    - 177
+    u: d
+    f: F60
+    e: V
+    d: painted turtle in anoxia at 3 °C (F60 gives 4–5 months for painted and snapping)
+  turtle22_h:
+    v: 30
+    r:
+    - 24
+    - 36
+    u: h
+    f: F19
+    e: V
+    d: 'turtle in anoxia at 22 °C. **Verified 2026-09-27 against primaries (F19): Herbert & Jackson 1985 and the Jackson series document that at high temperatures (>20 °C) anoxic survival is measured in hours to days, consistent with ~2 weeks at ~16 °C and the metabolic rate rising strongly with T (×Q10). Range [24, 36] h captures the dispersion between publications of the Jackson/Herbert group. It was previously [30, 30] with no uncertainty and at [P].**'
+  BMR:
+    v: 1700
+    r:
+    - 1500
+    - 2000
+    u: kcal/d
+    f: null
+    e: P
+    d: human basal metabolism
+  hypo_case_T:
+    v: 13.7
+    r:
+    - 13.7
+    - 13.7
+    u: °C
+    f: F13
+    e: V
+    d: accidental hypothermia with good outcome (with CPR, low flow)
+  hypo_case_min:
+    v: 412
+    r:
+    - 412
+    - 412
+    u: min
+    f: F88
+    e: V
+    d: '**DECLARED DISCREPANCY (batch 54), and the value is NOT moved.** The network inherited ''6 h 52 min of arrest with CPR'' from **F13, which is a review**. With the primary read (**F88, Lancet 2000**), its chronology gives **170 min** from arrest (19:00) to bypass flow (21:50) and **~195 min** to a rhythm with pulse (22:15). **The primary does NOT support the 412 min.** The value is not corrected because it is not recorded where the 412 comes from and changing it would require a source explaining it (R2); it is declared. **Impact computed in C9:** the key verdict (''ratio > 3 ⇒ there was low flow'') **holds at all corners with the three values**, but the margin falls from **×7.9–18.7 (with 412)** to **×3.26–7.71 (with 170)**, that is from comfortable to **tight over a threshold of 3**. The verdict does not change; the confidence does'
+  pig_min:
+    v: 60
+    r:
+    - 60
+    - 60
+    u: min
+    f: F42
+    e: V
+    d: 'pig: 60 min at 10 °C with arrest, no cognitive or neurological deficit at 6 weeks (Alam et al. 2005)'
+  pig_T:
+    v: 10
+    r:
+    - 10
+    - 10
+    u: °C
+    f: F42
+    e: V
+    d: 'pig temperature in F42 (60 min at 10 °C). Parameter of our own: previously C10 evaluated the pig with flush_T, the 10–15 °C range of the DOG with flush, and added an uncertainty the pig does not have'
+  flush_min:
+    v: 120
+    r:
+    - 120
+    - 120
+    u: min
+    f: F30
+    e: V
+    d: 'dog: no flow at ~10 °C cerebral (aortic flush at 4 °C), viability preserved'
+  flush_T:
+    v: 10
+    r:
+    - 10
+    - 15
+    u: °C
+    f: F30
+    e: V
+    d: brain temperature achieved with the flush (10–15 °C)
+cotas:
+  C1:
+    titulo: 'Convective rewarming: critical radius r* = √(α·ΔT/CWR)'
+    deps:
+    - alpha
+    - dT_rew
+    - CWR_M22
+    - CWR_VMP
+    fuente_verif:
+    - F2
+    - F3
+  C2:
+    titulo: 'Hypothermia without phase change: window = t37·Q10^((37−T)/10)'
+    deps:
+    - t37
+    - Q10
+    - Q10_frio
+    fuente_verif:
+    - F4
+  C3:
+    titulo: 'Convective cooling: rate ∝ 1/LC² anchored on 3 L; LC* = LC₀·√(rate₀/CCR)'
+    deps:
+    - anc_LC
+    - anc_rate
+    - CCR_M22
+    - CCR_VMP
+    - LC_trunk
+    - LC_body
+    - LC_kidneyH
+    - exp_LC
+    fuente_verif:
+    - F2
+  C4:
+    titulo: Extra (non-thermal) suppression of ectotherms versus C2
+    deps:
+    - t37
+    - Q10
+    - frog_days
+    - turtle_days
+    - turtle22_h
+    fuente_verif:
+    - F11
+    - F60
+  C5:
+    titulo: Fuel for 1 year of human torpor
+    deps:
+    - BMR
+    fuente_verif: []
+  C6:
+    titulo: 'Partial freezing: does heat limit at LC 4 cm?'
+    deps:
+    - anc_LC
+    - anc_rate
+    - exp_LC
+    fuente_verif:
+    - F20
+    - F21
+    - F22
+  C7:
+    titulo: 'Ceiling of reperfusion: τ_org versus τ_cel'
+    deps:
+    - t37
+    - tau_org_good
+    - tau_org_surv
+    - tau_org_exist
+    - tau_cel
+    - legal_obs
+    fuente_verif:
+    - F23
+    - F25
+    - F27
+    - F38
+  C8:
+    titulo: 'CCR ↔ toxicity tension: CCR required at LC 4 cm'
+    deps:
+    - anc_LC
+    - anc_rate
+    - CCR_M22
+    - CCR_VMP
+    - exp_LC
+    fuente_verif:
+    - F26
+  C9:
+    titulo: 'Accidental hypothermia at 13.7 °C: a leak in C2?'
+    deps:
+    - t37
+    - Q10
+    - hypo_case_T
+    - hypo_case_min
+    fuente_verif:
+    - F88
+  C11:
+    titulo: 'Rate conflict: cold-injury band versus extracellular ice'
+    deps:
+    - anc_LC
+    - anc_rate
+    - exp_LC
+    fuente_verif:
+    - F53
+    - F66
+  C10:
+    titulo: 'Calibration of C2 in TWO mammals: dog with flush (120 min) and pig (60 min), both at ~10 °C'
+    deps:
+    - t37
+    - Q10
+    - flush_min
+    - flush_T
+    - pig_min
+    - pig_T
+    fuente_verif:
+    - F30
+    - F70
+    - F42
+afirmaciones:
+  O1:
+    capa: ontologia
+    e: V
+    deps:
+    - F14
+    - F15
+    t: Stasis = **demonstrably reversible** preservation. Informational preservation (ASC, cryonics) = another programme (E0). Only the first is a clinical or space residual.
+  O2:
+    capa: ontologia
+    e: V
+    deps:
+    - F27
+    - C7
+    t: 'Legal death is **permanence** (will not be resuscitated), declared at {legal_obs} min without circulation (≤ 5 mmHg). Physical irreversibility is another axis: the cell remains recoverable at ≥ {tau_cel} min.'
+  O3:
+    capa: ontologia
+    e: M
+    deps:
+    - F1
+    - F28
+    - F29
+    - F23
+    t: 'Success scale: E0 structure · E1 cell · E2 tissue or memory in a simple organism · E3 transplanted organ · E4 whole animal · E5 human with memory.'
+  G1:
+    capa: magnitud
+    e: V
+    deps:
+    - C2
+    - C7
+    t: '**τ_eq** = ∫Q10^((T−37)/10)dt. Organism after cardiac arrest, reproducible good outcome: τ_org ≤ {C7.tau_org_good} min; survives with deficit: {C7.tau_org_surv} min. **Existence (n = 1, brain-only ischemia):** {tau_org_exist} min with integrative function recovered. Cell: ≥ {C7.tau_cel} min.'
+  G2:
+    capa: magnitud
+    e: V
+    deps:
+    - F2
+    - F11
+    - F32
+    - F35
+    t: '**f_ice,intra** = 0 (mandatory). **f_ice,extra** > 0 tolerable only with controlled cryoprotectant and nucleation (frog in the field: {frog_days} days; rat liver: 10 days; human brain tissue and 2–3 mm organoids by MEDY slow freezing: 1.5 years with partial network activity).'
+  G2b:
+    capa: magnitud
+    e: V
+    deps:
+    - F11
+    - F32
+    t: '**Tolerance depends on the entry protocol, not only on the tissue:** the same Alaskan frog withstands {frog_days} days frozen in the field, but in the laboratory dies 4/4 after 12 weeks at −4 °C (2/4 after 8 weeks). In the field it accumulates glucose (liver ~194 µmol/g) and urea (~106 µmol/mL) through freeze–thaw cycles. ⇒ For StasisPath, the loading of the cryoprotectant (time, cycles, temperature) is a state variable, not a detail.'
+  G6:
+    capa: magnitud
+    e: V
+    deps:
+    - F34
+    t: 'Reference for the control arm of P15: MICrONS (1 mm³ of fixed mouse cortex, ~200,000 cells, ~523 M synapses). Even in the control, automatic segmentation needs human correction ⇒ traceability must be normalized to a control from the same laboratory (as P15 already requires). **It provides no data on the cryogenic arm: P15 remains open.**'
+  G3:
+    capa: magnitud
+    e: V
+    deps:
+    - F2
+    - F59
+    - F68
+    t: '**ΔT_glass** < {dT_crack} K so as not to crack (verified up to 3 L with annealing). **Second variable, measured in a neighbouring field (F59):** cracking depends strongly on the **Tg of the solution** — the higher the Tg, the less accumulated stress (4 chemistries with > 50 °C range, cryomacroscope + finite elements). ⇒ Tg ceases to be a passive datum and becomes a **design variable**: choose the CPA by Tg, not only by CCR and toxicity. **Third and fourth variables (F68, thermomechanical model of bags):** the **shape** of the container (maximum stress does NOT appear with the bag filled to the maximum, and the width/length ratio weighs heavily) and the **initial warming rate between storage and Tg**, whose reduction lowers stress drastically. Nanowarming also reduces it. ⇒ Cracking now has **four measured levers**: ΔT, Tg, geometry and rewarming profile.'
+  G4:
+    capa: magnitud
+    e: V
+    deps:
+    - F26
+    - C8
+    - F55
+    - F39
+    - F40
+    t: '**D_CPA = ∫ f(qv*) · g(T) · C(t) dt — form of the law closed, universal threshold nonexistent (and why is explained).** The three dependencies are now measured: **composition** via qv* (F26, 20 solutions) · **temperature** (F55: PROH 1.5 M degenerates 54.2 % of oocytes at 23 °C and **85 % at 37 °C**, same concentration and same time; F39: M22 9.3 M is tolerable at −22 °C with washout on warming) · **concentration and time** (F55: lowering PROH from 1.5 to 0.75 M combined with DMSO eliminates toxicity). **There is no universal threshold because D_CPA is not a property of the CPA but of the quadruple (composition, T, t, protocol)** — which is exactly what E7 demonstrates. Operational acceptance criterion: G4b.'
+  L14:
+    capa: ley
+    e: V
+    deps:
+    - G7
+    - C11
+    - F53
+    - F66
+    t: '**Cooling-rate conflict between two of our own routes (detected on closing G7).** Cold injury is reduced by **crossing the 0–20 °C band quickly**, but controlled **extracellular** ice demands cooling **slowly** (0.1–1 °C/min) for the cell to dehydrate. The two routes that promised most (supercooling V05/V18 and partial freezing V06) pass obligatorily through that band. ⇒ **The optimal protocol is not monotonic: fast from 20 to 0 °C and slow below.** It is a new prediction of the framework, not copied from any source.'
+  L15:
+    capa: ley
+    e: V
+    deps:
+    - F58
+    - L2
+    - C2
+    t: '**The domain of C2 is confirmed with a mammal, not only with ectotherms.** The **euthermic** arctic ground squirrel (37 °C, not hibernating) withstands 8 min of cardiac arrest with neuronal count indistinguishable from control at 7 days, whereas control rats are indeed injured (F58). ⇒ The tolerance does not come from cold or from being in torpor: it is **species biochemistry**. It confirms the restriction that L2 already declared (''mammalian tissue **without biochemical reprogramming**'') and demonstrates that this reprogramming **exists in a mammal** and is, in principle, transferable: it is the best concrete target for extending τ_eq in humans.'
+  L13:
+    capa: ley
+    e: V
+    deps:
+    - F71
+    - F46
+    - F37b
+    t: '**CPA composition, not the physics of vitrification, decides the functional outcome — and in the only case with measured LTP, LTP is preserved.** **CLOSED in batch 48 by a datum already present but uncrossed (pattern C10/L11) + an unnecessary dependency (pattern 4).** The earlier version took the ''61 % EG alone'' row from preprint F52 and the M22 row from preprint F47, and for that reason the law stayed at [P]. But **the comparison was already inside a [V] source of the network and nobody had crossed it:** the supplementary information of the PNAS paper itself (F71, PDF read) says that in the SAME work, same tissue and same protocol, they tested **V3, EG at 61 % alone and EG 37.5 % + DMSO 12.5 %, and that V3 gave the best functional recovery**. Series with the three strong dependencies: **V3** (DMSO 2.85 M + EG 2.71 M + formamide 2.86 M = 8.42 M, 59 % w/v, loaded at 10 °C) → **LTP preserved** (F46) and best functional recovery of the three chemistries tested (F71) · **EG 61 % alone** and **EG+DMSO** → worse functional recovery in the same work (F71) · **VM3** → K⁺/Na⁺ 91–108 %, LTP not measured (F37b). ⇒ At equal concentration and protocol, **changing the composition changes the functional outcome**. **What is claimed and what is not (R4, claim box):** the verdict is that composition governs; it is NOT claimed that LTP was measured in every row, because only V3 has it measured. **Corroboration that does NOT hold up the verdict, and for that reason is no longer in `deps`:** F52 [P, preprint] gives the finer version of the 61 % EG row (fEPSPs recovered but **unstable** potentiation, with swelling and vacuolization) and F47 [P, preprint] adds the M22 row (structure only, function not measured). Both are consistent and neither is necessary: the F47 row is an **absence of datum**, which cannot be the evidentiary basis of anything, and the F52 one is covered by F71 with a published source. Where F47 does serve as support is in X2, which keeps it in `deps` and remains [A]. **Declared leak:** F71 says ''better functional recovery'', which is vaguer than F52''s ''unstable potentiation''; if F52 were ever published, the 61 % EG row would gain precision, but the verdict would not change. And it remains **a single scale** (mouse hippocampal slice): none of this establishes scale, which is exactly what X2 keeps open.'
+    cierra: 'closed in batch 48: F71 [V] contains the comparison that was being taken from F52; F47 only contributed an absence of datum'
+  X2:
+    capa: frontera
+    e: A
+    deps:
+    - L13
+    - L12
+    - F47
+    - F46
+    - F65
+    t: '**Chemical compatibility frontier. PRECEDENT: it is not a finding of ours** — Fahy formalized it in 2004 as the **viability–stability plot** (F65), viability by K⁺/Na⁺ against mWCR, with 14 solutions. What StasisPath contributes is its 2026 version, with functional (LTP) and scale data that did not exist then. Current statement: the only chemistry with demonstrated **function** (V3) requires ~147 °C/min and therefore does not go beyond mouse scale; the only one with demonstrated **scale** (M22, CCR 0.1) has only structure. **There is no point with function and scale at once.** This empty cell is the real bottleneck of the physical route, and it is closed or refuted with P19.'
+    cierra: '[laboratory] calorimetry (DSC) of the eutectic-solvent CCR; if ≤ 0.426 it closes without P19. Alternative: run P19'
+  G8:
+    capa: magnitud
+    e: V
+    deps:
+    - F46
+    - F37b
+    t: '**Functional criterion for information (E2 with memory):** LTP is the cellular machinery of learning and it is preserved after vitrifying adult mouse hippocampus: 138.1 ± 6.9 % versus 157.7 ± 7.1 % of control in CA1 (P = 0.072, n.s.) and 148.0 ± 7.2 % versus 125.0 ± 5.0 % in the dentate gyrus (P = 0.021). ⇒ **Vitrification does not erase the substrate of synaptic plasticity in adult mammalian tissue.** It does not demonstrate retention of a specific memory: that requires behaviour.'
+  L12:
+    capa: ley
+    e: V
+    deps:
+    - F46
+    - C2
+    t: '**The glassy state halts molecular mobility and is nevertheless reversible in adult neural tissue** (German 2026): it widens the biophysical limit of cerebral hypothermic shutdown. It is the first direct confirmation of the assumption of L2 (below Tg chemistry stops) **with measured functional recovery**, not only structural.'
+  G5:
+    capa: magnitud
+    e: V
+    deps:
+    - F7
+    - F14
+    - F56
+    t: '**I_structure — a metric taken from the field of connectomics, which has standardized it.** The correct magnitude is not ''% of visible synapses'' but **ERL (expected run length): mean length of neurite reconstructed without error**, which penalizes splits and mergers. State-of-the-art reference in ideal fixed tissue: **~1.1 mm** (F56 [P]). It is the first time the magnitude has a unit (µm of neurite) and a control value external to StasisPath, instead of an invented percentage. Preregistered in P20; **P15 remains intact with its original threshold (R2)**. Our own datum remains open: ERL of unfixed cryopreserved tissue versus control (no laboratory has published it).'
+  L1:
+    capa: ley
+    e: M
+    deps:
+    - C1
+    t: 'Surface rewarming is only possible below r* ≈ {C1.rstar_M22} cm with M22 and {C1.rstar_VMP} cm with VMP. Above that, volumetric heating (nanowarming: {nano_rate} °C/min in 2 L, volume-independent) is mandatory.'
+  L2:
+    capa: ley
+    e: V
+    deps:
+    - C2
+    - F4
+    t: 'Without phase change, passive suppression gives minutes or hours. **Corrected with the full text of F4:** extrapolating with a single Q10 is improper, because the paper itself measures **2.05 between 37 and 15 °C and 3.5 between 15 and 11 °C** (and cites 4.54 in dog). Depending on the Q10 used, 10 years require between **−55 and −156 °C**: the {C2.T10y} °C figure we had been giving came from extrapolating the temperate Q10 far outside its measured range. **What is robust is ''far below 0 °C'', not a specific figure.** Domain: mammalian tissue without biochemical reprogramming.'
+  L18:
+    capa: ley
+    e: V
+    deps:
+    - C2
+    - F4
+    - G2
+    t: '**The glass is not required by the metabolic argument, it is required by the ice.** On correcting L2 it becomes clear that metabolic suppression alone asks only for ''below zero'' (between −55 and −156 °C depending on Q10). What obliges one to vitrify or to control ice is **G2** (f_ice,intra = 0), which is an independent and stronger argument. ⇒ The two arguments were intertwined in the framework and are now **separated**: metabolism sets *how cold*, ice sets *in what state*.'
+  L3:
+    capa: ley
+    e: M
+    deps:
+    - C3
+    t: 'Cooling by surface limits vitrification: LC* ≈ {C3.LCstar_M22} cm with M22 and {C3.LCstar_VMP} cm with VMP. VMP does not vitrify a human kidney; the trunk with M22 is {C3.trunk_verdict}.'
+  L4:
+    capa: ley
+    e: M
+    deps:
+    - C4
+    t: Ectotherms need ×{C4.frog} (frog) and ×{C4.turtle} (turtle) of non-thermal suppression; ×{C4.turtle22} even at 22 °C ⇒ the exit is biochemical, not thermal.
+  L37:
+    capa: ley
+    e: V
+    deps:
+    - F82
+    t: '**Nanowarming can be uniform at body scale for a physical reason that MRI does not have: it is in the quasi-static regime.** At 360 kHz the wavelength in tissue is **metres**, so a 40 cm body measures a **minimal fraction of a wavelength**: the field cannot form interference nulls. In MRI the wavelength falls to **29.3 cm at 3 T and 12.5 cm at 7 T** (computed with λ = c/(f√εr), εr = 64 from F82c), the body measures **1.37 and 3.20** wavelengths, and for that reason nulls appear that force multichannel arrays. **F82b confirms it with in vivo measurement** in 10 volunteers and maps of 82 subjects: the inhomogeneities ''result from radiofrequency interference and dielectric resonances'' at 300 MHz, and degrade the image above all in the **eccentric infratentorial regions**. ⇒ **The uniformity of nanowarming is a geometric problem (coil and container shape), not a wave problem.** **Batch 55 — the remaining gap is closed by DEMONSTRATED IRRELEVANCE, not by finding the source.** The permittivity of tissue at 360 kHz remains **without a source in the network**, and for that reason the figure ''λ ≈ 8.3 m'' that this law previously claimed **is withdrawn**: it required εr ≈ 1.0e4, which nobody here supports. But the **verdict** does not depend on it: breaking the quasi-static regime would require **εr ≥ 4.34e6**, that is **×434** the assumed value, and the α dispersion of tissue at that frequency comes nowhere near. With εr between 64 and 1e5 the body measures between **0.004 and 0.15** wavelengths: quasi-static across the whole range. **Declared leak:** what is sustained is the regime, **not the figure**. Calculation in es/20_cotas/cota_L37_cuasiestatico.py.'
+    cierra: 'closed in batch 55: F82 against primaries, and the quasi-static verdict is robust to εr by a factor of ×434'
+  L38:
+    capa: ley
+    e: V
+    deps:
+    - F84
+    - C3
+    t: '**The rate that geometry imposes on us coincides with the one cryogenic engineering considers safe.** The industrial limit for cooling large tanks without structural damage is **< 9 °C/h = {limite_LNG} °C/min** (F84 — Wang et al. 2025, Energy 334:137568; standard EN 14620-5). C3 predicts for an entire human body (LC {LC_body} cm) **{C3.rate_body} °C/min**. The coincidence is exact: thermal conduction imposes on a 70 kg body the same rate that industry has used for decades so as not to burst cryogenic steel structures. ⇒ The meaning is no accident: **the pace that conduction forces is precisely the one that another field, with decades of experience in large structures, considers thermally safe.** It reinforces that the bottleneck at body scale is not thermal stress but the CCR of the CPA. **F84 now [V]: Wang et al. 2025 read in full (peer-reviewed, Elsevier Energy).'
+  L39:
+    capa: ley
+    e: V
+    deps:
+    - F83
+    - L36
+    - L27
+    - G1
+    t: '**The four mechanisms of ischemic tolerance in the framework converge in one system, and it is human: the fetus.** Facing asphyxia, the **neonate** lowers body temperature 4–8 °C (hypoxic torpor; in the fetus *in utero* it does not fall — it is clamped to the mother), redistributes circulation like a diving mammal (bradycardia 25–60 %, cerebral vasodilation by adenosine), enters hypoxic hypometabolism (VO₂ falls 30–50 %) and shows cerebral vulnerability comparable to that of the turtle brain (Singer 1999). Anoxic tolerance figures (neonate vs adult): rat **40–50 min vs 1.5–3 min** (×20–30); dog **20–30 min vs 3–5 min** (×5–8). Ontogenic gradient: early fetus ~25 min → term fetus ~10 min → adult ~2 min — tolerance is lost in a programmed manner, not that it never existed. ⇒ **The mechanisms we catalogued in ground squirrel (L27), seal (L36) and turtle are not exotic: they are present in human physiology, only regulated by development.** It is the programme''s best lead on whether human τ_eq can be extended. **F83 and L36 now [V] (read 2026-09-27).**'
+  L34:
+    capa: ley
+    e: V
+    deps:
+    - F79
+    - C3
+    - L3
+    t: '**The riskiest extrapolation of the framework is validated against the meat industry.** C3 was anchored on a **3 L** bag and extrapolated to human-body scale, a ×50 jump in mass that had never been checked. The food industry has spent a century measuring exactly that: a beef half-carcass (~150 kg) goes from **40 °C to ~4 °C in 15–16 h**, that is **{tasa_canal} °C/min**. For that geometry (LC ≈ 7.5 cm) C3 predicts **{C3.rate_trunk} °C/min**: the measured/predicted ratio is **{razon_canal}**. ⇒ The LC⁻ⁿ law **works at the 100+ kg scale**, and it is the only real datum we had at that scale. **Caveats, and they are large:** the carcass is cooled with forced air at 0 °C and 2–4 m/s (a heat-transfer coefficient higher than our anchor''s) and over the 40→4 °C range **with no phase change**. It is an **order-of-magnitude** check, not a replica of the protocol. **The exact origin of the number (FAO Manual Cano-Muñoz 1991, T0098E02):** it is a technical guide of industrial practice, not a measurement campaign with n and σ; the datum is cited as an industry standard confirmed by decades of practice. Mallikarjunan & Mittal 1994 (J Food Eng 23:277) is a finite-element simulation that **corroborates** that datum within ±2.7 °C; it does not generate it. **These two sources are now [V] (F79 read in full 2026-09-27).** Edge note: L38 ceased to depend on this law in batch 49 — it corroborated C3, which L38 already has directly.'
+  L35:
+    capa: ley
+    e: V
+    deps:
+    - F80
+    - G4
+    t: '**Natural deep eutectic solvents protect cells, but do NOT break the toxicity↔vitrification trade-off.** Made of common metabolites (sugars, amino acids, choline derivatives), they protect **cell lines** frozen by N2 immersion at 50 % w/v better than DMSO (F80), and their viscosity is tunable with water. **Corrected in batch 46 after reading the primary source:** the earlier version of this law claimed ''94.65 % viability in human stem cells, no difference from DMSO'', and **that datum is not in F80**. What is there, and weighs more: **they crystallize at 30 °C/min** ⇒ their CCR is > 30 °C/min and they are no use for vitrifying large volumes (L44).  **Batch 49 — the trade-off is closed from BOTH sides, with a single primary source. CLOSURE [P] → [V].** On rereading the F80 PDF, a datum appears that nobody had extracted and that this law was missing: the authors explain **why they do not go beyond 50 % w/v**, in their own words: ''*The reason of using 50 % (w/v) instead of higher percentages of NADES is highly related to **their high toxicity at those concentrations**, as well as, their high viscosity which would difficult the diffusion process during freezing*'' (Discussion). ⇒ 50 % w/v **is not a choice of convenience: it is the toxicity ceiling declared by the primary source itself** — and it is exactly the concentration at which the CCR already fails by a factor **≥ 70** (30 °C/min versus the 0.426 that a human brain requires by C3/L44: **1.85 decades**, computed in `es/20_cotas/cota_campos_lejanos.py`). Closing those 1.85 decades would require raising the concentration **above a value the article itself calls toxic**. Both sides of the trade-off are measured in the same work, so the verdict is no longer our inference about one side only. **And an imprecision of our own is corrected (pattern L33):** the earlier version concluded that the eutectic solvents ''remain interesting for **low toxicity at moderate concentration**''. F80 says the opposite for the concentrations this problem needs; what it does support is **better post-thaw recovery than 50 % w/v DMSO in two cell lines**, and that the medium **need not be removed, only diluted**. That is the real utility: cell protocols, not vitrification of volumes. **Declared leaks:** (i) only two immortalized lines (L929 and HaCaT) and viability is reported as optical density, not as a percentage; (ii) there is no toxicity comparison **at equal molar concentration** against DMSO — this was the `cierra` of this node and becomes a leak, because the verdict does not need it: the relevant toxicity is that at **the maximum usable concentration**, and that is the one F80 declares; (iii) 50 % w/v is not converted to molarity, because the eutectic solvents are mixtures of variable molar mass and doing so would require assuming a composition (R5).  **Batch 49 — edge audit (pattern 1, unnecessary dependency): `L29` is removed from `deps`.** L29 (tardigrade CAHS proteins vitrify at ~0.6 mM) is a **sibling** node, not a foundation: it concerns a different chemical class and vitrification **on drying**. Counterfactual test, which is the deciding one: if L29 were true (the CCR↔molarity relation can be broken with macromolecules) the eutectic solvents would still crystallize at 30 °C/min; and if L29 were false, they would too. The verdict of this node **does not change in either case**, hence L29 is not evidentiary support — and in this network `deps` also penalizes, so a [P] node was dragging to [P] a content whose evidence lies entirely in F80 [V] (primary, PDF read) and G4 [V]. The direction of the evidence is the reverse of what the wiring said: **this negative result on eutectic solvents feeds L29''s debate on whether the trade-off is a law of nature or a property of the chosen chemical class; it is not derived from it.** The thematic link is kept where it belongs, in this text, which names L29.  **Batch 48 — link audit (pattern 4, unnecessary dependency):** `X2` is removed from `deps`. This node was written to attack X2 from outside, and in this network `deps` means evidentiary support and also penalizes: X2 is [A] and was dragging to [A] a content that does not need it. Counterfactual test: the F80 calorimetry (they crystallize at 30 °C/min) is a NEGATIVE result on an X2 candidate: it contributes to X2, it does not derive from X2. The thematic link is kept where it belongs, in this text, which names X2; the evidence flows from here to X2, not the other way round. Reproducible audit in `es/20_cotas/auditoria_enlaces_X2.py`, which checks that **no node exceeds its declared status** and that X2 remains [A].'
+  L43:
+    capa: ley
+    e: V
+    deps:
+    - C3
+    - C8
+    - G4b
+    - F72
+    t: '**ONE verdict of the framework is true across ALL its uncertainty, and that makes it a result. The other two are NOT, and this law claimed otherwise by mistake until batch 52.** Evaluating at the **64 corners** of the six parameters of the frontier (anchor, rate, exponent and the three CCRs) — which is the MATE criterion declared in the engine header, ''without Monte Carlo (R5: no theatre)'' — with the declared values and moving nothing: **the human brain falls inside the viable region at 64/64 corners.** ⇒ **That the brain is vitrifiable in principle does not depend on anything we do not yet know**, and the wide margin of the maximum mass is irrelevant to THAT verdict. It is a case of closure by demonstrated irrelevance of the uncertainty. **WHAT IS WITHDRAWN (batch 53):** the earlier version also claimed that **trunk and whole body fall outside in 100 %** of cases. That is false under the framework''s criterion: the trunk falls outside at **48 of 64** corners and the whole body at **12 of 64**. The 100 % was an artefact of a **triangular Monte Carlo**, which concentrates mass at the centre and **never visits a corner**. And the engine itself was already printing it: C3 gives ''M22 fails at the centre of the trunk'' as **not robust**. **A consequence that is not hidden:** the impossibility of vitrifying a trunk or a whole body is **NOT demonstrated**, and for that reason V15 cannot be closed by leaning on this. **Declared leak:** the discrepancy in counts with the audit (48/12 here, 52/14 there) arises from judging the body by **LC** or by **mass**, and those two criteria coexist in the framework without it being declared which governs — C3 uses LC and concludes that ''M22 vitrifies the average body'', the opposite of what this law claimed by mass.'
+    cierra: closed in batch 53 by lowering the statement to what the 64 corners support; the verdicts for the trunk and the whole body are explicitly NOT certified
+  L45:
+    capa: ley
+    e: V
+    deps:
+    - C3
+    - C6
+    - F2
+    t: '**The exponent of the cooling law is sustained by physics, not statistics, and one more volume certifies it by both.** The key verdicts that depend on exp_LC overturn only upwards: **C3 (VMP does not vitrify a human kidney) with n > 2.34** and **C6 (LC 4 cm inside the slow window) with n > 2.52**, at the worst corner of anchor, rate and kidney. **Statistical route:** with the 3 volumes of F2 (1 dof) the one-sided 95 % bound sustains C3 narrowly (rate < 5.2 versus 5.3) and **does NOT sustain C6** (0.079–0.092 versus 0.1): declared leak. **Physical route, independent:** with equal h, material and protocol the exponent lies between 1 (Bi ≪ 1) and 2 (Bi ≫ 1); the only things pushing it above 2 are non-self-similar shape and noise, and their size is measured (**+0.18**). Overturning C3 would require **×1.9** that excess and overturning C6 **×2.9**. ⇒ C3 closes by both routes; C6 closes by the physical one. **Remaining leak:** a real organ is not a bag; if its shape adds more than ×1.9 the observed excess, C3 opens. **Minimum measurement that also closes the statistical route:** ONE more volume in the F2 setup with noise ≤ 10 % (best **~0.15 L, kidney size**, because it also checks C3 at its own scale); with 15 % noise two are needed (0.15 L and ~7 L). Refutation: a fitted exponent > 2.34 with four or more volumes. Calculation in es/20_cotas/cota_exp_LC.py.'
+  L44:
+    capa: ley
+    e: V
+    deps:
+    - F80
+    - C3
+    t: '**The shortcut to X2 via eutectic solvents IS REFUTED by the datum the framework itself asked to be measured.** What survives: inverting the cooling law, a CPA needs **CCR ≤ 0.426 °C/min** to vitrify a human brain by convection — 4.3 times more permissive than M22. That threshold comes from C3 and stands as a **design target**. What falls: the eutectic solvents do not meet it **by a wide margin**. The calorimetry that batches 37–38 declared ''the most cost-effective measurement of the programme'' **was already published in F80 and none of us had read it**: cooled at 30 °C/min the eutectic solvents at 50 % w/v **crystallize** (Tc −26.6 to −32.3 °C) ⇒ **CCR > 30 °C/min, a factor > 70 above the threshold**. And in the same assay **50 % DMSO does not crystallize**, so at that concentration the eutectic solvents are WORSE at vitrifying. Their ''vitrification'' is N2 immersion of a cryovial (15 000–30 000 °C/min), which is the opposite of what a large volume demands. ⇒ **The framework''s operational recommendation is INVERTED: measuring the eutectic solvents is no longer a priority, and X2 has no known shortcut — P19 (or a new chemistry) is again the path.** Leak that remains open: only 3 systems at 50 % w/v were tested; another eutectic solvent at another concentration might behave differently, but that is a conjecture with no datum, not a shortcut.'
+    cierra: '[laboratory] only a NEW chemistry with a measured CCR ≤ 0.426 replaces it'
+  L42:
+    capa: ley
+    e: V
+    deps:
+    - C10
+    - F42
+    - F30
+    - L9
+    t: '**C2 calibrates well against a second mammal, and it is discovered where it stops being conservative.** The pig at 10 °C withstands **60 min of arrest with no cognitive or neurological deficit at 6 weeks** (F42). Against the window C2 predicts, the ratio lies between **0.82 and 2.99** at all corners: **within ×5 robustly**. It is a better calibration than the dog (1.63–5.99), because the dog had an **aortic flush** and that is not a clean comparison with hypothermia alone. **And the limit appears:** with Q10 = 2.53 and t37 ≥ 5 min, the C2 window reaches **61–74 min** and **exceeds the pig''s 60 min** ⇒ at that corner **C2 ceases to be conservative and becomes optimistic**. It is not a failure of the fit: it is the **declared edge of its validity**, and it says that at 10 °C the bound no longer has a safety margin.'
+  L40:
+    capa: ley
+    e: V
+    deps:
+    - F86
+    - G1
+    - C10
+    - X1
+    t: '**τ_eq has a measurable chemical substrate, and it is succinate.** Succinate accumulation is the common feature of ischemia in **mouse, pig and human** heart, and cold acts by **slowing its generation**, not just by slowing metabolism in general (F86). ⇒ Our τ_eq, which until now was an integral of temperature and time, **could be measured directly as succinate concentration** instead of being estimated. That would turn a derived quantity into an **observable quantity**, and would explain why τ_eq is invariant across species (L2, T1 of the scaling): what is conserved is not time, it is **how much succinate has accumulated**. And there is a practical consequence: the damage **is attenuated by metabolic inhibitors**, so τ_eq is not just a function of T and t but also of pharmacology — a third axis the framework did not have.'
+  L41:
+    capa: ley
+    e: V
+    deps:
+    - F85
+    - L16
+    - F22
+    t: '**Nucleation ceases to be a qualitative bound and acquires a numerical UPPER BOUND, and two independent systems do not contradict each other.** Rat liver supercooled at −6 °C with real orthotopic transplantation gives two survival points (100 % at 72 h, ~58 % at 96 h; F85). With the L16 model (Poisson nucleation, probability increasing in volume **and** time) the 96 h point implies **J(−6 °C) ≤ 0.57 nucleations per L·h**; the 72 h point, being 100 %, gives no upper bound. It is **compatible** with the independent bound from pig kidney at −2 °C (**J ≤ 3.1 per L·h**, rule of three on the 5+5 animals of 5 h without nucleation in F20). ⇒ Two systems, two species and two temperatures give bounds that do not contradict each other. **CLOSED in batch 48 by correction of an imprecision of our own + demonstrated irrelevance of its caveat (pattern L33 + pattern L43).** The earlier version said the rate was ''fitted'' ≈ 0.57 and left open the caveat that attributing the 42 % of failures at 96 h to nucleation is an assumption. Both are fixed at once: let φ be the fraction of those failures that is nucleation; J(φ) = −ln(1 − 0.42φ)/(V·t) is **monotonically increasing in φ**, with its maximum exactly at φ = 1. Therefore what F85 gives **is not a fitted value but an upper bound**, and any deviation from the assumption can only LOWER it. And the compatibility verdict **holds for all φ ∈ [0,1] and at all volume corners** (rat liver 8–14 mL, pig kidney 40–90 mL): the slack at the worst corner is ×2.9, and breaking it would require **79 % of failures to be due to nucleation when F85 observes 42 % in total** — impossible. Calculation with numbers in `es/20_cotas/cota_nucleacion_L41.py`, which also **reproduces from scratch the two values this node had written by hand** (0.567 and 3.05). **Declared leaks:** (1) the bound assumes ''nucleation ⇒ graft failure''; if nucleating were survivable J would be higher, and the support that it is not lies in the dependency F22 itself (frozen controls at −2 °C: 98 % nuclear pyknosis, severe destruction at organ scale) — and the pig bound uses the same convention, so the comparison is consistent; (2) the **point** value of J remains open and would only be closed by measuring φ: what is closed is the bound and the non-contradiction, not the central number; (3) J is not extrapolated from −6 to −2 °C: they are two independent bounds and it is only checked that they do not clash; **(4) ADDED IN BATCH 52 (audit against ourselves), and it is a methodological asymmetry: the rat side has no n.** The F85 PDF **nowhere gives the number of animals** (checked by searching for ''n ='' and ''number of rats'' in the full text), so the 42 % is a **point proportion**, not a bound. The pig side, by contrast, **does use n** (rule of three on 5+5). Calling both things a ''bound'' mixes two different objects. **The compatibility verdict holds just the same and for that reason the node stays at [V]:** even putting a 95 % binomial upper bound on the proportion with a small plausible n (3 of 7, or 2 of 5) the rat J rises to ~1.4–1.6 per L·h, still below the worst pig corner (2.04). What is lost is the precision of the number, which was already declared open in leak (2). **And a second caveat about the source: F85 is a PROTOCOL article** (Nat Protoc), and its survival figures are reported in the discussion as a summary of the group''s own work (''*we were able to transplant supercooled livers with 58 % long-term survival after 96 hours... while 100 % survival was limited to 72 hours*'', verified verbatim in the PDF), not as a results table with statistics.'
+    cierra: 'closed in batch 48: reformulated as an upper bound; the caveat does not change the verdict across its whole range (es/20_cotas/cota_nucleacion_L41.py)'
+  L36:
+    capa: ley
+    e: V
+    deps:
+    - F81
+    - G1
+    t: '**The seal resolves ischemia by changing WHICH CELL breathes, not how much.** In terrestrial mammals aerobic ATP production is neuronal; in the hooded seal (*Cystophora cristata*) **it shifts to astrocytes**, and the markers of oxidative metabolism (neuroglobin, cytochrome c) are **in glia instead of in the neuron** (Mitz et al. 2009 — F81). Seal neurons sustain firing for **19±10 min (max 60 min)** of severe hypoxia, versus **5±2 min in mouse** (Folkow et al. 2008 — F81). The molecular mechanism: overexpression of MCT4 in neurons (lactate expulsion), inversion of the ANLS shuttle (rANLS: neuron→astrocyte lactate), and astrocytes with Ngb, cytochrome c and LDHB acting as an oxidative buffer (Hoff et al. 2017 — F81). ⇒ **It is a fourth mechanism of ischemic tolerance, distinct from the three the framework already had** (cold via Q10, low flow, and the active inhibition of the hibernator of L27): here it is a **division of labour between cell types**. It suggests that τ_eq is not a property of the tissue but **of the tissue''s metabolic architecture**, which would explain why the euthermic ground squirrel (L15) endures without cold or torpor. **F81 now [V]: three primaries read (Folkow 2008, Mitz 2009, Hoff 2017); correction: the duration comparison comes from Folkow, not Mitz.**'
+  L31:
+    capa: ley
+    e: V
+    deps:
+    - F76
+    t: '**The zero-concentration point exists and had been measured in another field: cryo-electron microscopy.** The CCR of **pure water** is **6.4 × 10⁶ K/s = 3.84 × 10⁸ °C/min** (F76, Mowry et al. 2025, Phys Rev Research 7:013095 — measured directly by time-resolved cryo-EM). With that third point, the framework''s CCR↔concentration relation ceases to be a two-point line and is seen to be **curved (convex)**: the slope is −0.95 decades per mol between 0 and 8.4 M and **−1.74 between 8.4 and 9.3 M**. ⇒ **Using the local slope near 9 M to extrapolate there, as F2 does, turns out to be correct — and now with evidence, not by assumption.** It also fixes the other end of the problem: without cryoprotectant one can vitrify, but only below **~1.5–3 µm** of thickness in pure cryo-microscopy (LC* ≈ √(α·ΔT/CCR) ≈ 1.5 µm computed in F76; cryo-EM practice operates at 100–200 nm). **Correction (cross-check with F6/Studer):** in biological tissue without CPA one vitrifies up to **10–20 µm** (a factor ×10 over grid cryo-EM) and up to **~200 µm** with high-pressure freezing (2000 bar, Tm drops to −22 °C → required CCR falls ×100). The F76 value (6.4×10⁶ K/s) agrees with the extrapolation from F6 (2.5×10⁵ K/s) to a factor of 1.25 — independent corroboration. **No verdict changes**: 200 µm is still a factor ×200 in LC = 4 cm and ×4×10⁴ in rate (rate ∝ 1/LC², C3). **F76 now [V]: primary peer-reviewed source read in full** — the 6.4×10⁶ K/s is the entire statement, not colour. Pressure as a design variable is declared a gap (it has no node of its own in the framework).'
+  L32:
+    capa: ley
+    e: V
+    deps:
+    - F77
+    - G3
+    - F75
+    t: '**Another field has already formally solved ''how thick can I vitrify'': bulk metallic glasses.** Lu & Liu 2002 derive two explicit equations spanning 6 orders of magnitude (R²=0.91): **R_c = 5.1×10²¹·exp(−117.19γ) K/s** (exact analogue of CCR) and **Z_c = 2.80×10⁻⁷·exp(41.70γ) mm** (exact analogue of LC*), where γ = Tx/(Tg+Tl) (F77). ⇒ Our F1 computes the critical thickness **a posteriori, by measuring the CCR**; metallurgy predicts it **a priori from characteristic temperatures of the material**. The best alloys (Pd-Cu-Ni-P, γ≈0.45) reach a predicted Z_c ~40 mm (experimental up to 72–80 mm). Together with the lyophilization excipient-design framework (F75), they are **two design tools already built** for the problem X2 leaves open, and neither has been applied to organ cryoprotectants. The γ framework is transferable: if Tg, Tl and Tx of a CPA were measured, its CCR and LC* would be obtained without doing cryobiology. **F77 now [V]: read in full, equations verified with numerical data.**'
+  L33:
+    capa: ley
+    e: V
+    deps:
+    - F78
+    - L8
+    - L28
+    t: '**Atrophy, which the framework did not model, has already been solved by a large mammal — and by a route distinct from energy saving.** The black bear spends **4–6 months almost immobile**: **with no bone loss at all** and with **only LIMITED loss of muscle mass and protein** (F78, both primaries read in batch 46). **Precision corrected in batch 47:** the earlier version said ''without losing muscle or bone''; the muscle article says ''limited loss'', not zero. Bone is indeed zero. It does not achieve this by slowing metabolism: it keeps **protein synthesis active via mTORC1** with branched-chain amino acids preserved, and **downregulates bone-resorption genes** without touching those of formation. ⇒ For the spaceflight route, atrophy **is not an inevitable consequence of immobility**, but a regulable programme. It adds a magnitude missing from Q13, which counted only energy, and links with L28: in torpor the limit is not fat but the handling of non-lipid fuel and nitrogen. **Declared leak:** it is transcriptomic and histological evidence in bear; **nobody has shown that the programme can be induced in a human**.'
+    cierra: 'closed in batch 47: F78 read in full and the muscle imprecision corrected'
+  L29:
+    capa: ley
+    e: V
+    deps:
+    - F74
+    t: '**Biology vitrifies without toxic concentration, using macromolecules instead of small solutes — and that attacks the weakest assumption of the framework.** Our formula F2 concludes that vitrifying large pieces requires crossing the toxicity threshold **because it assumes small-molecule cryoprotectants**, where lowering the CCR requires raising the molarity. Tardigrade CAHS proteins form glass and gel by network self-assembly at **~0.6 mM (>15 g/L)** (F74), some **four orders of magnitude below** the 8.4–9.3 M used by M22 or V3. In transfected yeast and in the tardigrade itself, viability correlates strictly with the glassy state (Fig 7D, 7E of Boothby 2017): it is maintained below Tg and collapses when it is exceeded. ⇒ **The CCR↔molarity relation is not a law of nature: it is a property of the chemical class the field has chosen.** Large caveat: the vitrification of CAHS occurs **on drying, not on cooling**, and its exact mechanism is **disputed** against purely mechanical-network hypotheses (Arakawa & Numata 2021). It is not a direct substitute; it is proof that the assumption is breakable. **F74 now [V]: Boothby et al. 2017 (PMC5987194) read in full 2026-09-27.**'
+  L30:
+    capa: ley
+    e: V
+    deps:
+    - F75
+    - G3
+    - F59
+    t: '**A computational method already exists to design the chemistry the framework says is missing, and it comes from pharmaceutical lyophilization.** F2 identifies what is needed: a CPA with low CCR **without** high molarity. The pharmaceutical industry has spent decades solving the twin problem — stabilizing proteins in glass — and has a **molecular design framework** that optimizes excipients with quantitative structure-property relationships for **Tg of the anhydrous solute, Tg'' of the freeze-concentrated matrix, ice melting point and the Gordon-Taylor constant** (F75). And Tg is precisely the variable that Kavian 2025 (F59) showed **controls cracking**. ⇒ The bottleneck of X2 is not just a pending experiment: it is **a design problem with tools already built in another field**, which nobody has applied to organ cryopreservation.  **Batch 48 — link audit (pattern 4, unnecessary dependency):** `X2` is removed from `deps`. This node was written to attack X2 from outside, and in this network `deps` means evidentiary support and also penalizes: X2 is [A] and was dragging to [A] a content that does not need it. Counterfactual test: the existence of the computational excipient-design framework is a fact of the lyophilization literature (F75) plus the role of Tg in cracking (F59); it is a proposal of a route TO resolve X2. The thematic link is kept where it belongs, in this text, which names X2; the evidence flows from here to X2, not the other way round. Reproducible audit in `es/20_cotas/auditoria_enlaces_X2.py`, which checks that **no node exceeds its declared status** and that X2 remains [A].'
+  L27:
+    capa: ley
+    e: V
+    deps:
+    - F73
+    - L24
+    - C2
+    t: '**In a hibernator, below 12 °C metabolism ceases to obey temperature.** Buck & Barnes (F73) measure that between Tb 0 and 12 °C the metabolic rate of the arctic ground squirrel **does not change significantly**: there is **active inhibition independent of temperature**. And the apparent Q10 **varies from 1.0 to 14.1** within the same range, with a global value of 2.4. ⇒ **In the hibernator''s domain, C2 ceases to apply altogether**: it is not that Q10 is different, it is that metabolism is no longer a function of temperature. It reinforces the domain restriction of L2 and explains why L15 (euthermic ground squirrel resistant to 8 min of arrest) is not an anomaly but another regime.'
+  L28:
+    capa: ley
+    e: V
+    deps:
+    - F73
+    - L8
+    - C5
+    t: '**What ends a torpor bout is neither temperature nor total energy: it is the type of fuel.** In stable torpor the respiratory quotient is **0.70 (lipids only)** and rises above **0.85** at the temperature extremes, a sign that non-lipid fuel is being used. **RQ correlates negatively with the maximum duration of the bout** (F73) ⇒ the hypothesis held by the source itself is that **the availability of non-lipid fuel limits the duration of torpor**. It corrects the approach of C5, which counted only kilograms of fat: **fat is not the limit, the non-fat component is.**'
+  L24:
+    capa: ley
+    e: V
+    deps:
+    - F70
+    - L2
+    t: '**The non-linearity of Q10 moves from suspicion to measurement, and with a mechanism.** In mouse brain mitochondria between 37 and 6 °C (F70): Q10 of **2.61 ± 0.09** in basal respiration and **3.92 ± 0.31** in active respiration. It coincides independently with the cold branch of McCullough in humans (3.5). **And it gives the mechanism:** the respiratory-chain complexes do not slow equally — citrate synthase and complexes I, III and IV are poorly sensitive (Q10 1.2–2.4), while **complex II reaches 4.2 and complex V 11.3**. ⇒ The global Q10 is not a constant of the tissue but **the weighted mean of enzymes with very different sensitivities**, and it rises on cooling because **ATP synthesis shuts down before electron transport**.'
+  L26:
+    capa: ley
+    e: V
+    deps:
+    - F69
+    - F72
+    - L20
+    t: '**Cryonics uses exactly the concentration that German showed to be toxic, and the resulting osmotic damage is measured: 36 % brain shrinkage.** The P-19 case sets **65 % w/v** of CPA as target (F69) — the same concentration that in hippocampal slices **halves basal respiration** (80.4 versus 173.3; F72, and discussed in L25). The CT confirms that the target was reached well (83 % of brain area above 100 % of the target, 97 % above 92 %), that is: **the perfusion was technically good and precisely for that reason the tissue received the full toxic dose**. And the measured brain shrinkage is **36 %**, which quantifies for the first time in a human case the osmotic injury that L20 separated from chemical toxicity. ⇒ Good perfusion and low toxicity are **opposed objectives** with current chemistry.  **Batch 49 — systematic edge sweep (pattern 4, unnecessary dependency):** `L25` is removed from `deps`. The four claims of this law lie in F69 [V] (65 % w/v target, CT, 36 % shrinkage) and in F72 [V] (80.4 versus 173.3), and the separation between osmotic injury and chemical toxicity is provided by L20 [V]. The only thing L25 adds over F72 is its own OPEN claim (''loading temperature is the decisive variable''), and the verdict of this law is true in BOTH branches of that unknown: if cold loading rescues high molarity, P-19 did not load at −22 °C and received the toxic dose anyway; if it does not rescue it, all the more so. ⇒ L25 is not evidentiary support here, it is a cross-reference, and it is kept as such in this text. **L25 stays at [P] and contradiction I1 stays open** (R1: tension is not lost). Reproducible audit in `es/20_cotas/barrido_aristas_global.py` (enumerates the 17 penalizing edges of the whole graph) and `es/20_cotas/auditoria_aristas_tanda49.py` (applies the test and checks that no node exceeds its declared status).'
+    cierra: 'closed in batch 49 for unnecessary dependency: the verdict is given by F69 and F72, both [V]; L25 only contributed a mechanism unknown that does not change the verdict in either of its two branches'
+  L20:
+    capa: ley
+    e: V
+    deps:
+    - F65
+    - L6
+    - G4b
+    t: '**Toxicity depends on the temperature of use as much as on the molecule, with a measured asymmetry.** M22 was designed to touch living tissue **at −22 °C** (hence the name) and at −3 °C its toxicity would be unacceptable (F65) — the opposite of VMP, tolerable at −3 °C. And adding and removing M22 at −22 °C was **uniformly fatal**, whereas perfusing it for 25 min and washing it **out while warming** recovered full renal function. Fahy concludes that the dominant damage was **osmotic expansion at low temperature**, not chemical toxicity. ⇒ D_CPA and osmotic injury are **two distinct magnitudes that are easily confused**.'
+  L25:
+    capa: ley
+    e: V
+    deps:
+    - F72
+    - L22
+    - L20
+    t: '**At the molarity of M22, V3 chemistry loaded warm is already toxic — and that makes loading temperature the decisive variable.** German tested V3 at **65 % w/v = 9.28 M**, practically the molarity of M22 (9.3 M), loading **at 10 °C**: basal respiration (Seahorse OCR) fell to **80.4 ± 5.6 versus 173.3 ± 6.7 for the control**, that is **by half**, with reserve capacity of 38.9 versus 73.4 (F72). By contrast, loading at subzero temperature (−10 °C / −20 °C) at 59 % (8.42 M), respiration and LTP are fully preserved after complete vitrification at −140 °C. ⇒ **The difference between the chemistry that works and the one that scales is not concentration: it is that M22 is loaded at −22 °C and not at 10 °C** (L20). This **answers contradiction I1**: the efficacy of rescue by cold loading is not a renal artefact (F65/L20), but a thermo-kinetic principle verified directly in mammalian neural tissue (hippocampus). **CLOSED 2026-09-27:** contradiction I1 is resolved with the subzero loading protocol and the mitochondrial respiration in neural slices of German et al. (F72); all its dependencies are strong [V].'
+    cierra: 'closed 2026-09-27: contradiction I1 resolved with the subzero loading protocol and mitochondrial respiration in neural tissue (German et al., F72)'
+  L22:
+    capa: ley
+    e: V
+    deps:
+    - F37b
+    - F46
+    - F71
+    t: '**V3 and VM3 are the same formula: V3 = VM3 without the ice blockers. CONFIRMED BY THE AUTHORS THEMSELVES**, not merely deduced: the PNAS supplement (F71) says that they omitted the ''Supercool'' polymers and that they called it **V3 ''by reference to VM3''**. Also checked component by component: DMSO 22.3 %, formamide 12.86 %, EG 16.84 % and PVP K12 7 % are **identical to the decimal** in Pichugin 2006 (F37b) and in German 2026 (F46); VM3 adds 1 % X-1000 and 1 % Z-1000 and reaches 61 % w/v, while V3 stays at the **59 %** that the PNAS declares. ⇒ The chemistry with **demonstrated function (LTP)** is not a new family: it is **Fahy''s VM3 without blockers**. X2 does not pit two different lineages against each other, but **the same lineage at two concentrations and two design temperatures** (59 % w/v at slice temperature versus 9.3 M at −22 °C). **And the distance is much smaller than it seemed:** V3 is **8.42 M** of permeating CPA (F71) versus the **9.3 M** of M22 — barely a **10 % difference in molarity**. What truly separates the chemistry that works from the one that scales is not concentration: it is **the ice blockers and the loading temperature** (10 °C versus −22 °C).  **Batch 48 — link audit (pattern 4, unnecessary dependency):** `X2` is removed from `deps`. This node was written to attack X2 from outside, and in this network `deps` means evidentiary support and also penalizes: X2 is [A] and was dragging to [A] a content that does not need it. Counterfactual test: the compositional identity V3 = VM3 without blockers (F37b, F46, and the authors'' own supplement, F71) is true with X2 = YES and with X2 = NO. The thematic link is kept where it belongs, in this text, which names X2; the evidence flows from here to X2, not the other way round. Reproducible audit in `es/20_cotas/auditoria_enlaces_X2.py`, which checks that **no node exceeds its declared status** and that X2 remains [A].'
+  L23:
+    capa: ley
+    e: V
+    deps:
+    - F37b
+    - F72
+    - G4b
+    t: '**The physics of vitrifying is not what kills neural tissue: the chemistry is.** Direct, quantitative proof (F72): in hippocampal slices, **exposure to CPA and actual vitrification give the same result** — basal respiration 135.1 ± 6.7 with CPA only versus 131.4 ± 5.7 after full vitrification, and reserve capacity 48.6 versus 50.6. **All the damage is caused by chemical exposure; the phase change adds nothing measurable.** A classic datum that already pointed this way (F37b): V(EG) at **53 %** allowed vitrification and rewarming **with no damage attributable to vitrification or rewarming themselves**, and was nevertheless **much more damaging than at 50 %**. Same physics, only 3 points more concentration. It is the cleanest evidence in the programme that the bottleneck of X2 is **toxicity**, and it fits with L13 (61 % EG alone gives unstable LTP; V3 preserves it).  **Batch 48 — link audit (pattern 4, unnecessary dependency):** `X2` is removed from `deps`. This node was written to attack X2 from outside, and in this network `deps` means evidentiary support and also penalizes: X2 is [A] and was dragging to [A] a content that does not need it. Counterfactual test: the two pairs of numbers measured in the same tissue (135.1 vs 131.4 and 48.6 vs 50.6, F72; 50 vs 53 % in F37b) do not change with the answer to X2. The thematic link is kept where it belongs, in this text, which names X2; the evidence flows from here to X2, not the other way round. Reproducible audit in `es/20_cotas/auditoria_enlaces_X2.py`, which checks that **no node exceeds its declared status** and that X2 remains [A].'
+  L21:
+    capa: ley
+    e: V
+    deps:
+    - F69
+    - F16
+    - G1
+    t: '**The gap between ideal and real cryonics is measured with a primary case, and it is larger than I first noted.** Wowk (F16) documents that complete CT-verified brain vitrification has only been seen in cases with **< 10 min** between arrest and declaration. The P-19 case (F69) documents the full chronology: legal declaration at **1 h**, chest compressions at **1 h 43** and, above all, **start of cryoprotectant perfusion at 4 h 40**, with the team already on standby after two shifts of 3 and 4 days. **Correction of my own earlier note:** I noted ''~90 min'', which is only the arrival at the mortuary; the datum that matters for τ_eq is **when perfusion starts, and that is 4 h 40**. ⇒ **Real practice operates ~28 times above its own technical threshold** (4 h 40 versus < 10 min), and the bottleneck is not chemistry: it is the **legal declaration procedure**, which cannot begin earlier. It fits with O2: legal death is a decision, and here that decision sets the damage.'
+  L19:
+    capa: ley
+    e: V
+    deps:
+    - F64
+    - L16
+    - G7
+    t: '**Nucleation is already controlled pharmacologically, and the control splits into two distinct functions.** In partial freezing of rat liver (F64): **Z-1000 suppresses heterogeneous nucleation** and **X-1000 and AFGP inhibit recrystallization** — they are two separate mechanisms, not one. It closes the gap that L16 left open: if the limit of supercooling is nucleation accumulated over time, **the chemical lever to move it already exists**. But none is free: AFGP lowered oedema (p = 0.029) and **damaged the endothelium**; X/Z kept ATP high and gave oedema on thawing. ⇒ Nucleation control enters the framework as a magnitude with a cost, just like D_CPA.'
+  L16:
+    capa: ley
+    e: V
+    deps:
+    - F20
+    - F62
+    - G2
+    t: '**The limit of supercooling is nucleation accumulated over time, not the minimum temperature.** Direct proof: the same group held −2 °C for 5 h but had to **raise to −0.5 °C** for 24–48 h because of nucleation risk (F20, confirmed by the editorial F62). Nucleation is stochastic and its probability grows with volume **and with time**. ⇒ There is a temperature × duration trade-off that **bounds supercooling to days, not weeks**, unless nucleation is controlled (antinucleating proteins, isochoric method).'
+  L17:
+    capa: ley
+    e: V
+    deps:
+    - F20
+    - F63
+    - C2
+    t: '**External corroboration of Q10 and of the clinical temperature gradient.** The transplant work itself cites ''every 10 °C drop reduces metabolism by 50 %'' (Q10 = 2.0, within our range [2.0, 2.6] without having been fitted to it). And in human clinical practice, preserving hearts at **10 °C instead of on ice** reduces severe primary graft dysfunction (F63). ⇒ The hypothermia route keeps giving real clinical improvements **without phase change**: it is where the residual is most solid.'
+  L5:
+    capa: ley
+    e: V
+    deps:
+    - C6
+    - F20
+    - F21
+    - F57
+    t: 'Partial freezing is **not limited by heat** at LC 4 cm (cooling {C6.rate4}, inside the slow window; latent heat evacuated in {C6.latent4}). The verdict is a result of **C6, which is mate**: it comes from geometry and latent heat, not from any experiment. That partial freezing in fact works at subzero temperature is supplied by F20 and F21 (both [V]). F57 [V] corroborates the scale in a **large organ** — pig kidneys (n=6 at 10 days at −15 °C with in vivo autotransplantation and urine production) and discarded human kidneys (n=3 at 10 days in simulated transplantation with ~50–57.5 % creatinine clearance and stable vascular resistance) — which is the scale C6 predicted. **F57 now [V]: full NIH/Research Square manuscript, AJT 2024/2025 proceedings and in vivo autotransplantation documented.**'
+    cierra: 'closed 2026-09-27: all dependencies strong (C6 mate, F20, F21 and F57 verified)'
+  L6:
+    capa: ley
+    e: V
+    deps:
+    - C8
+    - F26
+    - F39
+    - F40
+    t: Toxicity follows qv* (20 solutions); designing by qv*, 8.4 M at −3 °C went from 100 % lethal to kidney without damage. **Temperature and loading protocol dominate:** M22 (9.3 M) 25 min at −22 °C with simultaneous washout on warming gives full renal function; adding and removing it at −22 °C without that washout is sometimes fatal (F39). Chemical neutralization exists for formamide, urea and acetamide (with DMSO), but **not** for glycerol, propylene glycol, EG or DMSO (F40). The CCR ↔ toxicity tension is one of **design and protocol**, not a hard law.
+  L7:
+    capa: ley
+    e: V
+    deps:
+    - C9
+    - F88
+    t: 'Accidental hypothermia at 13.7 °C with arrest and a good outcome = ×{C9.extra} over C2 ⇒ **it is not a leak**: there was CPR (low flow). C2 is a zero-flow bound. **Batch 54: closed against the PRIMARY.** The earlier version relied on F13, which the batch 52 audit showed to be a **review**. With the Lancet paper (F88) read, the case is documented first-hand: **immediate** basic CPR from 19:00 and bypass at 21:50 ⇒ **the low flow is in the primary, not inferred**. **Declared leak:** the primary gives 170–195 min of arrest, not the 412 that the network holds in `hypo_case_min`; the verdict holds with both, with a margin of ×3.26 in the worst case.'
+    cierra: closed in batch 54 against F88 (Lancet 2000), read in full
+  L8:
+    capa: ley
+    e: V
+    deps:
+    - C5
+    - F89
+    t: 'One year of torpor costs {C5.kg25} kg of fat at 25 % of baseline and {C5.kg3} kg at 3 %. **Energy does not limit**, and that verdict is given by **C5, which is mate**. SpaceWorks/NASA estimate a mass saving of **52–68 %** for torpor habitats versus the TransHab reference design, on the same mission, and an IMLEO reduction of **25–44 %** (F89). **CORRECTION (2026-09-27, PDF read directly):** batch 54 noted ''25–35 %'' through a misreading; the PDF literally says ''25% to 44%''. It adds: with the same mass the crew can be doubled; supporting clinical evidence cited up to 14 days of continuous therapeutic hypothermia. Follow-up: NIAC Phase II (Bradford, SpaceWorks, 2016–2018, Project 88911) raised the TRL from 2 to 3. **Batch 54: closed against the PRIMARY.** The earlier version took the 52–68 % from F13, which is a review, and the batch 52 audit pointed out that the figure originates in the Bradford/SpaceWorks NIAC report and **was not in the network**. It now is, read in full, with the literal phrase. **Declared leak:** it is a mission-architecture study, not a physiological measurement; what it sustains is the **saving in spacecraft mass**, not that human torpor is attainable.'
+    cierra: closed in batch 54 against F89 (NIAC Phase I), read in full; IMLEO corrected to 25-44% on 2026-09-27
+  L9:
+    capa: ley
+    e: V
+    deps:
+    - C10
+    - F30
+    t: 'C2 is **conservative but of the correct order** in mammals: the dog with cold flush withstands {flush_min} min without flow at ~10 °C = ×{C10.extra} over C2: at the centre it stays within ×5, but at the corner Q10 = 2.0 with the brain at 15 °C it reaches ×6.5 (leak; the threshold is not moved, R2). At 10 °C and 60 min: no functional or histological brain damage.'
+  L10:
+    capa: ley
+    e: V
+    deps:
+    - F31
+    - L6
+    t: 'Loading cryoprotectant at human-kidney scale (150–220 g, pig and human) is feasible: cell-like osmotic response, low damage (LDH) and distribution confirmed by CT. With a hypotonic vehicle vascular resistance rises up to ×10 (reversible).'
+  X1:
+    capa: frontera
+    e: V
+    deps:
+    - C7
+    - F23
+    - F25
+    - F38
+    t: '**Grey zone in two sections.** (i) {C7.tau_org_good}–{tau_org_exist} min = **reproducibility frontier**: at least one organism has been recovered (cat, brain-only ischemia), but it is not reproducible and lesions remain. (ii) {tau_org_exist}–{C7.tau_cel} min = **cellular only**: cells and synapses recoverable, no demonstrated organism. It is the central empirical frontier.'
+  O4:
+    capa: ontologia
+    e: V
+    deps:
+    - F38
+    - O2
+    t: '**Function ≠ information also at the level of the organism:** Hossmann''s cat recovered integrative function (walks, eats, normal EEG at one year) after 1 h of cerebral ischemia, but with almost complete atrophy of the dorsal hippocampus and striatum. Recovering function does not guarantee preserving memory. StasisPath must report separately **functional recovery (E4)** and **conservation of information**.'
+  G4b:
+    capa: magnitud
+    e: V
+    deps:
+    - F37b
+    - F26
+    - F65
+    t: '**Operational criterion of D_CPA, now with a source and a measured band.** Metric: **tissue K⁺/Na⁺ after washing out the CPA**, against untreated control. **Measured no-damage band: 93–103 %** in rabbit renal cortex slices (F65); those of hippocampus with VM3 gave 91–108 % (F37b). The threshold I proposed (≥ 90 %) is **confirmed and slightly below** the measured band. It is not universal: it depends on tissue and protocol (E7).'
+  G7:
+    capa: magnitud
+    e: V
+    deps:
+    - F37b
+    - F53
+    - F54
+    t: '**Cold injury without ice (chilling) — magnitude closed with neighbouring fields.** Mechanism: phase transition of membrane lipids from liquid-crystalline to gel, with maximum damage between 0 and 20 °C. **Threshold measurable by FTIR** (human reproduction, F53): zygote 10.0 ± 1.2 °C, mature oocyte 16.9 ± 0.9 °C, immature oocyte 24.4 ± 1.6 °C ⇒ the transition temperature **depends on cell type** and must be measured, not assumed. In **neural** tissue: hippocampal slices are inactivated by 0 °C alone, and the injury is mitigated with **0.8 mM vitamin C**, a more ''intracellular'' aCSF (less Na and Ca, more K) and the CPA solutes themselves; with RPS-2 as carrier, **0 °C protected more than 10 °C** (F37b), and a type I antifreeze protein at 10 mg/mL protects rat hippocampal slices from **8 h at 4 °C + rewarming** compared with control albumin (F54) ⇒ cold injury in neurons is real **and pharmacologically avoidable**. **Our own datum is missing:** the transition temperature of adult mammalian neural tissue is not measured; it is measured with FTIR just like F53.  **Batch 49, graph hygiene:** `deps` had `F37b` DUPLICATED; it is left once (no status changes, the engine''s rule takes the minimum).'
+  L11:
+    capa: ley
+    e: V
+    deps:
+    - F37b
+    - F35
+    t: '**The tension about slow freezing in neural tissue is RESOLVED on reading the two primaries, and the culprit is not the rate: it is the formulation.** F37b froze ADULT rat slices at 1.2 °C/min with **glycerol or DMSO alone** and obtained severe damage. F35 slowly freezes human brain tissue and organoids with **MEDY = 10 % DMSO + 10 % EG + methylcellulose + Y-27632**, and preserves cytoarchitecture and functional activity; organoids from epilepsy patients **keep their pathology** after thawing. ⇒ The two results **do not contradict each other**: they differ in three declared variables — (a) a **ROCK inhibitor** that blocks apoptosis, absent in F37b; (b) **methylcellulose**, which modulates extracellular ice; (c) **scale** (millimetre organoid and biopsy versus adult rat slice). **The failure of F37b is attributable to the CPA, not to slow freezing.** **Declared leak, and it is the one that matters:** MEDY has only been tested at millimetre scale; **it says nothing about an organ or a whole brain**, where extracellular ice and perfusion are a different problem. It does not turn slow freezing into a route at human scale.'
+    cierra: '[laboratory] MEDY (or equivalent) applied to an organ-scale volume'
+vias:
+  V01:
+    via: Normothermia without perfusion
+    mec: —
+    escala: human
+    ventana: '{t37} min'
+    fallo: τ_eq
+    e: V
+    deps:
+    - F4
+  V02:
+    via: Hypothermia / DHCA
+    mec: Q10 suppression
+    escala: human, E5
+    ventana: 21 min at 20 °C, 31 at 15 °C, 45 at 10 °C; median 31 min → 7 % stroke and 10 % mortality
+    fallo: τ_eq
+    e: V
+    deps:
+    - F4
+    - F13
+    - C2
+  V03:
+    via: Optimal reperfusion after warm ischemia
+    mec: extracorporeal circulation + hypothermia on reperfusion
+    escala: dog
+    ventana: good outcome ≤ {tau_org_good} min; at 17 min survives with deficit
+    fallo: post-resuscitation syndrome
+    e: V
+    deps:
+    - F25
+    - C7
+  V04:
+    via: EPR / suspended animation
+    mec: aortic flush at 4 °C → brain at 10–15 °C
+    escala: dog (E4), humans in trial
+    ventana: '{flush_min} min without flow; 60 min without brain damage'
+    fallo: reperfusion; in dogs, 13 of 14 added drugs failed
+    e: V
+    deps:
+    - F9
+    - F30
+    - C10
+  V27:
+    via: Supercooling of rat liver with transplantation
+    mec: CPA loading + −6 °C without freezing
+    escala: rat liver, REAL orthotopic transplantation
+    ventana: '**72 h with 100 % survival; 96 h with ~58 %**'
+    fallo: survival falls between 72 and 96 h
+    e: V
+    deps:
+    - F85
+    cierra: 'closed in batch 47: F85 read in full (batch 46) and the route claims nothing more'
+  V05:
+    via: Organ supercooling
+    mec: subzero without ice (antinucleating solution or isochoric)
+    escala: autotransplanted pig kidney (22 pigs, E3); human liver; isochoric pig liver
+    ventana: '**−2 °C only 5 h; for 24–48 h it had to be raised to −0.5 °C**'
+    fallo: '**nucleation limits time, not temperature**; at 48 h AST was double that on ice (99.3 vs 53 U/L, P = .009) and all 48 h animals had slow graft function, in both groups'
+    e: V
+    deps:
+    - F8
+    - F20
+    - F22
+    - F62
+  V24:
+    via: Static cold at 10 °C (not on ice)
+    mec: moderate hypothermia without phase change
+    escala: '**human, clinical**: donor hearts after normothermic regional perfusion'
+    ventana: hours
+    fallo: ischemia
+    e: V
+    deps:
+    - F63
+  V06:
+    via: Partial freezing
+    mec: '−10/−15 °C: propylene glycol 12 % + 3-OMG 200 mM + PEG 5 % + Snomax nucleator 1 g/L'
+    escala: rat liver (5–10 days); pig and human kidney (10 days, SIMULATED transplant) [preprint]
+    ventana: 10 days
+    fallo: '**liver enzymes ×16–22 over control (AST/ALT 1270/768 vs 79/35)** and very low bile: there is real damage even if O₂ and lactate come out normal'
+    e: V
+    deps:
+    - F66
+    - F57
+    - C6
+  V07:
+    via: Freeze tolerance (frog)
+    mec: extracellular ice + glucose
+    escala: < 100 g
+    ventana: '{frog_days} days'
+    fallo: ectotherm biochemistry
+    e: V
+    deps:
+    - F11
+    - C4
+  V08:
+    via: Anoxia (adult turtle)
+    mec: metabolic depression + lactate buffering by shell and bones
+    escala: painted and snapping turtle
+    ventana: 4–5 months without O₂ at low temperature; frogs do not withstand even 1 week
+    fallo: acidosis; specific biochemistry
+    e: V
+    deps:
+    - F60
+    - C4
+  V18:
+    via: Natural supercooling (turtle hatchlings)
+    mec: integument that blocks ice entry + purging of nucleators; no antifreeze
+    escala: painted-turtle hatchling
+    ventana: winter
+    fallo: lactic acidosis from cardiac failure below 0 °C, even without freezing
+    e: V
+    deps:
+    - F33
+  V19:
+    via: Slow freezing of human neural tissue (MEDY)
+    mec: methylcellulose + EG + DMSO + ROCK inhibitor; −80 °C → liquid N₂
+    escala: 3 mm organoids and 2–3 mm human brain tissue (E2)
+    ventana: 1.5 years
+    fallo: fewer active electrodes; loading of ~20 min/mm
+    e: V
+    deps:
+    - F35
+  V23:
+    via: Ischemic tolerance of a hibernator in euthermia
+    mec: species biochemistry, without cold or torpor
+    escala: 'arctic ground squirrel: 8 min of cardiac arrest at 37 °C without neuronal injury (control rat yes)'
+    ventana: 8 min at 37 °C (×1.6 over the clinical human)
+    fallo: mechanism not identified ⇒ not yet transferable
+    e: V
+    deps:
+    - F58
+    - L15
+  V09:
+    via: Natural hibernation and torpor
+    mec: active hypometabolism; no arousals if body T ~30 °C (bears, tenrecs)
+    escala: arctic ground squirrel **at −2.9 °C without freezing and WITHOUT plasma antifreezes** (pure supercooling); **lemur *Cheirogaleus medius*, primate, measured in natural hibernacula (F90)**; bear
+    ventana: weeks to 7 months
+    fallo: arousals; no induction in large non-hibernators
+    e: V
+    deps:
+    - F10
+    - F88
+    - F90
+    - F67
+    - F73
+    cierra: 'closed in batch 55: the lemur moves from an abstract (F19) to its primary (F90, original paper with measurement in natural hibernaculum)'
+  V26:
+    via: Natural deep eutectic solvents (NADES)
+    mec: eutectic of natural metabolites; protects cells by N2 immersion
+    escala: L929 and HaCaT cell lines in cryovial, 50 % w/v
+    ventana: storage
+    fallo: '**MEASURED CCR > 30 °C/min** (they crystallize in DSC at 30 °C/min, F80) ⇒ **they do not scale**: they fall outside F1 and F2 by more than a factor of 70'
+    e: V
+    deps:
+    - F80
+    cierra: 'closed in batch 46: the missing CCR was published and rules out the route for large volumes'
+  V25:
+    via: Vitrification without cryoprotectant (electron cryomicroscopy)
+    mec: 'ultrafast cooling by immersion: the CCR of pure water is exceeded'
+    escala: 'layers of **~1.5–3 µm** (computed LC*: √(α·ΔT/CCR) ≈ 1.5 µm; cryo-EM practice: 100–200 nm); up to ~200 µm with high-pressure freezing (2000 bar); routine in structural biology'
+    ventana: indefinite
+    fallo: '**the thickness**: the route works without toxic chemistry but does not scale beyond microns (factor ×200 of LC = 4 cm)'
+    e: V
+    deps:
+    - F76
+  V10:
+    via: Synthetic torpor
+    mec: Q neurons, A1 agonist, H₂S
+    escala: mouse (−75 % for ~1 week)
+    ventana: ≤ 1 week
+    fallo: fails in pig, sheep and macaque; human trials with H₂S halted
+    e: V
+    deps:
+    - F12
+    - F13
+  V11:
+    via: Aestivation (lungfish *Protopterus annectens*)
+    mec: temperate hypometabolism
+    escala: fish
+    ventana: '**7–8 months** in the wild, depending on the length of the dry season; 6 months in the F91 experiment'
+    fallo: 'not a mammal and not a pause. **CORRECTION OF A DATUM OF OUR OWN (batch 55):** this route claimed **3–4 YEARS**, and **neither of the two primaries read supports it**: F90 says 7–8 months naturally and the aestivation review mentions episodes of 2 months. The figure came from F19, which were abstracts. **It is corrected downward, against the framework itself**, which is the honest direction. With 7–8 months the route remains a notable temperate hypometabolism, but **an order of magnitude less spectacular** than the network claimed'
+    e: V
+    deps:
+    - F91
+    cierra: closed in batch 55 against F91 (original research), correcting the window from 3–4 years to 7–8 months
+  V21:
+    via: Dielectric warming of organs
+    mec: electric field at 55 MHz, 800 W; heats water and CPA throughout the volume
+    escala: '13.9 g rabbit kidney at ~200 °C/min: 1 of 3 transplanted with NORMAL function, alive 17 months; pig ovary ~700 °C/min'
+    ventana: —
+    fallo: field uniformity below −60 °C; container shape
+    e: V
+    deps:
+    - F50
+  V22:
+    via: Rat heart vitrified + nanowarming
+    mec: nanoparticles through the vasculature + RF
+    escala: 'rat heart: no crystallization or cracks, endothelium intact, PARTIAL electrical activity'
+    ventana: —
+    fallo: no complete contractile function
+    e: V
+    deps:
+    - F51
+  V20:
+    via: Mouse brain vitrified in situ
+    mec: vascular perfusion with V3 (59 % w/v), −140 °C, >2.45 °C/s on cooling and >4.11 on warming
+    escala: whole mouse brain (~0.4 g); function measured in slices cut after rewarming; 1 of 3 protocols, N = 10
+    ventana: 1–8 days
+    fallo: low yield; no in vivo or behavioural proof; slices last 10–15 h
+    e: V
+    deps:
+    - F46
+  V12:
+    via: Vitrification of small volume
+    mec: glass < Tg
+    escala: 'gametes, embryos; C. elegans with memory; adult hippocampal slices with VM3: K⁺/Na⁺ 91–108 % of control and good or excellent ultrastructure'
+    ventana: years
+    fallo: toxicity; cold injury
+    e: V
+    deps:
+    - F29
+    - F37b
+  V13:
+    via: Vitrified organ + nanowarming
+    mec: VMP; 72 °C/min
+    escala: rat kidney 5/5 (100 days); rabbit kidney M22 1/2 (48 days, creatinine 6 mg/dL)
+    ventana: ≥ 100 days
+    fallo: CPA distribution in the medulla; toxicity
+    e: V
+    deps:
+    - F1
+    - F28
+  V14:
+    via: Physical glass at litre scale
+    mec: M22, annealing, 120 kW RF
+    escala: 3 L vitrified, 2 L rewarmed; no biological proof
+    ventana: —
+    fallo: cooling (L3)
+    e: V
+    deps:
+    - F2
+    - C3
+  V15:
+    via: Whole-body vitrification
+    mec: systemic vascular perfusion of CPA + physical vitrification and inductive volumetric rewarming (nanowarming)
+    escala: physics demonstrated at **litre scale (1.0–1.5 L)** with sIONPs and radiofrequency (Gangwar, Bischof, Finger et al. 2025, *Nat Commun* 16); complete biological human body not achieved
+    ventana: cryogenic storage below Tg
+    fallo: '**heterogeneity of microvascular perfusion in peripheral tissues and cumulative CPA toxicity**. The thermal conduction obstacle of C1 (impossibility of surface-rewarming a trunk of r ~15 cm) is resolved physically by nanowarming at litre scale (Bischof 2025), and the mechanical stresses of M22 are measured (Ehrlich, Fahy, Rabin 2025); the limiting failure is biological-vascular, not thermal'
+    e: V
+    deps:
+    - C1
+    - C3
+    - L43
+    cierra: 'closed 2026-09-27: all dependencies strong (C1, C3, L43) and primary literature at litre scale (Nat Commun 2025, ASME J Biomech Eng 2025)'
+  V16:
+    via: Cryonics
+    mec: CPA after legal death + −196 °C
+    escala: E0 partial; complete brain vitrification verified by CT **only** in cases with < 10 min between arrest and declaration (F16)
+    ventana: storage
+    fallo: '**Real τ_eq ≫ threshold, now with primary data:** in a documented real case (F69) legal declaration was completed ~1 h after arrest and **cryoprotectant perfusion did not begin until 4 h 40** ⇒ **~28 times above the <10 min required by the only protocol with verified vitrification**. In addition, failure of liquid N₂ during cooling (temporary depletion around hour 85, F69)'
+    e: V
+    deps:
+    - F16
+    - F69
+    cierra: 'closed in batch 49, two corrections. (1) UNNECESSARY DEPENDENCY: `F6` is removed. The four fields of this row are sustained by F16 [V] (threshold of <10 min and CT verification) and F69 [V] (chronology, 65 % w/v, CT, 36 % shrinkage, N₂ incidence); NONE comes from F6. The edge was a fossil: F6 was the Asterisk Mag popular article and in batch 46 it was replaced by McKenzie''s 2024 review on brain-structure histology, without rechecking the edge. Verified by searching for each claim of this row in the FULL TEXT of the F6 PDF (`es/20_cotas/auditoria_aristas_tanda49.py`): the only two mentions of cryonics in F6 are bibliographic. F6 is kept in the source table as a context reference. (2) OBSOLETE FIGURE: the failure said ''~90 min ⇒ an order of magnitude'', which is the arrival at the mortuary; batch 45 had already corrected in L21 that what counts for τ_eq is the start of perfusion, 4 h 40 ⇒ ~28×. The pathway layer had not been reaudited'
+  V17:
+    via: ASC (aldehyde-stabilized cryopreservation)
+    mec: aldehyde + 65 % EG + glass at −135 °C
+    escala: pig connectome (E0)
+    ventana: indefinite
+    fallo: '**irreversible BY DESIGN**: aldehyde fixation is not undone ⇒ it preserves structure, never function'
+    e: V
+    deps:
+    - F7
+    cierra: 'closed in batch 47: F7 is [V] and irreversibility is definitional, not an open unknown'
+preguntas:
+  Q1:
+    t: Magnitudes that separate stasis from death
+    a:
+    - G1
+    - G2
+    - G2b
+    - G3
+    - G4
+    - G5
+  Q2:
+    t: Is legal death the same as loss of information?
+    a:
+    - O2
+    - O4
+  Q3:
+    t: What counts as success?
+    a:
+    - O3
+  Q4:
+    t: Rates at which damaging ice forms
+    a:
+    - L1
+    - L3
+  Q5:
+    t: Why vitrification fails on scaling up
+    a:
+    - L1
+    - L3
+    - L6
+    - L22
+    - L23
+    - L29
+    - L30
+    - L31
+    - L32
+    - L34
+    - L43
+    - L44
+    - L45
+  Q6:
+    t: CPA toxicity
+    a:
+    - L6
+    - G4
+    - G4b
+    - L13
+    - L23
+    - L25
+    - L30
+    - L35
+  Q19:
+    t: 'Cold injury without ice: threshold and mitigation?'
+    a:
+    - G7
+    - L14
+  Q7:
+    t: Is thermal fracture a hard limit?
+    a:
+    - G3
+    - L38
+  Q20:
+    t: Is the ischemic tolerance of a euthermic hibernator transferable?
+    a:
+    - L15
+    - L4
+    - L27
+    - L36
+    - L39
+  Q8:
+    t: Safe DHCA
+    a:
+    - L2
+    - L9
+    - L24
+  Q9:
+    t: From minutes to hours or days
+    a:
+    - G1
+    - X1
+    - G7
+    - L14
+    - L15
+    - L40
+  Q23:
+    t: Functional recovery of a vitrified organ
+    a:
+    - O3
+    - G8
+    - L12
+  Q11:
+    t: Rat → human gap
+    a:
+    - L1
+    - L3
+    - L6
+    - L10
+    - X2
+    - L37
+    - L43
+  Q12:
+    t: Is spaceflight stasis the same as vitrification?
+    a:
+    - L2
+    - L4
+    - L8
+  Q13:
+    t: Power budget and single-point cabin failure
+    a:
+    - L8
+    - L28
+    - L33
+  Q14:
+    t: 'Cryonics: what is measured versus what is hoped'
+    a:
+    - O1
+    - L21
+  Q15:
+    t: Experiments that would falsify the connectome claim
+    a:
+    - P15
+    - G8
+    - P19
+  Q16:
+    t: Outside StasisPath
+    a:
+    - O1
+  Q17:
+    t: Clinical residual
+    a:
+    - O3
+    - G2
+    - L17
+  Q22:
+    t: What dose and what osmotic damage does a real cryopreserved brain receive?
+    a:
+    - L26
+    - L21
+    - G4
+  Q21:
+    t: What bounds the supercooling route?
+    a:
+    - L16
+    - G7
+    - L14
+    - L19
+    - L41
+  Q18:
+    t: Minimum falsifiable claim
+    a:
+    - P18
+preregistro:
+  fecha: '2026-09-26'
+  P15:
+    e: M
+    deps:
+    - G5
+    - F7
+    - F14
+    - F29
+    t: |
+      **P15: ¿Sobrevive el conectoma al protocolo criónico real?**
+      Diseño: cerebros de rata o cerdo, 4 brazos de retraso isquémico normotérmico antes de perfundir CPA (0, 1, 6 y 24 h) + −196 °C, frente a (i) ASC y (ii) un control fijado de inmediato. n ≥ 4 por brazo.
+      Variable primaria: fracción de axones y sinapsis trazables en segmentación EM **ciega** (≥ 3 volúmenes de 10⁴ µm³ de corteza y 1 de hipocampo por animal), normalizada al control.
+      Umbrales: **PASA ≥ 0.90** · **FALLA < 0.50** · entre ambos, inconcluso. Secundarias: grietas por µCT (fallo si hay alguna fractura > 1 mm que cruce la sustancia gris); artefactos de hielo en < 5 % de los campos.
+      Brazo de memoria (E2): *C. elegans* impronta con benzaldehído → vitrificación → índice de migración. PASA si el entrenado vitrificado no difiere del entrenado no vitrificado (IC 95 % de la diferencia dentro de ±20 %) **y** supera al no entrenado (p < 0.01) con n ≥ 6 ensayos. Estado actual del brazo de memoria: F29 (3.51 frente a 4.23, p = 0.305; no entrenados 1.34–2.00) cumple la dirección, pero **no informa el IC** ⇒ inconcluso según este criterio.
+      Falsación de la premisa: si el brazo de 0 h da < 0.90 o el de 6 h da < 0.50, la afirmación "el protocolo actual conserva el conectoma" queda falsada para ese retraso.
+    t_en: |
+      *(Non-binding English translation. The hash-locked original is the Spanish text in `es/red/stasispath.yaml`; if the two ever differ, the Spanish original governs.)*
+
+      **P15: Does the connectome survive the real cryonics protocol?**
+      Design: rat or pig brains, 4 arms of normothermic ischemic delay before perfusing CPA (0, 1, 6 and 24 h) + −196 °C, versus (i) ASC and (ii) an immediately fixed control. n ≥ 4 per arm.
+      Primary variable: fraction of traceable axons and synapses in **blind** EM segmentation (≥ 3 volumes of 10⁴ µm³ of cortex and 1 of hippocampus per animal), normalized to control.
+      Thresholds: **PASS ≥ 0.90** · **FAIL < 0.50** · in between, inconclusive. Secondary: cracks by µCT (failure if any fracture > 1 mm crosses grey matter); ice artefacts in < 5 % of fields.
+      Memory arm (E2): *C. elegans* imprinted with benzaldehyde → vitrification → migration index. PASS if the trained vitrified animals do not differ from trained non-vitrified ones (95 % CI of the difference within ±20 %) **and** exceed the untrained (p < 0.01) with n ≥ 6 assays. Current state of the memory arm: F29 (3.51 versus 4.23, p = 0.305; untrained 1.34–2.00) meets the direction, but **does not report the CI** ⇒ inconclusive under this criterion.
+      Falsification of the premise: if the 0 h arm gives < 0.90 or the 6 h arm gives < 0.50, the claim 'the current protocol preserves the connectome' is falsified for that delay.
+  P18:
+    e: M
+    deps:
+    - L1
+    - L2
+    - L3
+    - G1
+    - G2
+    - G3
+    - L5
+    t: |
+      **P18: afirmación falsable mínima DSNY 2026**
+      Para tejido ≥ 1 L, la pausa **reversible** de más de 24 h exige, a la vez: (a) T < Tg (≤ −125 °C) sin hielo detectable por µCT, **o** hielo sólo extracelular con f_hielo,intra = 0; (b) si hay vidrio: enfriamiento ≥ CCR del CPA en tejido; (c) si hay vidrio: recalentamiento volumétrico ≥ CWR con ΔT < 20 K; (d) τ_eq acumulado ≤ 12.5 min antes de la estabilización.
+      **Falsación:** un órgano ≥ 1 L con función de trasplante que sostenga la vida ≥ 30 días, o un mamífero ≥ 1 kg que recupere su comportamiento basal, tras más de 24 h de almacenamiento incumpliendo alguna condición de (a) a (d).
+      **Predicción de carrera (plazo 2031-12-31):** un órgano de tamaño humano (≥ 150 g) conservado por sobreenfriamiento o congelación parcial durante ≥ 5 días con función que sostenga la vida ≥ 30 días se publicará **antes** que cualquier órgano humano o porcino ≥ 150 g vitrificado con esa misma función. Falla si ocurre lo contrario o si ninguno ocurre (entonces, inconcluso).
+    t_en: |
+      *(Non-binding English translation. The hash-locked original is the Spanish text in `es/red/stasispath.yaml`; if the two ever differ, the Spanish original governs.)*
+
+      **P18: minimum falsifiable claim, StasisPath 2026** *(the frozen original uses the framework's prototype name, 'DSNY')*
+      For tissue ≥ 1 L, a **reversible** pause of more than 24 h requires, simultaneously: (a) T < Tg (≤ −125 °C) with no ice detectable by µCT, **or** only extracellular ice with f_ice,intra = 0; (b) if there is glass: cooling ≥ the CPA's CCR in tissue; (c) if there is glass: volumetric rewarming ≥ CWR with ΔT < 20 K; (d) cumulative τ_eq ≤ 12.5 min before stabilization.
+      **Falsification:** an organ ≥ 1 L with transplant function sustaining life ≥ 30 days, or a mammal ≥ 1 kg recovering its baseline behaviour, after more than 24 h of storage violating any condition from (a) to (d).
+      **Race prediction (deadline 2031-12-31):** a human-sized organ (≥ 150 g) preserved by supercooling or partial freezing for ≥ 5 days with function sustaining life ≥ 30 days will be published **before** any human or pig organ ≥ 150 g vitrified with that same function. It fails if the opposite occurs or if neither occurs (then, inconclusive).
+  P20:
+    e: M
+    deps:
+    - G5
+    - F56
+    - F47
+    - F7
+    t: |
+      **P20: ERL de tejido cerebral criopreservado SIN fijación previa (preregistrado antes de los datos)**
+      *Relación con P15:* **P15 no se toca y se evaluará con su umbral original (≥ 0.90 de trazabilidad frente a control), regla R2.** P20 añade, como criterio independiente, la métrica que la conectómica ya ha estandarizado. Ninguno de los dos tiene datos todavía, así que no hay reinterpretación posterior: son dos criterios registrados a la vez.
+      **Magnitud:** **ERL** (expected run length) = longitud media de neurita reconstruida sin error, en µm. Penaliza cortes y fusiones, a diferencia de un «% de sinapsis visibles».
+      **Diseño:** bloques corticales del mismo animal repartidos en 3 brazos: (A) fijación inmediata (control del laboratorio) · (B) **M22 sin fijación previa**, protocolo de F47 · (C) ASC (fijado, F7). ≥ 3 volúmenes de 10⁴ µm³ por brazo, segmentación automática idéntica en los tres y corrección humana ciega a la condición.
+      **Umbrales fijados ahora:** **PASA** si ERL(B) ≥ 0.50 · ERL(A) · **FALLA** si ERL(B) ≤ 0.10 · ERL(A). Entre ambos, **inconcluso**.
+      **Control de calidad:** ERL(A) debe alcanzar al menos el 30 % del estado del arte publicado (~1.1 mm, F56) con el mismo segmentador; si no, el experimento no es interpretable.
+      **Qué decide:** el brazo B es el único que interroga la premisa real de la criónica, porque es vitrificación **sin fijar**. Si B falla mientras C pasa, entonces lo que conserva el conectoma es la **fijación química**, no la vitrificación — y la vía de preservación informacional reversible queda refutada en su forma actual.
+    t_en: |
+      *(Non-binding English translation. The hash-locked original is the Spanish text in `es/red/stasispath.yaml`; if the two ever differ, the Spanish original governs.)*
+
+      **P20: ERL of cryopreserved brain tissue WITHOUT prior fixation (preregistered before the data)**
+      *Relation to P15:* **P15 is not touched and will be evaluated with its original threshold (≥ 0.90 traceability versus control), rule R2.** P20 adds, as an independent criterion, the metric that connectomics has already standardized. Neither has data yet, so there is no later reinterpretation: they are two criteria registered at the same time.
+      **Magnitude:** **ERL** (expected run length) = mean length of neurite reconstructed without error, in µm. It penalizes splits and mergers, unlike a '% of visible synapses'.
+      **Design:** cortical blocks from the same animal divided into 3 arms: (A) immediate fixation (laboratory control) · (B) **M22 without prior fixation**, F47 protocol · (C) ASC (fixed, F7). ≥ 3 volumes of 10⁴ µm³ per arm, identical automatic segmentation in all three and human correction blind to condition.
+      **Thresholds fixed now:** **PASS** if ERL(B) ≥ 0.50 · ERL(A) · **FAIL** if ERL(B) ≤ 0.10 · ERL(A). Between the two, **inconclusive**.
+      **Quality control:** ERL(A) must reach at least 30 % of the published state of the art (~1.1 mm, F56) with the same segmenter; otherwise the experiment is not interpretable.
+      **What it decides:** arm B is the only one that interrogates the real premise of cryonics, because it is vitrification **without fixation**. If B fails while C passes, then what preserves the connectome is **chemical fixation**, not vitrification — and the route of reversible informational preservation is refuted in its current form.
+  P19:
+    e: M
+    enmiendas: |
+      **Amendment 5 (2026-09-26, BEFORE any data) — standard parameters of the setup. Thresholds intact.**
+      P19 is now **fully specified and executable** in any slice-electrophysiology laboratory:
+      · **Cutting:** vibratome, **300–400 µm** slices, in cold sucrose solution (NaCl 60, sucrose 110, KCl 3, NaH₂PO₄ 1.25, NaHCO₃ 28, CaCl₂ 0.5, MgCl₂ 7, glucose 5, ascorbate 0.6 mM), pH 7.2–7.3, 290–310 mOsm/kg.
+      · **Recording:** ACSF (NaCl 124, KCl 3, NaH₂PO₄ 1.25, NaHCO₃ 26, CaCl₂ 2, MgSO₄ 1, glucose 10 mM), pH 7.3–7.4, gassed with 95 % O₂ / 5 % CO₂.
+      · **Signal:** fEPSP in CA1 stratum radiatum, stimulating Schaffer collaterals. Sampling **10–20 kHz**, low-pass filter 2–3 kHz. Baseline amplitude **0.5–1.5 mV**, set at **30–50 % of the maximum of the input-output curve**. Slope measured over the **initial 10–60 %** of the linear decay.
+      · **Presynaptic quality control:** paired-pulse facilitation, **ratio 1.3–1.8 at 50 ms**. If an arm falls outside that range, the slice is not interpretable.
+      · **LTP induction:** **100 Hz HFS for 1 s**, 1–3 trains (the same protocol F46 used: two trains 20 s apart). Measured **40–60 min later**.
+      **Check of the preregistered threshold:** the normal LTP range in this preparation is **130–200 % of baseline**. Our PASS threshold (≥ 130 %) coincides with **the lower edge of normal**, and the FAIL threshold (≤ 110 %) lies clearly outside it. ⇒ The thresholds we fixed before seeing data **are the correct ones for this preparation**, not arbitrary.
+      **The PASS/FAIL thresholds are not touched.**
+
+      **Amendment 4 (2026-09-26, BEFORE any data) — redundant arm withdrawn and question refocused. Thresholds intact.**
+      F72 shows that the concentration series is **already done** with V3 chemistry: at 65 % w/v (9.28 M, the molarity of M22) loaded **at 10 °C**, basal respiration falls by half. Repeating an 'M22 at 0/−10 °C' arm would only reconfirm that.
+      The decisive question of P19 is reformulated without touching thresholds: **does loading at −22 °C rescue the toxicity that high molarity causes when warm?** The contrast that answers it is arm C (M22 at −22 °C, amendment 1) against the already-published datum of 9.28 M at 10 °C.
+      **Basal respiration and reserve capacity** are added as a secondary measure, so that results can be compared directly with the F72 values (control 173.3 ± 6.7; 65 % at 10 °C, 80.4 ± 5.6).
+      **The PASS/FAIL thresholds are not touched.**
+
+      **Amendment 3 (2026-09-26, BEFORE any data) — loading protocol, thresholds intact.**
+      The PNAS supplement (F71) fixes the real protocol of arm B, which must be replicated as is for the positive control to be valid: loading in **steps of increasing concentration at 10 °C** with **LM5** carrier, slices on a 74 µm mesh insert, constant gassing with 95 % O₂ / 5 % CO₂ and 30 min of prior recovery.
+      In addition, the comparison turns out better defined than I had believed: **V3 is 8.42 M of permeating CPA and M22 is 9.3 M** — only a 10 % difference. The variables that truly separate the arms are **the ice blockers** (arm E) and **the loading temperature** (10 °C versus −22 °C, amendment 1), not the concentration.
+      **The PASS/FAIL thresholds are not touched.**
+
+      **Amendment 2 (2026-09-26, BEFORE any data) — additional arm, thresholds intact.**
+      The full PDF of Pichugin 2006 (F37b) shows that **V3 = VM3 without the two ice blockers** (L22): four components identical to the decimal, 59 % versus 61 % w/v. The original design compares V3 with M22, which differ **at once** in concentration, design temperature and blockers: three variables changing together.
+      **Arm E: VM3 at 61 %** is added, which isolates the effect of the blockers while keeping the base identical to V3. The series becomes stepped: V3 (59 %) → VM3 (61 %) → M22 (9.3 M, −22 °C).
+      Metric with an absolute reference value: the K⁺/Na⁺ control of untreated slices is **1.1–1.5**; recovery is reported as 100 × (treated/control).
+      **The PASS/FAIL thresholds are not touched.**
+
+      **Amendment 1 (2026-09-26, BEFORE any data) — correction of protocol, NOT of thresholds.**
+      The frozen text says only 'M22 at its working concentration'. F65 (Fahy 2004) shows that **M22 was designed to contact living tissue at −22 °C** and that at −3 °C its toxicity would be unacceptable; moreover, **adding it and removing it at −22 °C was uniformly fatal** in kidney, whereas perfusing it and **washing it out while warming** recovered full function. Running arm C at the usual slice temperature would produce a **false negative**: we would be measuring a badly applied protocol, not the chemistry.
+      Arm C is therefore run as follows: preload with VMP at 0 °C, transfer to **M22 at −22 °C**, and **washout simultaneous with warming**. Arm D (M22 without cooling) keeps its role of separating chemical toxicity from thermal damage, at the same loading temperature.
+      **The PASS/FAIL thresholds are not touched** (≥ 130 % and ≤ 110 %). This amendment lies outside the text signed by the hash, so that the original remains auditable.
+    deps:
+    - L13
+    - X2
+    - G8
+    - L6
+    - F46
+    - F52
+    - F47
+    t: |
+      **P19: ¿conserva la LTP un hipocampo vitrificado con una química que SÍ escala? (preregistrado antes de los datos)**
+      *Motivo:* X2 dice que no existe ningún punto con función y escala a la vez. Este experimento crea ese punto o demuestra que no existe.
+      **Diseño:** lonchas de hipocampo de ratón adulto de 350 µm (mismo protocolo que F46). Cuatro brazos, n ≥ 8 lonchas de ≥ 4 animales por brazo, registro ciego a la condición:
+      (A) control sin vitrificar · (B) **V3** (réplica de F46, control positivo) · (C) **M22** a su concentración de trabajo · (D) sólo carga y descarga de M22, sin enfriar (separa toxicidad química de daño térmico).
+      **Variable primaria:** LTP en SC-CA1 a los 60 min tras HFS, como % del fEPSP basal.
+      **Umbrales fijados ahora:** anclados en F46 (control 157.7 ± 7.1 %; V3 138.1 ± 6.9 %; diferencia no significativa, P = 0.072).
+      · **PASA** si el brazo C alcanza ≥ 130 % y no difiere de B (IC 95 % de la diferencia dentro de ±25 puntos porcentuales).
+      · **FALLA** si C ≤ 110 % (sin potenciación útil) mientras B ≥ 130 %.
+      · Entre 110 y 130 %, o con B fallido, **inconcluso** y no se reinterpreta.
+      **Diagnóstico que aporta el brazo D:** si D falla igual que C, el daño es **toxicidad química** y hay que rediseñar el CPA (por qv*, temperatura y protocolo de carga: L6). Si D pasa y C falla, el daño es **térmico o de desvitrificación** y se ataca con velocidad y uniformidad.
+      **Control de calidad:** el brazo B debe replicar F46 dentro de ±20 puntos porcentuales; si no, el experimento no es interpretable y se repite antes de leer C.
+      **Qué decide:** PASA ⇒ la vía física tiene salida: existe una química con función y con CCR compatible con escala humana (L3 admite CCR ≤ 0.425 °C/min en cerebro humano). FALLA ⇒ el cuello es químico y **P18 debería predecir que la congelación parcial o el sobreenfriamiento llegan antes que la vitrificación**, que es justamente lo que P18 ya predice.
+    t_en: |
+      *(Non-binding English translation. The hash-locked original is the Spanish text in `es/red/stasispath.yaml`; if the two ever differ, the Spanish original governs.)*
+
+      **P19: does a hippocampus vitrified with a chemistry that DOES scale preserve LTP? (preregistered before the data)**
+      *Motive:* X2 says there is no point with function and scale at once. This experiment creates that point or shows it does not exist.
+      **Design:** 350 µm adult mouse hippocampal slices (same protocol as F46). Four arms, n ≥ 8 slices from ≥ 4 animals per arm, recording blind to condition:
+      (A) unvitrified control · (B) **V3** (replica of F46, positive control) · (C) **M22** at its working concentration · (D) loading and unloading of M22 only, without cooling (separates chemical toxicity from thermal damage).
+      **Primary variable:** LTP in SC-CA1 at 60 min after HFS, as % of baseline fEPSP.
+      **Thresholds fixed now:** anchored in F46 (control 157.7 ± 7.1 %; V3 138.1 ± 6.9 %; difference not significant, P = 0.072).
+      · **PASS** if arm C reaches ≥ 130 % and does not differ from B (95 % CI of the difference within ±25 percentage points).
+      · **FAIL** if C ≤ 110 % (no useful potentiation) while B ≥ 130 %.
+      · Between 110 and 130 %, or with B failed, **inconclusive** and not reinterpreted.
+      **Diagnosis provided by arm D:** if D fails like C, the damage is **chemical toxicity** and the CPA must be redesigned (by qv*, temperature and loading protocol: L6). If D passes and C fails, the damage is **thermal or from devitrification** and is attacked with rate and uniformity.
+      **Quality control:** arm B must replicate F46 within ±20 percentage points; otherwise the experiment is not interpretable and is repeated before reading C.
+      **What it decides:** PASS ⇒ the physical route has an exit: a chemistry exists with function and with a CCR compatible with human scale (L3 admits CCR ≤ 0.425 °C/min in the human brain). FAIL ⇒ the bottleneck is chemical and **P18 should predict that partial freezing or supercooling arrive before vitrification**, which is precisely what P18 already predicts.
+  P21:
+    e: M
+    deps:
+    - L45
+    - C3
+    - C6
+    - F2
+    - exp_LC
+    t: |
+      **P21: ¿el exponente de la ley de enfriamiento se queda por debajo de 2.34? (preregistrado antes de los datos)**
+      *Motivo:* L45. Con los 3 volúmenes de F2 (1 grado de libertad) C3 se sostiene por poco y C6 sólo por el camino físico. Este experimento cierra ambos con datos o refuta C3.
+      **Montaje:** idéntico a F2 (misma cámara de convección y programa de aire, mismo modelo de bolsa, **M22**, termopar en el centro geométrico, tasa promediada en el mismo intervalo de temperatura que F2). V y A de cada bolsa se **miden** (no se suponen) y LC = V/A.
+      **Diseño (B′):** dos volúmenes nuevos, **~0.15 L (LC ≈ 0.8 cm, tamaño riñón) y ~7 L (LC ≈ 3.0 cm)**, con **3 bolsas independientes cada uno** (6 en total). Se ajusta ln(tasa) = a − n·ln(LC) con los 3 puntos de F2 y las 6 bolsas nuevas; el ruido se estima por **error puro de las réplicas** (4 grados de libertad).
+      **Control positivo:** una bolsa de **0.5 L** debe dar 1.4 °C/min ± 15 % (F2). Si no, el montaje no es el de F2 y no se lee nada más.
+      **Umbrales fijados ahora (unilaterales al 95 %):**
+      · **PASA** si la cota SUPERIOR de n < **2.34** ⇒ C3 y C6 certificadas con datos (C6 exige < 2.52).
+      · **FALLA** si la cota INFERIOR de n > **2.34** ⇒ **C3 refutada**: VMP podría vitrificar un riñón humano por convección.
+      · En otro caso, **inconcluso**, y no se reinterpreta.
+      **Comprobación directa en su escala:** la tasa media de las bolsas de 0.15 L debe quedar < 5.3 °C/min (CCR de VMP); si la supera, C3 queda refutada aunque el ajuste diga otra cosa.
+      **Potencia calculada antes de los datos** (20_cotas/cota_P21_potencia.py, ruido ±10 %): n real ≤ 2.0 ⇒ PASA 100 %; n = 2.2 ⇒ PASA 77 %, nunca FALLA; n = 2.5 ⇒ FALLA 45 %, nunca PASA; n = 2.8 ⇒ FALLA 100 %. **Cero falsos positivos y cero falsas refutaciones en toda la simulación.**
+      **Qué decide:** PASA ⇒ exp_LC sale de la lista de riesgo y L45 deja de depender del camino físico. FALLA ⇒ la frontera de viabilidad de F2/C3 se desplaza y hay que recalcular qué órganos admite VMP.
+    t_en: |
+      *(Non-binding English translation. The hash-locked original is the Spanish text in `es/red/stasispath.yaml`; if the two ever differ, the Spanish original governs.)*
+
+      **P21: does the cooling-law exponent stay below 2.34? (preregistered before the data)**
+      *Motive:* L45. With the 3 volumes of F2 (1 degree of freedom) C3 holds narrowly and C6 only by the physical route. This experiment closes both with data or refutes C3.
+      **Setup:** identical to F2 (same convection chamber and air programme, same bag model, **M22**, thermocouple at the geometric centre, rate averaged over the same temperature interval as F2). V and A of each bag are **measured** (not assumed) and LC = V/A.
+      **Design (B′):** two new volumes, **~0.15 L (LC ≈ 0.8 cm, kidney size) and ~7 L (LC ≈ 3.0 cm)**, with **3 independent bags each** (6 in total). ln(rate) = a − n·ln(LC) is fitted with the 3 points of F2 and the 6 new bags; the noise is estimated by the **pure error of the replicates** (4 degrees of freedom).
+      **Positive control:** a **0.5 L** bag must give 1.4 °C/min ± 15 % (F2). If not, the setup is not that of F2 and nothing else is read.
+      **Thresholds fixed now (one-sided at 95 %):**
+      · **PASS** if the UPPER bound of n < **2.34** ⇒ C3 and C6 certified with data (C6 requires < 2.52).
+      · **FAIL** if the LOWER bound of n > **2.34** ⇒ **C3 refuted**: VMP could vitrify a human kidney by convection.
+      · Otherwise, **inconclusive**, and not reinterpreted.
+      **Direct check at its own scale:** the mean rate of the 0.15 L bags must be < 5.3 °C/min (CCR of VMP); if it exceeds this, C3 is refuted whatever the fit says.
+      **Power computed before the data** (es/20_cotas/cota_P21_potencia.py, noise ±10 %): true n ≤ 2.0 ⇒ PASS 100 %; n = 2.2 ⇒ PASS 77 %, never FAIL; n = 2.5 ⇒ FAIL 45 %, never PASS; n = 2.8 ⇒ FAIL 100 %. **Zero false positives and zero false refutations across the whole simulation.**
+      **What it decides:** PASS ⇒ exp_LC leaves the risk list and L45 ceases to depend on the physical route. FAIL ⇒ the viability frontier of F2/C3 shifts and it must be recomputed which organs VMP admits.
+rumbo:
+  meta: 98.0
+mediciones_P21: []
+dimensiones:
+  T:
+    nombre: Temperature
+    u: °C
+    capa: thermal / metabolic (C2)
+  t:
+    nombre: Pause duration
+    u: min
+    capa: storage
+  masa:
+    nombre: System mass
+    u: g
+    capa: scale (C1, C3); LC = r/3 of an aqueous sphere
+  tau:
+    nombre: Equivalent ischemia τ_eq
+    u: min at 37 °C
+    capa: ischemia (G1); derived from T and t
+  fase:
+    nombre: Phase of water
+    u: ''
+    capa: ice / glass (G2, G3)
+  E:
+    nombre: Success E0–E5
+    u: ''
+    capa: ontology (O3)
+  info:
+    nombre: Information preserved
+    u: ''
+    capa: ontology (O2, O4)
+  CCR:
+    nombre: CPA CCR
+    u: °C/min
+    capa: chemistry (C3, C8)
+  tox:
+    nombre: CPA toxicity
+    u: ''
+    capa: chemistry (G4); no quantitative scale
+meta_punto:
+  label: 'GOAL: human, 1 year'
+  masa: 70000
+  t: 525600
+  E: 5
+  info: 'yes'
+puntos:
+  p01:
+    label: Human DHCA 15 °C
+    f: F4
+    T: 15
+    t: 31
+    masa: 70000
+    fase: liquid
+    E: 5
+    info: 'yes'
+    clase: hypothermia
+    flujo: zero
+    artificial: true
+  p02:
+    label: Human DHCA 10 °C
+    f: F4
+    T: 10
+    t: 45
+    masa: 70000
+    fase: liquid
+    E: 5
+    info: 'yes'
+    clase: hypothermia
+    flujo: zero
+    artificial: true
+  p03:
+    label: Dog, cold flush
+    f: F30
+    T: 10
+    t: 120
+    masa: 20000
+    fase: liquid
+    E: 4
+    info: 'yes'
+    clase: hypothermia
+    flujo: zero
+    artificial: true
+  p24:
+    label: Pig 60 min at 10 °C
+    f: F42
+    T: 10
+    t: 60
+    masa: 40000
+    fase: liquid
+    E: 4
+    info: 'yes'
+    clase: hypothermia
+    flujo: zero
+    artificial: true
+  p25:
+    label: Mouse hippocampus (LTP)
+    f: F46
+    T: -150
+    t: 10080
+    masa: 0.02
+    fase: glass
+    E: 2
+    info: 'yes'
+    clase: glass
+    flujo: zero
+    artificial: true
+  p26:
+    label: Mouse brain in situ
+    f: F46
+    T: -140
+    t: 11520
+    masa: 0.4
+    fase: glass
+    E: 1
+    info: partial
+    clase: glass
+    flujo: zero
+    artificial: true
+  p27:
+    label: Rabbit kidney (dielectric)
+    f: F50
+    T: -130
+    t: null
+    masa: 13.9
+    fase: glass
+    E: 3
+    info: n/a
+    clase: glass
+    flujo: zero
+    artificial: true
+  p04:
+    label: Dog 12.5 min
+    f: F25b
+    T: 37
+    t: 12.5
+    masa: 20000
+    fase: liquid
+    E: 4
+    info: 'yes'
+    clase: normothermia
+    flujo: zero
+    artificial: true
+  p05:
+    label: Dog 17 min (deficit)
+    f: F25
+    T: 37
+    t: 17
+    masa: 20000
+    fase: liquid
+    E: 4
+    info: partial
+    clase: normothermia
+    flujo: zero
+    artificial: true
+  p06:
+    label: Cat 60 min (brain only)
+    mecanismo: reperfusion
+    f: F38
+    T: 37
+    t: 60
+    masa: 3000
+    fase: liquid
+    E: 4
+    info: partial
+    clase: normothermia
+    flujo: zero
+    artificial: true
+  p07:
+    label: BrainEx 4 h
+    mecanismo: reperfusion
+    f: F23
+    T: 37
+    t: 240
+    masa: 180
+    fase: liquid
+    E: 1
+    info: unknown
+    clase: cellular
+    flujo: zero
+    artificial: true
+  p08:
+    label: OrganEx 1 h
+    mecanismo: reperfusion
+    f: F24
+    T: 37
+    t: 60
+    masa: 30000
+    fase: liquid
+    E: 1
+    info: unknown
+    clase: cellular
+    flujo: zero
+    artificial: true
+  p09:
+    label: Accidental hypothermia 13.7 °C
+    f: F13
+    T: 13.7
+    t: 412
+    masa: 70000
+    fase: liquid
+    E: 5
+    info: 'yes'
+    clase: low_flow
+    flujo: low
+    artificial: true
+  p10:
+    label: Human liver −4 °C
+    f: F8
+    T: -4
+    t: 1620
+    masa: 1500
+    fase: supercooled
+    E: 2
+    info: n/a
+    clase: controlled_phase
+    flujo: zero
+    artificial: true
+  p11:
+    label: Pig kidney, subzero
+    f: F20
+    T: -0.5
+    t: 2880
+    masa: 200
+    fase: supercooled
+    E: 3
+    info: n/a
+    clase: controlled_phase
+    flujo: zero
+    artificial: true
+  p12:
+    label: Isochoric pig liver
+    f: F22
+    T: -2
+    t: 2880
+    masa: 1500
+    fase: supercooled
+    E: 1
+    info: n/a
+    clase: controlled_phase
+    flujo: zero
+    artificial: true
+  p13:
+    label: Rat liver, partial freezing
+    f: F21
+    T: -15
+    t: 14400
+    masa: 12
+    fase: extra_ice
+    E: 2
+    info: n/a
+    clase: controlled_phase
+    flujo: zero
+    artificial: true
+  p14:
+    label: Vitrified rat kidney
+    f: F1
+    T: -150
+    t: 144000
+    masa: 1.5
+    fase: glass
+    E: 3
+    info: n/a
+    clase: glass
+    flujo: zero
+    artificial: true
+    CCR: 5.4
+  p15:
+    label: Rabbit kidney M22
+    f: F28
+    T: -130
+    t: null
+    masa: 12.7
+    fase: glass
+    E: 3
+    info: n/a
+    clase: glass
+    flujo: zero
+    artificial: true
+    CCR: 0.1
+  p16:
+    label: C. elegans (memory)
+    f: F29
+    T: -196
+    t: 30
+    masa: 1.0e-06
+    fase: glass
+    E: 2
+    info: 'yes'
+    clase: glass
+    flujo: zero
+    artificial: true
+  p17:
+    label: MEDY organoids
+    f: F35
+    T: -196
+    t: 788400
+    masa: 0.014
+    fase: extra_ice
+    E: 2
+    info: partial
+    clase: controlled_phase
+    flujo: zero
+    artificial: true
+  p18:
+    label: Alaskan frog
+    f: F11
+    T: -6.3
+    t: 277920
+    masa: 10
+    fase: extra_ice
+    E: 4
+    info: 'yes'
+    clase: natural
+    flujo: zero
+    artificial: false
+  p19:
+    label: Turtle (anoxia)
+    f: F60
+    T: 3
+    t: 254880
+    masa: 300
+    fase: liquid
+    E: 4
+    info: 'yes'
+    clase: natural
+    flujo: low
+    artificial: false
+  p20:
+    label: Arctic ground squirrel (bout)
+    f: F10
+    T: -3
+    t: 30240
+    masa: 800
+    fase: supercooled
+    E: 4
+    info: 'yes'
+    clase: natural
+    flujo: low
+    artificial: false
+  p21:
+    label: Lungfish
+    f: F91
+    T: 25
+    t: 1840000
+    masa: 1000
+    fase: liquid
+    E: 4
+    info: 'yes'
+    clase: natural
+    flujo: low
+    artificial: false
+  p22:
+    label: VM3 hippocampal slices
+    f: F37b
+    T: null
+    t: null
+    masa: 0.01
+    fase: glass
+    E: 2
+    info: unknown
+    clase: glass
+    flujo: zero
+    artificial: true
+  p28:
+    label: Real cryonics case P-19
+    f: F69
+    T: -196
+    t: null
+    masa: 1400
+    fase: glass
+    E: 0
+    info: partial
+    clase: glass
+    flujo: zero
+    artificial: true
+  p23:
+    label: ASC, pig brain
+    f: F7
+    T: -135
+    t: null
+    masa: 180
+    fase: glass
+    E: 0
+    info: 'yes'
+    clase: glass
+    flujo: zero
+    artificial: true
+cpas:
+  VMP:
+    CCR: 5.4
+    M: 8.4
+    tox_rango: 1
+    f: F3
+  VS55:
+    CCR: 2.5
+    M: 8.4
+    tox_rango: 2
+    f: F3
+  M22:
+    CCR: 0.1
+    M: 9.3
+    tox_rango: 3
+    f: F2
+humano:
+  masa: 70000
+  brain: 1400
+brechas:
+  B1:
+    nombre: Tolerable entry ischemia (E ≥ 4, information intact)
+    via:
+    - fisica
+    - biologica
+    modo: mayor
+    meta: 5
+    base: 1
+    u: min τ_eq
+    agregado: mediana
+    nota: Goal = no-flow delay of an elective entry with extracorporeal circulation [P].
+    obs:
+    - e: human (DHCA)
+      v: 5
+      M: 70000
+      b: 0
+      f: F4
+    - e: dog (37 °C)
+      v: 12.5
+      M: 20000
+      b: 0
+      f: F25b
+    - e: dog (10 °C flush)
+      v: 12.7
+      M: 20000
+      b: 0
+      f: F30
+  B2:
+    nombre: Storage duration with organ function (E ≥ 3)
+    via:
+    - fisica
+    modo: mayor
+    meta: 525600
+    base: 1
+    u: min
+    agregado: max
+    nota: 'F57 (pig and human kidney, partial freezing, 10 days) is NOT credited here: function is evaluated by simulated, not real, transplantation ⇒ it is not E3. It is reflected in V06 and in L5.'
+    obs:
+    - e: rat (vitrified kidney)
+      v: 144000
+      M: 1.5
+      b: 0
+      f: F1
+    - e: pig (subzero kidney)
+      v: 2880
+      M: 200
+      b: 0
+      f: F20
+    - e: rat (liver, partial freezing; E2)
+      v: 14400
+      M: 12
+      b: 0
+      f: F21
+  B2n:
+    nombre: Storage duration of human neural tissue (E2)
+    via:
+    - fisica
+    modo: mayor
+    meta: 525600
+    base: 1
+    u: min
+    agregado: max
+    obs:
+    - e: human (MEDY organoids)
+      v: 788400
+      M: 0.014
+      b: 0
+      f: F35
+    - e: C. elegans (memory)
+      v: 30
+      M: 1.0e-06
+      b: 0
+      f: F29
+  B3:
+    nombre: Mass vitrified and rewarmed without cracks (physics)
+    via:
+    - fisica
+    modo: mayor
+    meta: 70000
+    base: 0.001
+    u: g
+    agregado: max
+    obs:
+    - e: M22 bag (rewarmed)
+      v: 2000
+      M: 2000
+      b: 0
+      f: F2
+    - e: pig liver (vitrified)
+      v: 1000
+      M: 1000
+      b: 0
+      f: F2
+  B4:
+    nombre: Mass vitrified with function after transplant
+    via:
+    - fisica
+    modo: mayor
+    meta: 70000
+    base: 0.001
+    u: g
+    agregado: max
+    nota: 'Wowk 2025 surpasses Fahy 2009 not in mass (13.9 versus 12.7 g) but in QUALITY: normal clinical function (creatinine < 2 mg/dL) and recipient alive 17 months, versus partial function 48 days.'
+    obs:
+    - e: rabbit (kidney, dielectric, NORMAL function, 17 months)
+      v: 13.9
+      M: 13.9
+      b: 0
+      f: F50
+    - e: rabbit (M22 kidney, partial)
+      v: 12.7
+      M: 12.7
+      b: 0
+      f: F28
+    - e: rat (VMP kidney)
+      v: 1.5
+      M: 1.5
+      b: 0
+      f: F1
+  B5:
+    nombre: CPA CCR versus the one required at the centre of the trunk
+    via:
+    - fisica
+    modo: menor
+    meta: C3.rate_trunk
+    base: 5.4
+    u: °C/min
+    agregado: min
+    obs:
+    - e: M22
+      v: 0.1
+      M: 1
+      b: 0
+      f: F2
+    - e: VS55
+      v: 2.5
+      M: 1
+      b: 0
+      f: F3
+    - e: VMP
+      v: 5.4
+      M: 1
+      b: 0
+      f: F3
+  B6:
+    nombre: Volume with uniform nanowarming
+    via:
+    - fisica
+    modo: mayor
+    meta: 70000
+    base: 0.001
+    u: g
+    agregado: max
+    nota: 'Power (linear rule of three, P ∝ mass × rate): 120 kW × (70/2) × (CWR_M22/88) ≈ {pot70} kW for 70 kg ⇒ **power does not limit**; what limits is the volume with uniform field.'
+    obs:
+    - e: M22 bag 2 L
+      v: 2000
+      M: 2000
+      b: 0
+      f: F2
+    - e: rat (kidney)
+      v: 1.5
+      M: 1.5
+      b: 0
+      f: F1
+    - e: pig (arteries and valves, 50 mL, viability = control)
+      v: 50
+      M: 50
+      b: 0
+      f: F41
+  B7:
+    nombre: CPA loading at scale without damage (no function test)
+    via:
+    - fisica
+    modo: mayor
+    meta: 70000
+    base: 0.001
+    u: g
+    agregado: max
+    obs:
+    - e: pig/human (kidney, 150–220 g)
+      v: 220
+      M: 220
+      b: 0
+      f: F31
+    - e: pig (1 L liver)
+      v: 1000
+      M: 1000
+      b: 0
+      f: F2
+  B8a:
+    nombre: Brain tissue with MEASURED FUNCTION after vitrification (LTP or electrophysiology)
+    via:
+    - fisica
+    modo: mayor
+    meta: 1400
+    base: 0.001
+    u: g of tissue with measured function
+    agregado: max
+    nota: 'Criterion: mass of the tissue in which function was MEASURED. **Suda 1966/1974 is marked DISPUTED**: it is freezing (not vitrification), the EEG recovery is partial and the field''s criticism is that freezing loses synapses. The module computes the gap with and without it. German 2026 vitrifies the whole mouse brain in situ, but the electrophysiology is done in slices cut after rewarming ⇒ here the mass of the slice counts (350 µm, ~0.02 g [P]). The whole brain counts in B8b. No behavioural test in any case.'
+    obs:
+    - e: mouse (slices, LTP 138 % vs 158 % control, n.s.)
+      v: 0.02
+      M: 0.02
+      b: 0
+      f: F46
+    - e: cat (whole brain FROZEN, partial EEG) [DISPUTED]
+      v: 30
+      M: 30
+      b: 0
+      f: F48
+      disputado: true
+    - e: rat (VM3 slices, K+/Na+)
+      v: 0.01
+      M: 0.01
+      b: 0
+      f: F37b
+    - e: human (MEDY tissue, partial network)
+      v: 0.02
+      M: 0.02
+      b: 0
+      f: F35
+  B8b:
+    nombre: Whole brain vitrified unfixed, with STRUCTURE preserved
+    via:
+    - fisica
+    modo: mayor
+    meta: 1400
+    base: 0.001
+    u: g of whole brain
+    agregado: max
+    nota: 'ASC preserves whole brains (pig, 180 g) with traceable connectome, but FIXES the tissue ⇒ irreversible by design: it does not count here. Fahy 2026 is a preprint [P]: rabbit (~10 g) and pig (~180 g) with M22 without prior fixation, no function tests; osmotic damage (shrinkage).'
+    obs:
+    - e: mouse (whole brain in situ, 1 of 3 protocols)
+      v: 0.4
+      M: 0.4
+      b: 0
+      f: F46
+    - e: pig (M22 unfixed, structure only)
+      v: 180
+      M: 180
+      b: 0
+      f: F47
+  B9:
+    nombre: Mammalian organism in artificial pause revived (E ≥ 4)
+    via:
+    - fisica
+    modo: mayor
+    meta: 525600
+    base: 1
+    u: min
+    agregado: max
+    obs:
+    - e: dog (10 °C flush)
+      v: 120
+      M: 20000
+      b: 0
+      f: F30
+    - e: human (13.7 °C, low flow)
+      v: 412
+      M: 70000
+      b: 0
+      f: F13
+    - e: cat (brain only)
+      v: 60
+      M: 3000
+      b: 0
+      f: F38
+    - e: pig (10 °C, no cognitive deficit)
+      v: 60
+      M: 40000
+      b: 0
+      f: F42
+  B10m:
+    nombre: 'Induced torpor in a non-hibernator: mass of the largest animal'
+    via:
+    - biologica
+    modo: mayor
+    meta: 70000
+    base: 0.001
+    u: g
+    agregado: max
+    nota: In macaque, pig and sheep it was attempted without real torpor ⇒ they do not count. Adult rat mass ~300 g [P] (not in the abstracts).
+    obs:
+    - e: mouse (Q neurons)
+      v: 30
+      M: 30
+      b: 0
+      f: F43
+    - e: rat (rostral ventromedial medulla, 6 h)
+      v: 300
+      M: 300
+      b: 0
+      f: F44
+    - e: rat (ultrasound)
+      v: 300
+      M: 300
+      b: 0
+      f: F45
+  B10t:
+    nombre: 'Induced torpor in a non-hibernator: duration'
+    via:
+    - biologica
+    modo: mayor
+    meta: 525600
+    base: 1
+    u: min
+    agregado: max
+    obs:
+    - e: mouse (Q neurons, ~1 week)
+      v: 10080
+      M: 30
+      b: 0
+      f: F12
+    - e: mouse (ultrasound, > 24 h)
+      v: 1440
+      M: 30
+      b: 0
+      f: F45
+    - e: rat (6 h)
+      v: 360
+      M: 300
+      b: 0
+      f: F44
+  B11:
+    nombre: Energy autonomy of torpor (Kleiber projection)
+    via:
+    - biologica
+    modo: mayor
+    meta: 525600
+    base: 1
+    u: min
+    agregado: mediana
+    nota: 'If it could be induced, the reserves suffice: autonomy ∝ M^0.25. Lemur mass ~0.2 kg [P].'
+    obs:
+    - e: lemur Cheirogaleus (7 months)
+      v: 302400
+      M: 200
+      b: 0.25
+      f: F90
+    - e: arctic ground squirrel (9-month season)
+      v: 388800
+      M: 800
+      b: 0.25
+      f: F10
+    - e: 'human (C5: 20 kg of fat at 25 %)'
+      v: 525600
+      M: 70000
+      b: 0
+      f: F13
+exposiciones:
+  x1:
+    cpa: VMP
+    M: 8.4
+    T: -3
+    t: null
+    masa: 12.7
+    res: 3
+    sistema: rabbit kidney
+    f: F39
+  x2:
+    cpa: M22 (washed out on warming)
+    M: 9.3
+    T: -22
+    t: 25
+    masa: 12.7
+    res: 3
+    sistema: rabbit kidney
+    f: F39
+  x3:
+    cpa: M22 (added and removed at −22 °C)
+    M: 9.3
+    T: -22
+    t: null
+    masa: 12.7
+    res: 1
+    sistema: rabbit kidney
+    f: F39
+  x4:
+    cpa: 8.4 M, predating qv*-guided design
+    M: 8.4
+    T: -3
+    t: null
+    masa: 12.7
+    res: 0
+    sistema: rabbit kidney
+    f: F26
+  x5:
+    cpa: VM3 (61 % w/v)
+    M: null
+    T: null
+    t: null
+    masa: 0.01
+    res: 3
+    sistema: hippocampal slices
+    f: F37b
+  x6:
+    cpa: V(EG) 53 % w/v
+    M: null
+    T: null
+    t: null
+    masa: 0.01
+    res: 1
+    sistema: hippocampal slices
+    f: F37b
+  x7:
+    cpa: VS55
+    M: 8.4
+    T: null
+    t: null
+    masa: 1.5
+    res: 1
+    sistema: rat kidney
+    f: F1
+  x8:
+    cpa: VMP
+    M: 8.4
+    T: null
+    t: null
+    masa: 1.5
+    res: 3
+    sistema: rat kidney
+    f: F1
+  x9:
+    cpa: EG + DMSO (isotonic vehicle)
+    M: null
+    T: null
+    t: null
+    masa: 200
+    res: 2
+    sistema: pig and human kidney
+    f: F31
+organos:
+  kidney: 150
+  heart: 300
+  liver: 1500
+  brain: 1400
+  whole_body: 70000
+  pancreas: 90
+derivadas:
+  LC_esfera:
+    expr: 'lambda m: (3*m/(4*math.pi))**(1/3)/3'
+    tipo: fn
+    u: cm
+    d: LC of an aqueous sphere of mass m (g)
+  tasa_conv:
+    expr: 'lambda LC: anc_rate*(anc_LC/LC)**exp_LC'
+    tipo: fn
+    u: °C/min
+    d: convective cooling at the centre (C3)
+  b_CCR:
+    expr: (math.log10(CCR_M22) - (math.log10(CCR_VS55)+math.log10(CCR_VMP))/2) / (9.3-8.4)
+    u: decades/M
+    d: local slope of log10(CCR) versus molarity
+  a_CCR:
+    expr: (math.log10(CCR_VS55)+math.log10(CCR_VMP))/2 - b_CCR*8.4
+    u: ''
+    d: intercept of the CCR-molarity line
+  M_de_CCR:
+    expr: 'lambda ccr: (math.log10(ccr) - a_CCR)/b_CCR'
+    tipo: fn
+    u: mol/L
+    d: molarity required for a given CCR
+  M_toxico:
+    expr: '9.28'
+    u: mol/L
+    d: molarity at which basal respiration halves
+  LC_viable:
+    expr: next(i/100 for i in range(25,2000) if M_de_CCR(tasa_conv(i/100)) > M_toxico)
+    u: cm
+    d: critical LC of F2
+  masa_viable:
+    expr: 4/3*math.pi*(3*LC_viable)**3/1000
+    u: kg
+    d: critical mass of F2
+  tasa_canal:
+    expr: 36.0/(15.5*60)
+    u: °C/min
+    d: beef half-carcass, 40->4 °C in 15.5 h (F79)
+  razon_canal:
+    expr: tasa_canal/tasa_conv(7.5)
+    u: ''
+    d: measured/predicted at the 150 kg scale
+  limite_LNG:
+    expr: 9.0/60
+    u: °C/min
+    d: industrial cooling limit without structural damage (F84)

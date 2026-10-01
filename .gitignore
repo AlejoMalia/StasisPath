@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+build/
+dist/
+.venv/
+
+# Third-party PDFs (copyrighted): kept locally, never published
+10_fuentes/pdf/
+es/10_fuentes/pdf/
+*.pdf
+!PAPER_STASISPATH_EN.pdf
+!PAPER_STASISPATH_ES.pdf
+.pytest_cache/

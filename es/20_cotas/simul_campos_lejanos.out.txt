@@ -1,0 +1,45 @@
+progreso replicado = 94.58 %
+
+-- estatus declarado / efectivo del cluster --
+  L29: declarado P . efectivo P
+  L31: declarado P . efectivo P
+  L32: declarado P . efectivo P
+  L34: declarado P . efectivo P
+  L35: declarado V . efectivo V
+  L36: declarado P . efectivo P
+  L38: declarado P . efectivo P
+  L39: declarado P . efectivo P
+  F74: declarado P . efectivo P
+  F76: declarado P . efectivo P
+  F77: declarado P . efectivo P
+  F79: declarado P . efectivo P
+  F81: declarado P . efectivo P
+  F83: declarado P . efectivo P
+  F84: declarado P . efectivo P
+
+-- valor de cada cierre individual (declaracion -> V) --
+  L29 -> V : +0.00
+  L31 -> V : +0.00
+  L32 -> V : +0.00
+  L34 -> V : +0.00
+  L35 -> V : +0.00
+  L36 -> V : +0.00
+  L38 -> V : +0.00
+  L39 -> V : +0.00
+  F74 -> V : +0.00
+  F76 -> V : +0.00
+  F77 -> V : +0.00
+  F79 -> V : +0.00
+  F81 -> V : +0.00
+  F83 -> V : +0.00
+  F84 -> V : +0.00
+
+-- preguntas que dependen del cluster --
+  Q5 (Por qué falla la vitrificación al escala) efectivo P <- ['L1', 'L3', 'L6', 'L22', 'L23', 'L29', 'L30', 'L31', 'L32', 'L34', 'L43', 'L44', 'L45']
+  Q6 (Toxicidad del CPA) efectivo P <- ['L6', 'G4', 'G4b', 'L13', 'L23', 'L25', 'L30', 'L35']
+  Q7 (¿Rajado térmico = límite duro?) efectivo P <- ['G3', 'L38']
+  Q20 (¿Es transferible la tolerancia isquémica) efectivo P <- ['L15', 'L4', 'L27', 'L36', 'L39']
+
+-- cierre propuesto en la tanda 49: L35 sin L29 y declarada V --
+  total 94.58 % (+0.00)
+  Q6 efectivo: P -> P

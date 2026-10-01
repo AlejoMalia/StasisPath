@@ -1,0 +1,56 @@
+TANDA 49 - COTAS CON NUMEROS del cluster de campos lejanos (TRIADA, paso 2).
+
+Dos cotas, ambas aritmetica pura sobre datos que YA estan en la red:
+
+ (A) L35 - NADES: el compromiso toxicidad<->vitrificacion queda cerrado por los DOS lados
+     con una sola primaria (F80 [V], PDF leido en la tanda 46 y releido en la 49).
+ (B) L31 - vitrificacion SIN crioprotector: el dato de F76 se cruza con el que ya estaba
+     dentro del PDF de F6 (McKenzie 2024, pag. 8 y 13, citando a Studer et al. 2014) y que
+     nadie habia extraido. Corrige por lo alto el techo de espesor que L31 tenia escrito.
+
+Ningun umbral, valor central ni rango se toca (R2). No se inventa ningun dato (R5).
+Uso: python3 20_cotas/cota_campos_lejanos.py
+
+==============================================================================
+
+(A) L35 - NADES: distancia a la CCR que exige un cerebro humano
+
+  CCR de los NADES al 50 % p/v      > 30.0 C/min   (F80, DSC)
+  CCR que exige un cerebro humano  <= 0.426 C/min  (C3/L44, mate)
+  => faltan al menos un factor 70.4  =  1.85 decadas
+
+  Los dos lados del compromiso, medidos en el MISMO articulo:
+    lado vitrificacion: al 50 % p/v la CCR falla por un factor >= 70
+    lado toxicidad    : por encima del 50 % p/v los autores declaran 'high toxicity'
+  => para cerrar las 1.85 decadas habria que SUBIR la concentracion por encima
+     de un valor que la propia primaria llama toxico. El compromiso esta INTACTO.
+  Nota: NO se convierte 50 % p/v a molaridad, porque los NADES son mezclas de
+        masa molar variable y hacerlo exigiria suponer una composicion (R5).
+
+==============================================================================
+
+(B) L31 - vitrificar SIN crioprotector: cruce de F76 con el PDF de F6
+
+  F76, medida directa (cero hielo)        : 6.40e+06 K/s
+  F76, extrapolacion a <1 % de hielo      : 2.50e+05 K/s
+  F6/Studer 2014, tejido sin CPA          : 2.00e+05 K/s
+  => las dos cifras practicas coinciden dentro de un factor 1.25
+  => la cifra de cero hielo es 26x mas exigente que la practica
+
+  espesor: cryo-EM 3 um · inmersion en tejido 20 um · alta presion 200 um
+  el techo mas alto sin CPA (200 um) esta a un factor 200 de LC = 4 cm
+  y en velocidad (tasa ~ 1/LC^2, C3): factor 4.0e+04
+  la alta presion (2000 bar) compra un factor 100 de CCR:
+    2.0e+05 K/s -> 2.0e+03 K/s, que sigue estando a
+    2.8e+05 del umbral del cerebro (0.426 C/min)
+
+  => CONCLUSION de (B): el techo de espesor sin crioprotector no es ~3 um sino
+     10-20 um por inmersion y ~200 um con alta presion. La via sigue sin escalar
+     (factor 200 en espesor, 4e4 en velocidad), asi que NINGUN veredicto cambia:
+     es una correccion de una imprecision propia, al alza, del patron L33.
+     Y deja una palanca sin catalogar en el marco: la PRESION como variable que
+     baja la CCR x100 (F6/Studer). No se cablea como dependencia de nadie porque
+     el dato viene de una revision [P] citando a un tercero.
+
+==============================================================================
+TODAS LAS ASERCIONES PASAN. Ningun umbral movido; ningun dato inventado.

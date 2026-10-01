@@ -1,0 +1,7 @@
+objeto                                    LC cm tasa C/min  M22  VS55(tejido)  VMP
+riñón humano (~0.15 L)                      1.0      2.275   OK       OK        NO
+corazón/riñón en 1 L                        1.4      1.161   OK       OK        NO
+hígado humano (~1.5 L)                      1.8      0.702   OK       NO        NO
+cabeza (esfera r~9 cm, LC=r/3)              3.0      0.253   OK       NO        NO
+cuerpo entero (V=0.07 m3, A=1.8 m2)         3.9      0.150   OK       NO        NO
+tronco (cilindro r~15 cm, LC=r/2)           7.5      0.040   NO       NO        NO

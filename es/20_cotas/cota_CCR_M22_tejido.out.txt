@@ -1,0 +1,113 @@
+============================================================================================================
+COTA CCR_M22: qué se cae si el valor en TEJIDO fuera menor que el de F2 (bolsas). R2: no se mueve nada.
+============================================================================================================
+
+1. TASAS DE ENFRIAMIENTO (valores centrales, no dependen de CCR_M22)
+   riñón humano         LC =  0.880 cm   tasa =  2.93750 °C/min
+   cerebro (1400 g)     LC =  2.313 cm   tasa =  0.42510 °C/min
+   cuerpo medio         LC =  3.900 cm   tasa =  0.14956 °C/min
+   tronco               LC =  7.500 cm   tasa =  0.04044 °C/min
+
+2. LOS TRES VEREDICTOS QUE MENCIONAN M22 (C3 y C8), en el CENTRO y en las ESQUINAS
+   escenario                                               CCR_M22   tronco FALLA  cuerpo VITRIF   LC4 sufic.
+   declarado (F2, bolsas)                                      0.1      SI-frágil      SI-frágil    SI-frágil
+   tejido x2.5 (factor VS55 del propio marco)                 0.04         **NO**     SI-robusto   SI-robusto
+   tejido x5 (tope de la literatura citada)                   0.02         **NO**     SI-robusto   SI-robusto
+   tejido x2.5 + VS55 a su valor de TEJIDO (1.0)              0.04         **NO**     SI-robusto   SI-robusto
+   tejido x5 + VS55 a su valor de TEJIDO (1.0)                0.02         **NO**     SI-robusto   SI-robusto
+
+   Holgura exacta del veredicto del tronco en el escenario declarado:
+     tasa en el tronco = 0.04044 °C/min; el veredicto exige CCR_M22 > esa tasa.
+     mínimo del rango declarado 0.05 -> holgura x1.236
+     con esquinas GENEROSAS de LC_trunk=9 y exp_LC=1.67: tasa = 0.04471
+
+3. LO QUE LA TANDA 51 NO RECORRIÓ: la recta CCR<->molaridad y la FRONTERA DE VIABILIDAD
+   `b_CCR` es la pendiente local; `masa_viable` es la frontera de F2 que usan L43, L44, L45, V14 y V15.
+   escenario                                       b décadas/M        a  LC_viable cm  masa_viable kg
+   declarado (F2, bolsas)                              -1.7391  15.1734          4.59           10.94
+   tejido x2.5 (factor VS55 del propio marco)          -2.1812  18.8875          7.18           41.86
+   tejido x5 (tope de la literatura citada)            -2.5157  21.6971         10.07           115.5
+   tejido x2.5 + VS55 a su valor de TEJIDO (1.0)       -1.9602  16.8315          7.21           42.39
+   tejido x5 + VS55 a su valor de TEJIDO (1.0)         -2.2946  19.6411         10.12           117.2
+
+   Masas equivalentes de referencia: cerebro 1.40 kg (LC 2.313 cm) · cuerpo medio 6.7 kg (LC 3.9) · tronco 47.7 kg (LC 7.5)
+   OJO: `masa_viable` es la masa de la ESFERA equivalente a la LC, no la masa del órgano real.
+   declarado (F2, bolsas)                         -> cerebro=DENTRO · cuerpo medio=DENTRO · tronco=fuera
+   tejido x2.5 (factor VS55 del propio marco)     -> cerebro=DENTRO · cuerpo medio=DENTRO · tronco=fuera
+   tejido x5 (tope de la literatura citada)       -> cerebro=DENTRO · cuerpo medio=DENTRO · tronco=DENTRO
+   tejido x2.5 + VS55 a su valor de TEJIDO (1.0)  -> cerebro=DENTRO · cuerpo medio=DENTRO · tronco=fuera
+   tejido x5 + VS55 a su valor de TEJIDO (1.0)    -> cerebro=DENTRO · cuerpo medio=DENTRO · tronco=DENTRO
+
+4. EL MONTE CARLO DE L43 (20 000 combinaciones de los SEIS parámetros de la frontera).
+   L43 afirma: cerebro DENTRO en el 100 %, tronco y cuerpo entero FUERA en el 100 %.
+   No había script guardado en el repositorio; se reconstruye aquí con el muestreo de `precision.py`
+   (triangular con moda en el central, que es el que el marco ya usa).
+   escenario                                       cerebro DENTRO  cuerpo FUERA  tronco FUERA      p5     p50     p95
+   declarado (F2, bolsas)                                 100.00%         1.52%        99.97%    7.40   12.04   23.70
+   tejido x2.5 (factor VS55 del propio marco)             100.00%         0.00%        49.30%   27.88   47.90   99.75
+   tejido x5 (tope de la literatura citada)               100.00%         0.00%         0.01%   75.25  136.62  299.17
+   tejido x2.5 + VS55 a su valor de TEJIDO (1.0)          100.00%         0.00%        48.17%   28.15   48.48  101.00
+   tejido x5 + VS55 a su valor de TEJIDO (1.0)            100.00%         0.00%         0.00%   76.03  138.16  302.43
+
+4b. LA MISMA AFIRMACIÓN DE L43 CON EL CRITERIO MATE DEL MARCO: las 2^6 = 64 ESQUINAS
+    (valores DECLARADOS, ningún parámetro movido — R2)
+    LC_viable en las esquinas: 3.370 – 8.870 cm (central 4.59)
+    masa_viable en las esquinas: 4.33 – 78.9 kg (central 10.9)
+    cerebro (LC 2.313) DENTRO en 64/64 esquinas
+    cuerpo entero (LC 3.9) FUERA en 14/64 esquinas
+    tronco (LC 7.5) FUERA en 52/64 esquinas
+    por MASA de esfera equivalente: tronco (47.7 kg) FUERA en 52/64 · cuerpo (70 kg) FUERA en 60/64
+    esquina más generosa: anc_LC=2.35, anc_rate=0.5, exp_LC=1.67, CCR_M22=0.05, CCR_VS55=1.0, CCR_VMP=5.3  ->  LC_viable 8.87 cm (78.9 kg)
+    ⇒ EN ESA ESQUINA EL TRONCO (LC 7.5) CAE **DENTRO** DE LA REGIÓN VIABLE.
+    ⇒ El «100 %» de L43 NO se sostiene con el criterio mate del propio marco, y esto NO necesita
+      la laguna de CCR_M22: se cae con los valores DECLARADOS. Coincide con lo que C3 ya imprime:
+      el veredicto «M22 falla en el centro del tronco» sale ✔~ (cierto en el centro, NO robusto).
+
+5. OTRAS SALIDAS QUE TOCAN CCR_M22
+   `ESPACIO.md` / L44: CCR requerida por un cerebro humano = 0.4251 °C/min.
+     NO depende de CCR_M22 (sale de C3 sola) -> la 'intersección vacía' de X2 NO se cae en ningún escenario.
+     holgura de M22 sobre ese requisito, declarado (F2, bolsas)                        : x4.25
+     holgura de M22 sobre ese requisito, tejido x2.5 (factor VS55 del propio marco)    : x10.63
+     holgura de M22 sobre ese requisito, tejido x5 (tope de la literatura citada)      : x21.26
+     holgura de M22 sobre ese requisito, tejido x2.5 + VS55 a su valor de TEJIDO (1.0) : x10.63
+     holgura de M22 sobre ese requisito, tejido x5 + VS55 a su valor de TEJIDO (1.0)   : x21.26
+   `red/espacio.py`: el CCR de M22 está ESCRITO A MANO como 0.10 en la tabla CPAS, no leído de PAR.
+     -> si el parámetro se etiquetara algún día, ESPACIO.md NO se enteraría. Duplicado de dato (R4, impostor).
+   `barrido.py`: el corte de NADES se compara contra CCR_M22; con el valor declarado la razón
+     corte/CCR_M22 es x4.25; los NADES fallan por x71 y eso NO cambia en ningún escenario.
+
+============================================================================================================
+6. QUÉ SE CAE Y QUÉ AGUANTA
+============================================================================================================
+
+AGUANTA:
+  + C3 sigue MATE: su único veredicto CLAVE ('VMP no vitrifica un riñón humano') no toca CCR_M22.
+  + C8 sigue MATE: su único veredicto CLAVE ('VMP insuficiente a LC 4 cm') no toca CCR_M22.
+  + C1 intacta: usa CWR_M22, no CCR_M22. El veredicto del recalentamiento del tronco no se mueve.
+  + X2 sigue abierta y la intersección sigue VACÍA: el eje que le falta a M22 es FUNCIÓN neural, no CCR.
+  + L35/L44 (NADES): fallan por un factor >70 contra el requisito del cerebro, que no depende de CCR_M22.
+  + El cerebro humano sigue DENTRO de la región viable en el 100 % en todos los escenarios (y con más holgura).
+
+SE CAE (o queda condicionado):
+  - tejido x2.5 (factor VS55 del propio marco): veredicto del tronco SE DA LA VUELTA (ya no falla) · masa_viable 41.9 kg (declarado 10.9) · L43 'tronco fuera' pasa del 100 % al 49.3 % · 'cuerpo entero fuera' al 0.0 %
+  - tejido x5 (tope de la literatura citada): veredicto del tronco SE DA LA VUELTA (ya no falla) · masa_viable 115.5 kg (declarado 10.9) · L43 'tronco fuera' pasa del 100 % al 0.0 % · 'cuerpo entero fuera' al 0.0 %
+  - tejido x2.5 + VS55 a su valor de TEJIDO (1.0): veredicto del tronco SE DA LA VUELTA (ya no falla) · masa_viable 42.4 kg (declarado 10.9) · L43 'tronco fuera' pasa del 100 % al 48.2 % · 'cuerpo entero fuera' al 0.0 %
+  - tejido x5 + VS55 a su valor de TEJIDO (1.0): veredicto del tronco SE DA LA VUELTA (ya no falla) · masa_viable 117.2 kg (declarado 10.9) · L43 'tronco fuera' pasa del 100 % al 0.0 % · 'cuerpo entero fuera' al 0.0 %
+
+Y EL HALLAZGO QUE NO NECESITA LA LAGUNA (ver bloque 4b):
+  * L43 afirma «tronco y cuerpo entero fuera de la región viable en el 100 % de las 20 000
+    combinaciones». Con los valores DECLARADOS y el criterio MATE del propio marco (esquinas),
+    el tronco cae DENTRO en 12 de las 64 esquinas y el cuerpo entero en 50 de 64.
+    El «100 %» es un artefacto del muestreo TRIANGULAR, que nunca visita una esquina.
+    ⇒ L43 afirma MÁS de lo que su cálculo sostiene, y V15 se cerró apoyándose justo en eso.
+  * Además L43 mide «cuerpo entero» por MASA (70 kg frente a masa_viable) mientras C3 lo mide
+    por LC (3.9 cm frente a LC_viable) y concluye lo CONTRARIO: «M22 vitrifica el cuerpo medio».
+    Dos criterios distintos para el mismo objeto dentro del mismo marco.
+
+Y LA INCONSISTENCIA DE ETIQUETA, que es el otro hallazgo propio de esta cota:
+  * `b_CCR` mezcla en UNA recta un punto de M22 cuya etiqueta no consta con un punto de VS55 tomado
+    en su valor de SOLUCIÓN (2.5) y uno de VMP etiquetado como TEJIDO. Sea cual sea la etiqueta de M22,
+    la recta actual ya es mixta. Con los tres puntos en TEJIDO y M22 sin cambiar, b seria -1.5180 en vez de -1.7391, y masa_viable 11.1 kg en vez de 10.9 kg.
+    ⇒ la laguna NO es sólo 'de qué tipo es CCR_M22': es que la recta no declara de qué tipo es NINGUNO.
+
+R2 comprobado: este script no escribe en red/dsny.yaml. Ningún valor se ha movido.

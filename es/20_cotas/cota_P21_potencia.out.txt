@@ -1,0 +1,16 @@
+diseño                                ruido                n=1.8                n=2.0                n=2.2                n=2.5                n=2.8
+                                                PASA/FALLA/INC %     PASA/FALLA/INC %     PASA/FALLA/INC %     PASA/FALLA/INC %     PASA/FALLA/INC %
+A: 1 volumen 0.15 L, sin réplicas    ±  5 %          100/  0/  0           35/  0/ 65            0/  0/100            0/  0/100            0/  0/100
+A: 1 volumen 0.15 L, sin réplicas    ± 10 %           97/  0/  3           44/  0/ 56            1/  0/ 99            0/  0/100            0/  0/100
+A: 1 volumen 0.15 L, sin réplicas    ± 15 %           88/  0/ 12           46/  0/ 54            7/  0/ 93            0/  0/100            0/  0/100
+A': 0.15 L con 3 réplicas            ±  5 %          100/  0/  0           95/  0/  5           14/  0/ 86            0/ 96/  4            0/100/  0
+A': 0.15 L con 3 réplicas            ± 10 %           93/  0/  7           55/  0/ 45            6/  0/ 93            0/ 58/ 42            0/ 98/  2
+A': 0.15 L con 3 réplicas            ± 15 %           69/  0/ 31           31/  0/ 69            4/  1/ 95            0/ 35/ 65            0/ 83/ 17
+B: 0.15 L + 7 L, sin réplicas        ±  5 %          100/  0/  0          100/  0/  0            6/  0/ 94            0/  0/100            0/  0/100
+B: 0.15 L + 7 L, sin réplicas        ± 10 %          100/  0/  0           89/  0/ 11           20/  0/ 80            0/  0/100            0/  0/100
+B: 0.15 L + 7 L, sin réplicas        ± 15 %           98/  0/  2           78/  0/ 22           27/  0/ 73            0/  0/100            0/  0/100
+B': 0.15 L + 7 L con 3 réplicas      ±  5 %          100/  0/  0          100/  0/  0          100/  0/  0            0/ 91/  9            0/100/  0
+B': 0.15 L + 7 L con 3 réplicas      ± 10 %          100/  0/  0          100/  0/  0           77/  0/ 23            0/ 45/ 55            0/100/  0
+B': 0.15 L + 7 L con 3 réplicas      ± 15 %          100/  0/  0           94/  0/  6           48/  0/ 52            0/ 26/ 74            0/ 97/  3
+
+Lectura: con n real ≤ 2.2 (lo físico) se quiere PASA alto y FALLA ~0 (falsos negativos de C3); con n real ≥ 2.5 se quiere FALLA alto y PASA ~0 (falsos positivos).

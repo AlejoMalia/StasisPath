@@ -1,0 +1,19 @@
+T=  -2.5 C  dias=  14  C2 concede     134 min  -> supresión extra requerida x150
+T=  -6.0 C  dias=  60  C2 concede     180 min  -> supresión extra requerida x481
+T=  -6.0 C  dias= 218  C2 concede     180 min  -> supresión extra requerida x1,748
+T= -16.0 C  dias=  60  C2 concede     413 min  -> supresión extra requerida x209
+
+Si extra >> 1: la fuga NO es térmica; es bioquímica (tolerancia a isquemia/anoxia,
+metabolismo basal de ectotermo, crioprotector endógeno). C2 no cae: se acota su dominio a
+'tejido de mamífero sin reprogramación bioquímica'.
+
+[V] casos medidos vs C2 (ancla mamífero):
+  rana de bosque Alaska, congelada               T= -6.3    193.0 d  -> extra x1,509
+  rana, tras ciclos congelación-descongelación   T= -6.3    218.0 d  -> extra x1,704
+  tortuga pintada adulta, ANOXIA                 T=  3.0    177.0 d  -> extra x3,003
+  tortuga pintada, anoxia                        T= 22.0      1.2 d  -> extra x103
+
+C5 — reserva de grasa para 1 año de torpor humano (BMR ~1700 kcal/d, grasa 9 kcal/g, ~7700 kcal/kg tejido adiposo):
+  oso (~25 % BMR)                155,125 kcal/año  =  20.1 kg de tejido adiposo
+  Q-neurons ratón (~25 %)        155,125 kcal/año  =  20.1 kg de tejido adiposo
+  lémur/ardilla (2-4 %)           18,615 kcal/año  =   2.4 kg de tejido adiposo

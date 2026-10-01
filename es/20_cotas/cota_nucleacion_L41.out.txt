@@ -1,0 +1,67 @@
+COTA L41 — ¿la suposición declarada en L41 puede romper su veredicto?  (tanda 48)
+
+L41 afirma dos cosas distintas y hay que separarlas (R4: definición → unidad → suelo → impostor → afirmación):
+
+  (a) VALOR: J(-6 C) ~ 0.57 nucleaciones por L·h, "ajustado" con los dos puntos de F85.
+  (b) VEREDICTO: ese valor es COMPATIBLE con la cota independiente del riñón de cerdo
+      a -2 C (J <= 3 por L·h, F20).
+
+La salvedad que L41 declara: atribuir el 42 % de fallos a las 96 h a la NUCLEACION es una
+suposición; podría ser daño isquémico, del CPA o de la propia cirugía de trasplante.
+Sea phi in [0, 1] la fracción de esos fallos realmente causada por nucleación.
+
+MODELO (el de L16: nucleación estocástica, probabilidad que crece con volumen Y tiempo)
+  P(sin nucleación) = exp(-J · V · t)      (Poisson homogéneo en volumen-tiempo)
+  => J(phi) = -ln(1 - 0.42·phi) / (V · t)
+
+MONOTONIA: J(phi) es creciente en phi.  El máximo del rango está en phi = 1, que es
+justo el caso que L41 supone.  => cualquier desviación de la suposición BAJA J.
+Por tanto lo que los dos puntos de F85 dan no es un valor ajustado: es una COTA SUPERIOR.
+
+UNIDADES: J en 1/(L·h). V en L. t en h.  Suelo: J >= 0 (no puede haber nucleación negativa).
+
+SUPUESTO DECLARADO (no está en ninguna fuente de la red, así que entra como RANGO y el
+veredicto se evalúa en las esquinas, como hace el motor con los parámetros):
+  V hígado de rata   = 10 mL   (rango 8-14 mL; rata de 250-350 g, hígado ~4 % del peso)
+  V riñón de cerdo   = 60 mL   (rango 40-90 mL; cerdo Yorkshire de 30 kg, F20)
+Si el veredicto aguanta en TODAS las esquinas, el supuesto no lo sostiene.
+
+==============================================================================
+Cota del cerdo (F20): lambda_max = -ln(1-3/5) = 0.9163 eventos en 5 h
+   V =    60 mL (central) -> J <=  3.054 por L·h
+   V =    40 mL (lo     ) -> J <=  4.581 por L·h
+   V =    90 mL (hi     ) -> J <=  2.036 por L·h
+   ** reproduce el 'J <= 3 por L·h' que L41 tenía escrito a mano: 3.05 con V = 60 mL **
+
+Punto de F85 a 72 h: supervivencia 100% => lambda ~ 0 => no acota por arriba (es consistente con cualquier J pequeña); el punto informativo es el de 96 h.
+
+J implicada por F85 a -6 C, barriendo la SUPOSICION phi y el volumen:
+   phi | V=10 mL | V=8 mL | V=14 mL
+  1.00 |    0.567 |    0.709 |    0.405
+  0.75 |    0.394 |    0.493 |    0.282
+  0.50 |    0.246 |    0.307 |    0.175
+  0.25 |    0.116 |    0.144 |    0.083
+  0.10 |    0.045 |    0.056 |    0.032
+  0.01 |    0.004 |    0.005 |    0.003
+
+Esquina PEOR para la compatibilidad: J_rata maxima = 0.709 (phi=1, V=8 mL)
+                                     J_cerdo minima = 2.036 (V=90 mL)
+
+V1 (clave) 'compatible con la cota del cerdo' en TODO el rango de la suposición phi in [0,1] y en todas las esquinas de volumen: MATE
+V2 (clave) 'lo que F85 da es una COTA SUPERIOR, no un valor ajustado': MATE por monotonia (dJ/dphi > 0, maximo en phi=1)
+V3 (NO clave) 'el valor central 0.57 es el valor verdadero de J': ABIERTO — depende de phi, que nadie ha medido
+
+Holgura de V1 en la esquina peor: factor x2.87 (haría falta phi > 1, imposible, para romperla)
+Para romper V1 harían falta 79.1% de fallos por nucleación a las 96 h; F85 observa 42% en TOTAL.
+
+FUGAS DECLARADAS de la cota superior J <= 0.57 por L·h:
+ 1. Supone 'nucleación => fallo del injerto'. Si nuclear fuera sobrevivible, J sería MAYOR.
+    Apoyo en la red: F22 (dep de L41) congeló higados de cerdo a -2 C 24 h como control
+    y midió 98 % de picnosis nuclear, destrucción severa => a escala de órgano,
+    nuclear NO es sobrevivible. La misma convención la usa la cota del cerdo (F20),
+    así que la comparación es consistente en convención.
+ 2. Supone Poisson homogéneo (J·V·t). Es el modelo de L16 [V], no un añadido.
+ 3. El 42 % incluye la mortalidad de la propia cirugía de trasplante: eso BAJA J,
+    no la sube => refuerza la cota, no la rompe.
+ 4. Extrapolar J de -6 C (rata) a -2 C (cerdo) no se hace aquí: son dos cotas
+    independientes a dos temperaturas, y sólo se comprueba que NO se contradigan.

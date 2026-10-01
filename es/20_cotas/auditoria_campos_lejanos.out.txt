@@ -1,0 +1,9 @@
+1) YAML valido: 84 fuentes, 61 afirmaciones, 27 vias, 22 preguntas
+   preregistro intacto: P15, P18, P19, P20, P21 (hash identico al de prereg.lock)
+   todas las dependencias existen (243 nodos)
+2) ningun nodo supera su estatus declarado  [243 nodos comprobados]
+3) clúster no inflado: 7 fuentes lejanas en [P], 7 leyes en [P], solo L35 en [V]
+4) 3 aristas retiradas y verificadas fuera; las 9 que si son apoyo siguen dentro
+5) ninguna URL de fuente esta duplicada: no hay impostor del tipo F72 = F46
+
+TODAS LAS ASERCIONES PASAN. El marcador (COMP/SCORE/RANK de red/motor.py) no se ha tocado; este script solo lee.

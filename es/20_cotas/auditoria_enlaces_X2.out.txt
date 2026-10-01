@@ -1,0 +1,84 @@
+AUDITORIA DE ENLACES A X2 (tanda 48) — patrón 4: dependencia innecesaria.
+
+PROBLEMA. En `red/dsny.yaml` el comentario de la capa de afirmaciones dice:
+«deps = nodos de los que dependen», y el motor propaga con la regla «un nodo nunca vale
+más que su dependencia más débil». Es decir: `deps` es APOYO PROBATORIO, y cada arista
+es también una PENALIZACION.
+
+Las tandas 27-30 añadieron ocho nodos de «campos vecinos y lejanos» escritos EXPLICITAMENTE
+para atacar X2 desde fuera, y a todos se les puso `X2` en `deps` como marca temática.
+X2 está [A] (es la frontera empírica abierta del programa), así que esa marca temática
+arrastra a [A] ocho nodos cuya evidencia está entera en otras fuentes ya verificadas.
+Es el mismo tipo de fallo que la tanda 41 llamó «error de cableado».
+
+TEST (contrafáctico, uno por nodo). X2 pregunta: ¿existe una química con función Y escala
+a la vez? Es un SI/NO empírico todavía sin medir. Para cada nodo:
+
+    ¿cambiaría el contenido del nodo si X2 saliera SI?  ¿y si saliera NO?
+
+    - Si el nodo dice lo mismo con las dos respuestas  =>  X2 no es apoyo: la arista sale.
+    - Si el nodo necesita una de las dos respuestas    =>  la arista se queda.
+
+Y la dirección importa: un nodo que APORTA EVIDENCIA SOBRE X2 no puede a la vez DERIVAR
+de X2. La relación se conserva donde debe estar, en el texto del nodo, que nombra X2.
+
+LIMITE AUTOIMPUESTO, y es lo que hace la auditoría comprobable: **ningún nodo sube por
+encima de su estatus DECLARADO**. Quitar la arista no cierra nada nuevo; sólo deja de
+rebajar declaraciones que ya existían. Este script lo verifica al final y falla si no.
+
+================================================================================================
+
+L22  arista X2 -> SALE   evidencia real: F37b + F46 + F71
+      V3 = VM3 sin bloqueadores de hielo es una IDENTIDAD DE COMPOSICION, confirmada al decimal y por el suplementario de los propios autores (F71).
+      Sigue siendo cierta con X2 = SI y con X2 = NO.
+      Lo que el texto dice de X2 ('no enfrenta dos linajes, sino uno a dos concentraciones') se DEDUCE de esta identidad: la evidencia va de L22 a X2, no al revés.
+
+L23  arista X2 -> SALE   evidencia real: F72 + F37b + G4b
+      «el daño lo causa la exposición química, no el cambio de fase» son dos pares de números medidos en el mismo tejido (respiración 135.1 vs 131.4; reserva 48.6 vs 50.6, F72) más el clásico de 50 vs 53 % de F37b.
+      No depende de si existe o no una química con función y escala.
+
+L25  arista X2 -> SALE   evidencia real: F72 + L22 + L20
+      «a 9.28 M cargada a 10 °C la respiración cae a la mitad» es una medida de F72; que la temperatura de carga sea la variable decisiva lo da L20 [V].
+      Ninguna de las dos cosas cambia con la respuesta a X2.
+
+L29  arista X2 -> SALE   evidencia real: F74
+      Las CAHS del tardígrado forman vidrio o gel a ~0.6 mM: dato de F74.
+      El nodo ATACA el supuesto CCR<->molaridad que hay DEBAJO de X2; no se apoya en X2.
+
+L30  arista X2 -> SALE   evidencia real: F75 + F59 + G3
+      «existe un marco computacional de diseño de excipientes» es un hecho sobre la literatura de liofilización (F75) más el papel de Tg en el agrietamiento (F59).
+      Verdadero con X2 = SI y con X2 = NO; de hecho es una PROPUESTA DE VIA para resolver X2.
+
+L31  arista X2 -> SALE   evidencia real: F76
+      La CCR del agua pura, 6.4e6 K/s, es una medición ajena al marco (F76).
+      El tercer punto de la curva CCR<->concentración existe con independencia de la respuesta a X2.
+
+L32  arista X2 -> SALE   evidencia real: F77 + G3 + F75
+      Que la metalurgia de vidrios masivos defina Trg y gamma y derive de ellos el espesor crítico es un hecho de F77.
+      No necesita saber si hay una química con función y escala.
+
+L35  arista X2 -> SALE   evidencia real: F80 + L29 + G4
+      «los NADES protegen pero cristalizan a 30 °C/min» es la calorimetría de F80 leída en la tanda 46.
+      Es un resultado NEGATIVO sobre un candidato a X2: aporta a X2, no deriva de X2.
+
+Q11  arista X2 -> SE QUEDA   es una PREGUNTA; X2 figura entre sus respuestas, que es su papel correcto.
+
+================================================================================================
+nodo   declarado  efectivo CON X2  efectivo SIN X2  ¿supera lo declarado?
+L22    V          A                V                no
+L23    V          A                V                no
+L25    P          A                P                no
+L29    P          A                P                no
+L30    V          A                V                no
+L31    P          A                P                no
+L32    P          A                P                no
+L35    P          A                P                no
+L26    V          A                P                no
+X2     A          A                A                no
+
+Progreso CON las aristas temáticas: 92.43 %
+Progreso SIN las aristas temáticas: 94.26 %   (+1.83)
+X2 sigue en [A]: la tensión del programa (R1) se conserva intacta.
+
+COMPROBADO: ningún nodo supera su estatus declarado. La auditoría no cierra nada nuevo;
+sólo deja de rebajar declaraciones que el marco ya tenía escritas.

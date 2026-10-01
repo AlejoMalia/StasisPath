@@ -1,0 +1,9 @@
+(a) YAML válido: OK
+    244 nodos · sin dependencias inexistentes · sin dependencias duplicadas
+(b) preregistro INTACTO: 5 preregistros, los 5 protegidos presentes y con hash igual
+(c) ningún nodo supera su estatus declarado: OK
+(d) tensiones conservadas (X2 [A], L25 [P], clúster de campos lejanos [P]) y cierres aplicados: OK
+(e) red/motor.py idéntico al de HEAD (COMP, SCORE y RANK intactos): OK
+(f) grafo acíclico: OK
+
+TODAS LAS VERIFICACIONES PASAN.

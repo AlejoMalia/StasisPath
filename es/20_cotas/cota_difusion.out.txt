@@ -1,0 +1,6 @@
+caso                                t_dif  tasa_max C/min  VS55?  VM3?  M22?
+ovocito/embrión 0.1 mm              0.0min         7.8e+04   SI    SI    SI  
+tejido 1 mm                         0.1min             780   SI    SI    SI  
+riñón rata ~1 cm                   12.8min             7.8   NO    SI    SI  
+riñón/corazón humano ~5 cm        320.5min           0.312   NO    NO    NO  
+cabeza/torso ~12 cm              1846.2min          0.0542   NO    NO    NO  
